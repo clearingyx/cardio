@@ -3,21 +3,26 @@ package com.common.wechat.biz;
 import com.common.dao.auto.PersonDao;
 import com.common.dao.biz.PersonBizDao;
 import com.common.model.auto.PersonEntity;
+import com.common.other.resp.RspCodeMsg;
 import com.common.service.PersonService;
 import com.common.wechat.entity.user.UserAuthorize;
 import com.common.wechat.util.WexinConnectUtil;
 import com.common.other.annotation.ApiRequest;
+import com.exception.base.RspRuntimeException;
 import com.util.GetHttp;
 import com.util.JSONUtil;
+import com.util.SHA1;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -63,41 +68,37 @@ public class BaseBiz {
     }
 
     /**
-     * 微信验证服务器时使用，如果是向微信验证服务，注释掉下面的方法，放开这个方法
-     */
-//    @RequestMapping("weixin")
-//    public void weixin(String signature, String echostr,String timestamp,
-//                       String nonce,PrintWriter out) throws IOException{
-//        String[] str = { rb.getString("token"), timestamp, nonce };
-//        Arrays.sort(str); // 字典序排序
-//        String bigStr = str[0] + str[1] + str[2];
-//        // SHA1加密
-//        String digest = new SHA1().getDigestOfString(bigStr.getBytes()).toLowerCase();
-//        // 确认请求来至微信
-//        if (digest.equals(signature)) {
-//            out.print(echostr);
-//        }
-//    }
-
-    /**
-     * 其他的信息发送都是走的这个验证接口
+     * 主入口
      * @param response
      * @param request
      * @throws IOException
      */
     @ApiRequest
     @RequestMapping("weixin")
-    public void weixin(HttpServletResponse response, HttpServletRequest request){
+    @ResponseBody
+    public Object weixin(HttpServletResponse response, HttpServletRequest request,String signature,
+                         String echostr,String timestamp,String nonce){
         //定义发送回去的xml是utf-8格式，否则中文会乱码
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
-        try {
-            PrintWriter out = response.getWriter();
+
+        String[] str = { rb.getString("token"), timestamp, nonce };
+        Arrays.sort(str); // 字典序排序
+        String bigStr = str[0] + str[1] + str[2];
+        // SHA1加密
+        String digest = new SHA1().getDigestOfString(bigStr.getBytes()).toLowerCase();
+
+        // 确认请求来自微信
+        if (digest.equals(signature)){
+            //对微信发送过来的信息进行操作
             String backXmlString = eventBiz.backXmlString(request);
-            out.print(backXmlString);
-        }catch (IOException e){
-            e.printStackTrace();
-            //log
+            if ("".equals(backXmlString)){
+                return "success";   //如果不使用success，那么微信就会弹出来“公众号暂时不能服务”，不是很合适，所以建议都是返回success
+            }else {
+                return backXmlString;
+            }
+        } else { //错误
+            throw new RspRuntimeException(RspCodeMsg.WEIXIN_URL_ERR, "链接不是来自微信");
         }
     }
 
@@ -111,32 +112,5 @@ public class BaseBiz {
     public static void main(String[] args) {
         String str = new BaseBiz().getAccess_token();
         System.out.println(str);
-    }
-
-    @RequestMapping(value = "userInfo",method = RequestMethod.GET)
-    public void userInfo(String code, PrintWriter out) throws IOException {
-        //固定url
-        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + BaseBiz.appid
-                +"&secret=" + BaseBiz.secret
-                +"&code=" + code
-                +"&grant_type=authorization_code";
-
-        //get发送url，得到的json转型成WeixinAuthorizeBack类
-        String result = GetHttp.Get(url);
-        UserAuthorize userAuthorize = JSONUtil.toBean(result,UserAuthorize.class);
-
-        //这里的access_token和运营方的access_token不一样，这个是用户的随机码，5分钟刷新
-        //ps：这里注意，最好是放到redis里面，设置5分钟获取一次
-        url = "https://api.weixin.qq.com/sns/userinfo?"
-                +"access_token="+ userAuthorize.getAccess_token()
-                +"&openid="+ userAuthorize.getOpenid()
-                +"&lang="+ userAuthorize.getLang();
-
-        //get发送url，转型成Person对象，微信返回用户信息
-        result = GetHttp.Get(url);
-        PersonEntity person = JSONUtil.toBean(result,PersonEntity.class);
-
-        //测试头像，事务看业务
-        out.print(person.getHeadimgurl());
     }
 }

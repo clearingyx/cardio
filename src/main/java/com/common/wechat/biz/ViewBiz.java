@@ -5,6 +5,7 @@ import com.common.wechat.entity.user.UserAuthorize;
 import com.util.GetHttp;
 import com.util.JSONUtil;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -24,7 +25,7 @@ public class ViewBiz{
      * @throws IOException
      */
     @RequestMapping(value = "userInfo",method = RequestMethod.GET)
-    public void userInfo(String code, PrintWriter out) throws IOException {
+    public String userInfo(String code, PrintWriter out, Model model) throws IOException {
         //固定url
         String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + BaseBiz.appid
                 +"&secret=" + BaseBiz.secret
@@ -46,7 +47,13 @@ public class ViewBiz{
         result = GetHttp.Get(url);
         PersonEntity person = JSONUtil.toBean(result,PersonEntity.class);
 
-        //测试头像，事务看业务
-        out.print(person.getHeadimgurl());
+        model.addAttribute("img",person.getHeadimgurl());
+        model.addAttribute("sex",person.getSex());
+        model.addAttribute("city",person.getCity());
+        model.addAttribute("country",person.getCountry());
+        model.addAttribute("province",person.getProvince());
+        model.addAttribute("nick_name",person.getNickname());
+
+        return "person_info.jsp";
     }
 }

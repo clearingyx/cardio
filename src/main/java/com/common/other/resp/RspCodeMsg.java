@@ -26,6 +26,9 @@ public enum RspCodeMsg {
     SMS_BALANCE_ERR("2006","余额不足请充值后使用"),
     SMS_OTHER_ERR("2007","短信其他错误"),
 
+    // 3 微信错误
+    WEIXIN_URL_ERR("3001","链接不是来自微信"),
+
 
     // 9 开头表示系统、框架、模板异常
     UNKNOWN_ERR("9999", "未知错误"); //

@@ -149,8 +149,12 @@ public class EventBiz{
                 //插入成功，推送图文
                 //QRcodeParam：截取到二维码参数（视频id）
                 String videoId = eventKey.replace("qrscene_","");
-
-                xmlBack = "";
+                //这里举例子返回text
+                BaseResp br = new TextResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
+                        menuEvent.getMsgType(),  MsgTypeEmun.TEXT.getValue(),
+                        "关注后发送的文字");
+                xmlBack = XmlUtil.weixinBuildXml(br);
+                //xmlBack = "";
             } else {
                 //log
             }
