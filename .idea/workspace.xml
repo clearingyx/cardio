@@ -5,76 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4c93481f-d370-4d41-adc1-13f18aab7462" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/mobile/biz/MobileBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/mobile/entity/Mobile.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/annotation/ApiRequest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/aspect/ApiRequestAspect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/aspect/AspectUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/param/AbstractPageParam.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/param/AbstractParam.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/resp/PageResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/resp/Response.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/resp/ResponseData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/other/resp/RspCodeMsg.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/WexinConnectUtil$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/WexinConnectUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/ConnectUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common/mobile/biz/MobileBiz.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/common/mobile/entity/Mobile.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/util/ConnectUtil.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/web/WEB-INF/web.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/WeixinAuthorizeBack.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/ConnectUtil$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/ConnectUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/annotation/ApiRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/aspect/ApiRequestAspect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/aspect/AspectUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/param/AbstractPageParam.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/param/AbstractParam.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/resp/PageResp.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/resp/Response.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/resp/ResponseData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/other/resp/RspCodeMsg.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/upload_temp/20160801162841.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/test.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/common/wechat/biz/WeixinAuthorizeBack.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/common/wechat/util/ConnectUtil$1.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/common/wechat/util/ConnectUtil.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/annotation/ApiRequest.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/aspect/ApiRequestAspect.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/aspect/AspectUtils.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/param/AbstractPageParam.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/param/AbstractParam.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/resp/PageResp.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/resp/Response.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/resp/ResponseData.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/other/resp/RspCodeMsg.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/test-classes/test.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/util/ConnectUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/util/WexinConnectUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/annotation/ApiRequest.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/annotation/ApiRequest.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/aspect/ApiRequestAspect.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/aspect/ApiRequestAspect.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/aspect/AspectUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/aspect/AspectUtils.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/param/AbstractPageParam.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/param/AbstractPageParam.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/param/AbstractParam.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/param/AbstractParam.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/resp/PageResp.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/resp/PageResp.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/resp/Response.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/resp/Response.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/resp/ResponseData.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/resp/ResponseData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/other/resp/RspCodeMsg.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/other/resp/RspCodeMsg.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/PersonController.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/PersonController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/UserController.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/UserController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/UserReq.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/UserReq.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/UserResp.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/UserResp.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/service/PersonService.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/service/PersonService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/BaseBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/BaseBiz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/EventBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/EventBiz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/QRcodeBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/QRcodeBiz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/SourceBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/SourceBiz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/ViewBiz.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/biz/ViewBiz.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/FileUtil.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/FileUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/XmlUtil.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/wechat/util/XmlUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/exception/ParamCheckException.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/exception/ParamCheckException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/exception/base/RspRuntimeException.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/exception/base/RspRuntimeException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/PageUtil.class" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/PageUtil.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/controller/PersonController.class" afterPath="$PROJECT_DIR$/target/classes/com/common/controller/PersonController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/controller/UserController.class" afterPath="$PROJECT_DIR$/target/classes/com/common/controller/UserController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/model/biz/UserReq.class" afterPath="$PROJECT_DIR$/target/classes/com/common/model/biz/UserReq.class" />
@@ -90,35 +20,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/exception/ParamCheckException.class" afterPath="$PROJECT_DIR$/target/classes/com/exception/ParamCheckException.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/exception/base/RspRuntimeException.class" afterPath="$PROJECT_DIR$/target/classes/com/exception/base/RspRuntimeException.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/util/PageUtil.class" afterPath="$PROJECT_DIR$/target/classes/com/util/PageUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cardio.iml" afterPath="$PROJECT_DIR$/.idea/cardio.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/PersonBizDao.xml" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/PersonBizDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/config.properties" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/spring-core.xml" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/spring-core.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/spring-database.xml" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/spring-database.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/controller/PersonController.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/controller/PersonController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/controller/UserController.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/controller/UserController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/model/auto/PersonEntity.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/model/auto/PersonEntity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/model/biz/UserReq.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/model/biz/UserReq.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/model/biz/UserResp.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/model/biz/UserResp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/service/PersonService.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/service/PersonService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/BaseBiz.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/BaseBiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/EventBiz.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/EventBiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/QRcodeBiz.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/QRcodeBiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/SourceBiz.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/SourceBiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/ViewBiz.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/biz/ViewBiz.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/util/FileUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/util/FileUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/wechat/util/XmlUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/wechat/util/XmlUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/exception/ParamCheckException.java" afterPath="$PROJECT_DIR$/src/main/java/com/exception/ParamCheckException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/exception/base/RspRuntimeException.java" afterPath="$PROJECT_DIR$/src/main/java/com/exception/base/RspRuntimeException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/util/MobileUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/util/MobileUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/util/PageUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/util/PageUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/biz/PersonBizDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/biz/PersonBizDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/config.properties" afterPath="$PROJECT_DIR$/src/main/resources/spring/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-core.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-core.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-database.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-database.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/mapper/biz/PersonBizDao.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/mapper/biz/PersonBizDao.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/config.properties" afterPath="$PROJECT_DIR$/target/classes/spring/config.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/spring-core.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-core.xml" />
@@ -1130,8 +1032,15 @@
       <workItem from="1470359124638" duration="13461000" />
       <workItem from="1470379014175" duration="3878000" />
       <workItem from="1470383434659" duration="8019000" />
-      <workItem from="1470620101105" duration="20140000" />
+      <workItem from="1470620101105" duration="20221000" />
     </task>
+    <task id="LOCAL-00001" summary="8-8">
+      <created>1470644589263</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1470644589263</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1140,7 +1049,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="162604000" />
+    <option name="totallyTimeSpent" value="162685000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1188,7 +1097,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="8-8" />
+    <option name="LAST_COMMIT_MESSAGE" value="8-8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
