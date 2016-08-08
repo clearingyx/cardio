@@ -9,6 +9,7 @@ import java.io.File;
 
 /**
  * Created by zhang.peng on 2016/8/3.
+ * 暂时不用了
  */
 public class FileUtil {
 

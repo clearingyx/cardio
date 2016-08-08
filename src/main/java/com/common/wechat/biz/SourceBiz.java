@@ -5,7 +5,7 @@ import com.common.wechat.entity.source.ArticlesReq;
 import com.common.wechat.entity.source.ArticlesReqRoot;
 import com.common.wechat.entity.resp.ImageResp;
 import com.common.wechat.entity.source.SourceResp;
-import com.common.wechat.util.ConnectUtil;
+import com.common.wechat.util.WexinConnectUtil;
 import com.util.JSONUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,7 +37,7 @@ public class SourceBiz extends BaseBiz{
         String access_token = getAccess_token();
         String url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token="+access_token+"&type="+ MsgTypeEmun.IMAGE.getValue();
         try {
-            map = ConnectUtil.getConnectForFile(url,all_path);//path
+            map = WexinConnectUtil.getConnectForFile(url,all_path);//path
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -63,7 +63,7 @@ public class SourceBiz extends BaseBiz{
         String access_token = getAccess_token();
         String url = "https://api.weixin.qq.com/cgi-bin/material/add_material?access_token="+access_token+"&type="+ MsgTypeEmun.IMAGE.getValue();
         try {
-            map = ConnectUtil.getConnectForFile(url,"C:\\small.jpg");//path
+            map = WexinConnectUtil.getConnectForFile(url,"C:\\small.jpg");//path
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -94,7 +94,7 @@ public class SourceBiz extends BaseBiz{
 
         ArticlesReqRoot articlesReqRoot = new ArticlesReqRoot(list);
 
-        Map map = ConnectUtil.getConnectForPost(url, JSONUtil.toJson(articlesReqRoot));
+        Map map = WexinConnectUtil.getConnectForPost(url, JSONUtil.toJson(articlesReqRoot));
 
         //用户素材的这个media_id是唯一的，是要存入数据库的
         ImageResp imageResp = new ImageResp();
@@ -115,7 +115,7 @@ public class SourceBiz extends BaseBiz{
 
         String url = "https://api.weixin.qq.com/cgi-bin/media/get?access_token="+access_token+"&media_id="+media_id;
 
-        /*Map<String,Object> map = ConnectUtil.getConnectForGet(url);
+        /*Map<String,Object> map = WexinConnectUtil.getConnectForGet(url);
         System.out.println(map.toString());*/
     }
 }

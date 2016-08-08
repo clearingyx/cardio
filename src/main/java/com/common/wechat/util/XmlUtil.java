@@ -27,7 +27,7 @@ public class XmlUtil {
      * @param requset
      * @return map
      */
-    public Map<String,String> weixinResolveXml(HttpServletRequest requset) {
+    public static Map<String,String> weixinResolveXml(HttpServletRequest requset) {
         Map<String, String> map = new HashMap<String, String>();
         try {
             // 从request中取得输入流
@@ -57,7 +57,7 @@ public class XmlUtil {
      * @param br
      * @return
      */
-    public String weixinBuildXml(BaseResp br){
+    public static String weixinBuildXml(BaseResp br){
         Document document = DocumentHelper.createDocument();
         Element root = document.addElement("xml");
         root.addElement("ToUserName").addCDATA(br.getToUserName());

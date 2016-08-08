@@ -3,7 +3,8 @@ package com.common.controller;
 import com.common.dao.auto.PersonDao;
 import com.common.model.auto.PersonEntity;
 import com.common.model.auto.PersonExample;
-import com.other.annotation.ApiRequest;
+import com.common.service.PersonService;
+import com.common.other.annotation.ApiRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,8 @@ import java.util.Date;
 public class PersonController extends BaseController{
     @Autowired
     PersonDao personDao;
+    @Autowired
+    PersonService personService;
 
     /**
      * 新增 关注用户（这是微信发送回来的数据）
@@ -45,6 +48,7 @@ public class PersonController extends BaseController{
     public Object insert(){
         PersonEntity personEntity = new PersonEntity();
         personEntity.setSource(1);
+
         return personDao.insertSelective(personEntity);
     }
 }

@@ -1,7 +1,7 @@
 package com.exception;
 
 import com.exception.base.RspRuntimeException;
-import com.other.resp.RspCodeMsg;
+import com.common.other.resp.RspCodeMsg;
 
 /**
  * 参数检验异常，属于框架的异常

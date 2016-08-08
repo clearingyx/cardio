@@ -85,7 +85,7 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * -1未注册，0-已注册未评估，1正常，2-取消关注，3-禁用
+     * -1未注册，0-已注册未评估，1正常，2-取消关注
      * 表字段 : person.use_status
      * </pre>
      */
@@ -359,11 +359,11 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 获取：-1未注册，0-已注册未评估，1正常，2-取消关注，3-禁用
+     * 获取：-1未注册，0-已注册未评估，1正常，2-取消关注
      * 表字段：person.use_status
      * </pre>
      *
-     * @return person.use_status：-1未注册，0-已注册未评估，1正常，2-取消关注，3-禁用
+     * @return person.use_status：-1未注册，0-已注册未评估，1正常，2-取消关注
      */
     public Integer getUseStatus() {
         return useStatus;
@@ -371,12 +371,12 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 设置：-1未注册，0-已注册未评估，1正常，2-取消关注，3-禁用
+     * 设置：-1未注册，0-已注册未评估，1正常，2-取消关注
      * 表字段：person.use_status
      * </pre>
      *
      * @param useStatus
-     *            person.use_status：-1未注册，0-已注册未评估，1正常，2-取消关注，3-禁用
+     *            person.use_status：-1未注册，0-已注册未评估，1正常，2-取消关注
      */
     public void setUseStatus(Integer useStatus) {
         this.useStatus = useStatus;

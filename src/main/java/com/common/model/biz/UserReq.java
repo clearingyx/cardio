@@ -1,7 +1,7 @@
 package com.common.model.biz;
 
 import com.google.common.base.Preconditions;
-import com.other.param.AbstractPageParam;
+import com.common.other.param.AbstractPageParam;
 
 /**
  * 从前端获得的User对象，将需要的参数整合成UserSet对象，继承了参数验证类，实现了参数验证方法

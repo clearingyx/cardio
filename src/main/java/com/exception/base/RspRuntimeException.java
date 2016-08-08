@@ -1,7 +1,7 @@
 package com.exception.base;
 
 
-import com.other.resp.RspCodeMsg;
+import com.common.other.resp.RspCodeMsg;
 
 /**
  * RC unchecked 异常基类，可以存储RspCodeMsg

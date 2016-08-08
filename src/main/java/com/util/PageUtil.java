@@ -1,6 +1,6 @@
 package com.util;
 
-import com.other.param.AbstractPageParam;
+import com.common.other.param.AbstractPageParam;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.ibatis.session.RowBounds;
 

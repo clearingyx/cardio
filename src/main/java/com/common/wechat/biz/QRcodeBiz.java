@@ -5,7 +5,7 @@ import com.common.wechat.entity.qrcode.ActionInfo;
 import com.common.wechat.entity.qrcode.QRcodeReq;
 import com.common.wechat.entity.qrcode.QRcodeResp;
 import com.common.wechat.entity.qrcode.Scene;
-import com.common.wechat.util.ConnectUtil;
+import com.common.wechat.util.WexinConnectUtil;
 import com.util.JSONUtil;
 import com.util.QRcodeUtil;
 import org.springframework.stereotype.Controller;
@@ -33,13 +33,13 @@ public class QRcodeBiz extends BaseBiz{
         String url = "https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=";
 
         //给微信发送的对象
-        QRcodeResp qRcodeResp = new QRcodeResp(expire_seconds, QRcodeEmun.QR_SCENE.toString(),
+        QRcodeResp qRcodeResp = new QRcodeResp(expire_seconds, QRcodeEmun.QR_SCENE.getValue(),
                 new ActionInfo(new Scene(scene_id)));
         //得到access_token
         String access_token = new BaseBiz().getAccess_token();
 
         //post连接，生成二维码
-        Map map = ConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
+        Map map = WexinConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
                 +access_token, JSONUtil.toJson(qRcodeResp));
 
 //        //封装微信发送回来的信息，可以直接放入数据库，这里的封装并没有什么意义，测试用
@@ -70,7 +70,7 @@ public class QRcodeBiz extends BaseBiz{
         String access_token = getAccess_token();
         //System.out.println(access_token);
 
-        Map map = ConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
+        Map map = WexinConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
                 +access_token,JSONUtil.toJson(qRcodeResp));
 
         QRcodeReq qRcodeReq = new QRcodeReq(map.get("ticket").toString(),

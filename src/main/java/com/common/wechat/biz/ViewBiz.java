@@ -6,6 +6,7 @@ import com.util.GetHttp;
 import com.util.JSONUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -14,19 +15,19 @@ import java.io.PrintWriter;
  * Created by zhang.peng on 2016/8/3.
  */
 @Controller
-@RequestMapping("/viweBiz")
-public class ViewBiz extends BaseBiz{
+@RequestMapping("/viewBiz")
+public class ViewBiz{
     /**
      * 用户访问链接跳转，通过code得到用户的所有信息（需要用户进入链接前对网页进行授权）
      * @param code
      * @param out
      * @throws IOException
      */
-    @RequestMapping("userInfo")
+    @RequestMapping(value = "userInfo",method = RequestMethod.GET)
     public void userInfo(String code, PrintWriter out) throws IOException {
         //固定url
-        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + appid
-                +"&secret=" + secret
+        String url = "https://api.weixin.qq.com/sns/oauth2/access_token?appid=" + BaseBiz.appid
+                +"&secret=" + BaseBiz.secret
                 +"&code=" + code
                 +"&grant_type=authorization_code";
 

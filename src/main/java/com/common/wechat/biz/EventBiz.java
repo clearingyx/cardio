@@ -3,8 +3,6 @@ package com.common.wechat.biz;
 import com.common.dao.auto.PersonDao;
 import com.common.dao.biz.PersonBizDao;
 import com.common.model.auto.PersonEntity;
-import com.common.model.auto.PersonExample;
-import com.common.model.auto.UserExample;
 import com.common.service.PersonService;
 import com.common.wechat.emun.EventEmun;
 import com.common.wechat.emun.MsgTypeEmun;
@@ -15,8 +13,7 @@ import com.common.wechat.entity.resp.*;
 import com.common.wechat.event.MenuEvent;
 import com.common.wechat.util.XmlUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.ArrayList;
@@ -28,9 +25,8 @@ import java.util.Map;
  * Created by zhang.peng on 2016/7/29.
  * 微信反馈给使用者的事件处理
  */
-@Controller
-@RequestMapping("/eventBiz")
-public class EventBiz extends BaseBiz{
+@Service
+public class EventBiz{
     @Autowired
     PersonDao personDao;
     @Autowired
@@ -46,16 +42,16 @@ public class EventBiz extends BaseBiz{
         String backXmlString;
 
         //解析微信发送过来的xml，得到参数map集合
-        Map<String,String> map = new XmlUtil().weixinResolveXml(request);
+        Map<String,String> map = XmlUtil.weixinResolveXml(request);
 
         //通过MsgType判断是“触发事件”还是“用户发送信息”
         String type = map.get("MsgType");
         if((MsgTypeEmun.EVENT.getValue()).equals(type)){
             //用户触发事件
-            backXmlString = new EventBiz().eventHandl(map);
+            backXmlString = eventHandl(map);
         } else {
             //用户发送信息，这个分类也较多，暂时和业务不相关，可以查看MsgTypeEmun类
-            backXmlString = new EventBiz().infoHandl(map);
+            backXmlString = infoHandl(map);
         }
         return backXmlString;
     }
@@ -96,12 +92,12 @@ public class EventBiz extends BaseBiz{
                 BaseResp br = new TextResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
                         menuEvent.getMsgType(), MsgTypeEmun.TEXT.getValue(),
                         "发送文字，key是push_text");
-                backXmlString = new XmlUtil().weixinBuildXml(br);
+                backXmlString = XmlUtil.weixinBuildXml(br);
             } else if ("push_photo".equals(map.get("EventKey"))) {
                 BaseResp br = new ImageResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
                         menuEvent.getMsgType(), MsgTypeEmun.IMAGE.getValue(),
                         "5FZvGRE47npa6s7BhLbffIgH_3lxmuhEzShB3jRbyhI");
-                backXmlString = new XmlUtil().weixinBuildXml(br);
+                backXmlString = XmlUtil.weixinBuildXml(br);
             } else if ("push_news".equals(map.get("EventKey"))) {
                 List<NewsArticle> list = new ArrayList<NewsArticle>();
                 NewsArticle newsArticle = new NewsArticle("图文详情", "这个是图文详情的描述",
@@ -110,7 +106,7 @@ public class EventBiz extends BaseBiz{
                 BaseResp br = new NewsResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
                         menuEvent.getMsgType(), MsgTypeEmun.NEWS.getValue(),
                         1,list);
-                backXmlString = new XmlUtil().weixinBuildXml(br);
+                backXmlString = XmlUtil.weixinBuildXml(br);
             }
         }
 
@@ -148,7 +144,7 @@ public class EventBiz extends BaseBiz{
         if(null != eventKey && !"".equals(eventKey)){
             //插入数据
             person.setSource(1);//点击是0，其他是医生的id
-            int temp = new PersonService().insertSelective(person);
+            int temp = personService.insertSelective(person);
             if (temp == 1) {
                 //插入成功，推送图文
                 //QRcodeParam：截取到二维码参数（视频id）
@@ -170,7 +166,7 @@ public class EventBiz extends BaseBiz{
                 BaseResp br = new TextResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
                         menuEvent.getMsgType(),  MsgTypeEmun.TEXT.getValue(),
                         "关注后发送的文字");
-                xmlBack = new XmlUtil().weixinBuildXml(br);
+                xmlBack = XmlUtil.weixinBuildXml(br);
             } else {
                 //log
             }

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * Created by zhang.peng on 2016/8/4.
  */
-@Service(value = "personService")
+@Service
 public class PersonService {
     @Autowired
     PersonDao personDao;
