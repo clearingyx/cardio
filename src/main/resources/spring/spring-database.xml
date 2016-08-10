@@ -72,7 +72,7 @@
     <aop:config>
         <!-- 其中第一个*代表返回值，第二*代表dao下子包，第三个*代表方法名，“（..）”代表方法参数。 -->
         <aop:pointcut id="pc" expression="execution(* com.common.service..*(..))" />
-        <aop:pointcut id="pc1" expression="execution(* com.common.wechat.biz..*(..))" />
+        <aop:pointcut id="pc1" expression="execution(* com.common.modular.wechat.biz..*(..))" />
         <aop:advisor pointcut-ref="pc" advice-ref="txAdvice" />
         <aop:advisor pointcut-ref="pc1" advice-ref="txAdvice" />
     </aop:config>

@@ -4,7 +4,7 @@ import com.common.dao.auto.PersonDao;
 import com.common.model.auto.PersonEntity;
 import com.common.model.auto.PersonExample;
 import com.common.service.PersonService;
-import com.common.other.annotation.ApiRequest;
+import com.common.component.annotation.ApiRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,12 +37,21 @@ public class PersonController extends BaseController{
         return personDao.insertSelective(person)==1?SUCCESS:ERROR;
     }
 
+    /**
+     * 用户列表，测试向
+     * @param personExample
+     * @return
+     */
     @RequestMapping("list")
     @ResponseBody
     public Object list(PersonExample personExample){
         return personDao.selectByExample(personExample);
     }
 
+    /**
+     * 插入用户，测试向
+     * @return
+     */
     @RequestMapping("insert")
     @ResponseBody
     public Object insert(){

@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.common.dao.auto.PersonQuestionDao">
+  <resultMap id="BaseResultMap" type="com.common.model.auto.PersonQuestionEntity">
+    <!--
+    @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="person_id" jdbcType="INTEGER" property="personId" />
+    <result column="order" jdbcType="REAL" property="order" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="gender" jdbcType="INTEGER" property="gender" />
+    <result column="weight" jdbcType="INTEGER" property="weight" />
+    <result column="height" jdbcType="INTEGER" property="height" />
+    <result column="h_smk" jdbcType="INTEGER" property="hSmk" />
+    <result column="h_drink" jdbcType="INTEGER" property="hDrink" />
+    <result column="diet" jdbcType="INTEGER" property="diet" />
+    <result column="activity" jdbcType="INTEGER" property="activity" />
+    <result column="stress" jdbcType="INTEGER" property="stress" />
+    <result column="familys" jdbcType="INTEGER" property="familys" />
+    <result column="sbp" jdbcType="INTEGER" property="sbp" />
+    <result column="hyprx" jdbcType="INTEGER" property="hyprx" />
+    <result column="tc" jdbcType="INTEGER" property="tc" />
+    <result column="ldl" jdbcType="INTEGER" property="ldl" />
+    <result column="h_diab" jdbcType="INTEGER" property="hDiab" />
+    <result column="cvd" jdbcType="INTEGER" property="cvd" />
+    <result column="lvh" jdbcType="INTEGER" property="lvh" />
+    <result column="af" jdbcType="INTEGER" property="af" />
+    <result column="cognitive" jdbcType="INTEGER" property="cognitive" />
+    <result column="poor_memory" jdbcType="INTEGER" property="poorMemory" />
+    <result column="injury" jdbcType="INTEGER" property="injury" />
+    <result column="mini_stroke" jdbcType="INTEGER" property="miniStroke" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+    @mbggenerated
+    -->
+    id, person_id, order, age, gender, weight, height, h_smk, h_drink, diet, activity, 
+    stress, familys, sbp, hyprx, tc, ldl, h_diab, cvd, lvh, af, cognitive, poor_memory, 
+    injury, mini_stroke
+  </sql>
+  <select id="selectByExample" parameterType="com.common.model.auto.PersonQuestionExample" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from person_question
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    from person_question
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    delete from person_question
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.common.model.auto.PersonQuestionExample">
+    <!--
+    @mbggenerated
+    -->
+    delete from person_question
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.common.model.auto.PersonQuestionEntity">
+    <!--
+    @mbggenerated
+    -->
+    insert into person_question (id, person_id, order, 
+      age, gender, weight, 
+      height, h_smk, h_drink, 
+      diet, activity, stress, 
+      familys, sbp, hyprx, 
+      tc, ldl, h_diab, cvd, 
+      lvh, af, cognitive, 
+      poor_memory, injury, mini_stroke
+      )
+    values (#{id,jdbcType=INTEGER}, #{personId,jdbcType=INTEGER}, #{order,jdbcType=REAL}, 
+      #{age,jdbcType=INTEGER}, #{gender,jdbcType=INTEGER}, #{weight,jdbcType=INTEGER}, 
+      #{height,jdbcType=INTEGER}, #{hSmk,jdbcType=INTEGER}, #{hDrink,jdbcType=INTEGER}, 
+      #{diet,jdbcType=INTEGER}, #{activity,jdbcType=INTEGER}, #{stress,jdbcType=INTEGER}, 
+      #{familys,jdbcType=INTEGER}, #{sbp,jdbcType=INTEGER}, #{hyprx,jdbcType=INTEGER}, 
+      #{tc,jdbcType=INTEGER}, #{ldl,jdbcType=INTEGER}, #{hDiab,jdbcType=INTEGER}, #{cvd,jdbcType=INTEGER}, 
+      #{lvh,jdbcType=INTEGER}, #{af,jdbcType=INTEGER}, #{cognitive,jdbcType=INTEGER}, 
+      #{poorMemory,jdbcType=INTEGER}, #{injury,jdbcType=INTEGER}, #{miniStroke,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.common.model.auto.PersonQuestionEntity">
+    <!--
+    @mbggenerated
+    -->
+    insert into person_question
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="personId != null">
+        person_id,
+      </if>
+      <if test="order != null">
+        order,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="gender != null">
+        gender,
+      </if>
+      <if test="weight != null">
+        weight,
+      </if>
+      <if test="height != null">
+        height,
+      </if>
+      <if test="hSmk != null">
+        h_smk,
+      </if>
+      <if test="hDrink != null">
+        h_drink,
+      </if>
+      <if test="diet != null">
+        diet,
+      </if>
+      <if test="activity != null">
+        activity,
+      </if>
+      <if test="stress != null">
+        stress,
+      </if>
+      <if test="familys != null">
+        familys,
+      </if>
+      <if test="sbp != null">
+        sbp,
+      </if>
+      <if test="hyprx != null">
+        hyprx,
+      </if>
+      <if test="tc != null">
+        tc,
+      </if>
+      <if test="ldl != null">
+        ldl,
+      </if>
+      <if test="hDiab != null">
+        h_diab,
+      </if>
+      <if test="cvd != null">
+        cvd,
+      </if>
+      <if test="lvh != null">
+        lvh,
+      </if>
+      <if test="af != null">
+        af,
+      </if>
+      <if test="cognitive != null">
+        cognitive,
+      </if>
+      <if test="poorMemory != null">
+        poor_memory,
+      </if>
+      <if test="injury != null">
+        injury,
+      </if>
+      <if test="miniStroke != null">
+        mini_stroke,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="personId != null">
+        #{personId,jdbcType=INTEGER},
+      </if>
+      <if test="order != null">
+        #{order,jdbcType=REAL},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null">
+        #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="height != null">
+        #{height,jdbcType=INTEGER},
+      </if>
+      <if test="hSmk != null">
+        #{hSmk,jdbcType=INTEGER},
+      </if>
+      <if test="hDrink != null">
+        #{hDrink,jdbcType=INTEGER},
+      </if>
+      <if test="diet != null">
+        #{diet,jdbcType=INTEGER},
+      </if>
+      <if test="activity != null">
+        #{activity,jdbcType=INTEGER},
+      </if>
+      <if test="stress != null">
+        #{stress,jdbcType=INTEGER},
+      </if>
+      <if test="familys != null">
+        #{familys,jdbcType=INTEGER},
+      </if>
+      <if test="sbp != null">
+        #{sbp,jdbcType=INTEGER},
+      </if>
+      <if test="hyprx != null">
+        #{hyprx,jdbcType=INTEGER},
+      </if>
+      <if test="tc != null">
+        #{tc,jdbcType=INTEGER},
+      </if>
+      <if test="ldl != null">
+        #{ldl,jdbcType=INTEGER},
+      </if>
+      <if test="hDiab != null">
+        #{hDiab,jdbcType=INTEGER},
+      </if>
+      <if test="cvd != null">
+        #{cvd,jdbcType=INTEGER},
+      </if>
+      <if test="lvh != null">
+        #{lvh,jdbcType=INTEGER},
+      </if>
+      <if test="af != null">
+        #{af,jdbcType=INTEGER},
+      </if>
+      <if test="cognitive != null">
+        #{cognitive,jdbcType=INTEGER},
+      </if>
+      <if test="poorMemory != null">
+        #{poorMemory,jdbcType=INTEGER},
+      </if>
+      <if test="injury != null">
+        #{injury,jdbcType=INTEGER},
+      </if>
+      <if test="miniStroke != null">
+        #{miniStroke,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.common.model.auto.PersonQuestionExample" resultType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    select count(*) from person_question
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update person_question
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.personId != null">
+        person_id = #{record.personId,jdbcType=INTEGER},
+      </if>
+      <if test="record.order != null">
+        order = #{record.order,jdbcType=REAL},
+      </if>
+      <if test="record.age != null">
+        age = #{record.age,jdbcType=INTEGER},
+      </if>
+      <if test="record.gender != null">
+        gender = #{record.gender,jdbcType=INTEGER},
+      </if>
+      <if test="record.weight != null">
+        weight = #{record.weight,jdbcType=INTEGER},
+      </if>
+      <if test="record.height != null">
+        height = #{record.height,jdbcType=INTEGER},
+      </if>
+      <if test="record.hSmk != null">
+        h_smk = #{record.hSmk,jdbcType=INTEGER},
+      </if>
+      <if test="record.hDrink != null">
+        h_drink = #{record.hDrink,jdbcType=INTEGER},
+      </if>
+      <if test="record.diet != null">
+        diet = #{record.diet,jdbcType=INTEGER},
+      </if>
+      <if test="record.activity != null">
+        activity = #{record.activity,jdbcType=INTEGER},
+      </if>
+      <if test="record.stress != null">
+        stress = #{record.stress,jdbcType=INTEGER},
+      </if>
+      <if test="record.familys != null">
+        familys = #{record.familys,jdbcType=INTEGER},
+      </if>
+      <if test="record.sbp != null">
+        sbp = #{record.sbp,jdbcType=INTEGER},
+      </if>
+      <if test="record.hyprx != null">
+        hyprx = #{record.hyprx,jdbcType=INTEGER},
+      </if>
+      <if test="record.tc != null">
+        tc = #{record.tc,jdbcType=INTEGER},
+      </if>
+      <if test="record.ldl != null">
+        ldl = #{record.ldl,jdbcType=INTEGER},
+      </if>
+      <if test="record.hDiab != null">
+        h_diab = #{record.hDiab,jdbcType=INTEGER},
+      </if>
+      <if test="record.cvd != null">
+        cvd = #{record.cvd,jdbcType=INTEGER},
+      </if>
+      <if test="record.lvh != null">
+        lvh = #{record.lvh,jdbcType=INTEGER},
+      </if>
+      <if test="record.af != null">
+        af = #{record.af,jdbcType=INTEGER},
+      </if>
+      <if test="record.cognitive != null">
+        cognitive = #{record.cognitive,jdbcType=INTEGER},
+      </if>
+      <if test="record.poorMemory != null">
+        poor_memory = #{record.poorMemory,jdbcType=INTEGER},
+      </if>
+      <if test="record.injury != null">
+        injury = #{record.injury,jdbcType=INTEGER},
+      </if>
+      <if test="record.miniStroke != null">
+        mini_stroke = #{record.miniStroke,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update person_question
+    set id = #{record.id,jdbcType=INTEGER},
+      person_id = #{record.personId,jdbcType=INTEGER},
+      order = #{record.order,jdbcType=REAL},
+      age = #{record.age,jdbcType=INTEGER},
+      gender = #{record.gender,jdbcType=INTEGER},
+      weight = #{record.weight,jdbcType=INTEGER},
+      height = #{record.height,jdbcType=INTEGER},
+      h_smk = #{record.hSmk,jdbcType=INTEGER},
+      h_drink = #{record.hDrink,jdbcType=INTEGER},
+      diet = #{record.diet,jdbcType=INTEGER},
+      activity = #{record.activity,jdbcType=INTEGER},
+      stress = #{record.stress,jdbcType=INTEGER},
+      familys = #{record.familys,jdbcType=INTEGER},
+      sbp = #{record.sbp,jdbcType=INTEGER},
+      hyprx = #{record.hyprx,jdbcType=INTEGER},
+      tc = #{record.tc,jdbcType=INTEGER},
+      ldl = #{record.ldl,jdbcType=INTEGER},
+      h_diab = #{record.hDiab,jdbcType=INTEGER},
+      cvd = #{record.cvd,jdbcType=INTEGER},
+      lvh = #{record.lvh,jdbcType=INTEGER},
+      af = #{record.af,jdbcType=INTEGER},
+      cognitive = #{record.cognitive,jdbcType=INTEGER},
+      poor_memory = #{record.poorMemory,jdbcType=INTEGER},
+      injury = #{record.injury,jdbcType=INTEGER},
+      mini_stroke = #{record.miniStroke,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.common.model.auto.PersonQuestionEntity">
+    <!--
+    @mbggenerated
+    -->
+    update person_question
+    <set>
+      <if test="personId != null">
+        person_id = #{personId,jdbcType=INTEGER},
+      </if>
+      <if test="order != null">
+        order = #{order,jdbcType=REAL},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="gender != null">
+        gender = #{gender,jdbcType=INTEGER},
+      </if>
+      <if test="weight != null">
+        weight = #{weight,jdbcType=INTEGER},
+      </if>
+      <if test="height != null">
+        height = #{height,jdbcType=INTEGER},
+      </if>
+      <if test="hSmk != null">
+        h_smk = #{hSmk,jdbcType=INTEGER},
+      </if>
+      <if test="hDrink != null">
+        h_drink = #{hDrink,jdbcType=INTEGER},
+      </if>
+      <if test="diet != null">
+        diet = #{diet,jdbcType=INTEGER},
+      </if>
+      <if test="activity != null">
+        activity = #{activity,jdbcType=INTEGER},
+      </if>
+      <if test="stress != null">
+        stress = #{stress,jdbcType=INTEGER},
+      </if>
+      <if test="familys != null">
+        familys = #{familys,jdbcType=INTEGER},
+      </if>
+      <if test="sbp != null">
+        sbp = #{sbp,jdbcType=INTEGER},
+      </if>
+      <if test="hyprx != null">
+        hyprx = #{hyprx,jdbcType=INTEGER},
+      </if>
+      <if test="tc != null">
+        tc = #{tc,jdbcType=INTEGER},
+      </if>
+      <if test="ldl != null">
+        ldl = #{ldl,jdbcType=INTEGER},
+      </if>
+      <if test="hDiab != null">
+        h_diab = #{hDiab,jdbcType=INTEGER},
+      </if>
+      <if test="cvd != null">
+        cvd = #{cvd,jdbcType=INTEGER},
+      </if>
+      <if test="lvh != null">
+        lvh = #{lvh,jdbcType=INTEGER},
+      </if>
+      <if test="af != null">
+        af = #{af,jdbcType=INTEGER},
+      </if>
+      <if test="cognitive != null">
+        cognitive = #{cognitive,jdbcType=INTEGER},
+      </if>
+      <if test="poorMemory != null">
+        poor_memory = #{poorMemory,jdbcType=INTEGER},
+      </if>
+      <if test="injury != null">
+        injury = #{injury,jdbcType=INTEGER},
+      </if>
+      <if test="miniStroke != null">
+        mini_stroke = #{miniStroke,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.common.model.auto.PersonQuestionEntity">
+    <!--
+    @mbggenerated
+    -->
+    update person_question
+    set person_id = #{personId,jdbcType=INTEGER},
+      order = #{order,jdbcType=REAL},
+      age = #{age,jdbcType=INTEGER},
+      gender = #{gender,jdbcType=INTEGER},
+      weight = #{weight,jdbcType=INTEGER},
+      height = #{height,jdbcType=INTEGER},
+      h_smk = #{hSmk,jdbcType=INTEGER},
+      h_drink = #{hDrink,jdbcType=INTEGER},
+      diet = #{diet,jdbcType=INTEGER},
+      activity = #{activity,jdbcType=INTEGER},
+      stress = #{stress,jdbcType=INTEGER},
+      familys = #{familys,jdbcType=INTEGER},
+      sbp = #{sbp,jdbcType=INTEGER},
+      hyprx = #{hyprx,jdbcType=INTEGER},
+      tc = #{tc,jdbcType=INTEGER},
+      ldl = #{ldl,jdbcType=INTEGER},
+      h_diab = #{hDiab,jdbcType=INTEGER},
+      cvd = #{cvd,jdbcType=INTEGER},
+      lvh = #{lvh,jdbcType=INTEGER},
+      af = #{af,jdbcType=INTEGER},
+      cognitive = #{cognitive,jdbcType=INTEGER},
+      poor_memory = #{poorMemory,jdbcType=INTEGER},
+      injury = #{injury,jdbcType=INTEGER},
+      mini_stroke = #{miniStroke,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByExampleWithRowbounds" parameterType="com.common.model.auto.PersonQuestionExample" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from person_question
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>

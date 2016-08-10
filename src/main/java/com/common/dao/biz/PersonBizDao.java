@@ -12,4 +12,11 @@ public interface PersonBizDao {
      * 根据openid和use_status
      */
     PersonEntity selectPersonByOpenid(String openid);
+
+    /**
+     * 根据openid增加用户电话
+     * @param personEntity
+     * @return
+     */
+    int updatePersonByOpenid(PersonEntity personEntity);
 }

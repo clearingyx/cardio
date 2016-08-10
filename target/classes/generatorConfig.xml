@@ -51,6 +51,7 @@
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
 
-        <table schema="" tableName="person" domainObjectName="Person"></table>
+        <!--<table schema="" tableName="person" domainObjectName="Person"></table>-->
+        <table schema="" tableName="sms" domainObjectName="Sms"></table>
     </context>
 </generatorConfiguration>

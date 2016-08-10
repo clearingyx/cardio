@@ -1,7 +1,7 @@
 package com.common.controller;
 
 import com.common.model.biz.UserResp;
-import com.common.other.annotation.ApiRequest;
+import com.common.component.annotation.ApiRequest;
 import com.common.dao.auto.UserMapper;
 import com.common.dao.biz.UserBizMapper;
 import com.common.model.auto.User;

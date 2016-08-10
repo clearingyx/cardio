@@ -26,7 +26,7 @@ public class MobileUtil {
      * @return mobileAddress
      */
     private static String getLocationByMobile(final String mobile) throws ParserConfigurationException, SAXException, IOException {
-        String MOBILEURL = " http://www.youdao.com/smartresult-xml/search.s?type=mobile&q=";
+        String MOBILEURL = " http://www.youdao.com/smartresult-xml/search.s?type=sms&q=";
         String result = callUrlByGet(MOBILEURL + mobile, "GBK");
         StringReader stringReader = new StringReader(result);
         InputSource inputSource = new InputSource(stringReader);
@@ -67,53 +67,45 @@ public class MobileUtil {
     /**
      * 手机号码归属地
      * @param tel  手机号码
-     * @return 135XXXXXXXX,联通/移动/电信,湖北武汉
+     * @return 135XXXXXXXX,联通/移动/电信,北京
      * @throws Exception
      * @author
      */
     public static String getMobileLocation(String tel) throws Exception{
         Pattern pattern = Pattern.compile("1\\d{10}");
         Matcher matcher = pattern.matcher(tel);
-        if(matcher.matches()){
-            String url = "http://life.tenpay.com/cgi-bin/mobile/MobileQueryAttribution.cgi?chgmobile=" + tel;
-            String result = callUrlByGet(url,"GBK");
-            StringReader stringReader = new StringReader(result);
-            InputSource inputSource = new InputSource(stringReader);
-            DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-            Document document = documentBuilder.parse(inputSource);
-            String retmsg = document.getElementsByTagName("retmsg").item(0).getFirstChild().getNodeValue();
-            if(retmsg.equals("OK")){
-                //String supplier = document.getElementsByTagName("supplier").item(0).getFirstChild().getNodeValue().trim();
-                String province = document.getElementsByTagName("province").item(0).getFirstChild().getNodeValue().trim();
-                String city = document.getElementsByTagName("city").item(0).getFirstChild().getNodeValue().trim();
-                if (province.equals("-") || city.equals("-")) {
-
+        String url = "http://life.tenpay.com/cgi-bin/sms/MobileQueryAttribution.cgi?chgmobile=" + tel;
+        String result = callUrlByGet(url,"GBK");
+        StringReader stringReader = new StringReader(result);
+        InputSource inputSource = new InputSource(stringReader);
+        DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
+        Document document = documentBuilder.parse(inputSource);
+        String retmsg = document.getElementsByTagName("retmsg").item(0).getFirstChild().getNodeValue();
+        if(retmsg.equals("OK")){
+            //String supplier = document.getElementsByTagName("supplier").item(0).getFirstChild().getNodeValue().trim();
+            String province = document.getElementsByTagName("province").item(0).getFirstChild().getNodeValue().trim();
+            String city = document.getElementsByTagName("city").item(0).getFirstChild().getNodeValue().trim();
+            if (province.equals("-") || city.equals("-")) {
 //                    return (tel + "," + supplier + ","+ getLocationByMobile(tel));
 //                    return (getLocationByMobile(tel) + "," + supplier);
-                    return (getLocationByMobile(tel));
-                }else {
-
+                return (getLocationByMobile(tel));
+            }else {
 //                    return (tel + "," + supplier + ","+ province + city);
 //                    return (province + city + "," + supplier );
-                    return (province+","+city);
-                }
-            }else {
-                return "无此号记录！";
+                return (province+","+city);
             }
-
-        }else{
-            return tel+ "：手机号码格式错误！";
-        }
-
-    }
-
-
-    public static void main(String[] args) {
-        try {
-            System.out.println(MobileUtil.getMobileLocation("13453412046"));
-        } catch (Exception e) {
-            e.printStackTrace();
+        }else {
+            return "无此号记录！";
         }
     }
+
+
+//    public static void main(String[] args) {
+//        try {
+//            System.out.println(MobileUtil.getMobileLocation("13453412046"));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

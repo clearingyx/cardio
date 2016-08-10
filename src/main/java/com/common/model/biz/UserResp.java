@@ -1,7 +1,7 @@
 package com.common.model.biz;
 
 import com.common.model.auto.User;
-import com.common.other.resp.PageResp;
+import com.common.component.resp.PageResp;
 
 import java.util.List;
 
