@@ -35,9 +35,13 @@ public class MobileBiz {
     @ApiRequest
     @RequestMapping(value = "sendSms", method = RequestMethod.GET)
     @ResponseBody
-    public Object sendSms(String content, String mobiles, String sendtime){
+    public Object sendSms(String mobiles, String sendtime){
         Mobile mobile = Mobile.getMobile();
 
+        //6位随机验证码
+        String radom_code = getRandNum(6);
+        //存入redis服务，设置5分钟失效
+        String content = "您的验证码是：" + radom_code + "，请在5分钟内注册有效。";
         //发送短信的url
         StringBuffer url = new StringBuffer("http://115.29.47.5:8080/CxfSmsWs/service/SmsWebServices/sendSms?");
         url = url .append("loginid=" +mobile.getLoginid()

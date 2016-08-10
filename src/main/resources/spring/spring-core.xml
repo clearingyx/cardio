@@ -60,6 +60,7 @@
     </bean>
 
     <import resource="classpath:spring/spring-database.xml"/>
+    <import resource="classpath:spring/spring-redis.xml"/>
 
 
 </beans>
