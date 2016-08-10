@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c93481f-d370-4d41-adc1-13f18aab7462" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="cardio.iws" />
@@ -944,7 +945,7 @@
       <workItem from="1470383434659" duration="8019000" />
       <workItem from="1470620101105" duration="30278000" />
       <workItem from="1470704734805" duration="24457000" />
-      <workItem from="1470791622973" duration="645000" />
+      <workItem from="1470791622973" duration="990000" />
     </task>
     <task id="LOCAL-00001" summary="8-8">
       <created>1470644589263</created>
@@ -970,7 +971,13 @@
       <option name="project" value="LOCAL" />
       <updated>1470792188748</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="8-10">
+      <created>1470792317641</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1470792317641</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -979,7 +986,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197844000" />
+    <option name="totallyTimeSpent" value="198189000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
