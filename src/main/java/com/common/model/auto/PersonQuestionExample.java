@@ -1,6 +1,7 @@
 package com.common.model.auto;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class PersonQuestionExample {
@@ -283,63 +284,63 @@ public class PersonQuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andOrderIsNull() {
-            addCriterion("order is null");
+        public Criteria andCreateDateIsNull() {
+            addCriterion("create_date is null");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIsNotNull() {
-            addCriterion("order is not null");
+        public Criteria andCreateDateIsNotNull() {
+            addCriterion("create_date is not null");
             return (Criteria) this;
         }
 
-        public Criteria andOrderEqualTo(Float value) {
-            addCriterion("order =", value, "order");
+        public Criteria andCreateDateEqualTo(Date value) {
+            addCriterion("create_date =", value, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotEqualTo(Float value) {
-            addCriterion("order <>", value, "order");
+        public Criteria andCreateDateNotEqualTo(Date value) {
+            addCriterion("create_date <>", value, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderGreaterThan(Float value) {
-            addCriterion("order >", value, "order");
+        public Criteria andCreateDateGreaterThan(Date value) {
+            addCriterion("create_date >", value, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderGreaterThanOrEqualTo(Float value) {
-            addCriterion("order >=", value, "order");
+        public Criteria andCreateDateGreaterThanOrEqualTo(Date value) {
+            addCriterion("create_date >=", value, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderLessThan(Float value) {
-            addCriterion("order <", value, "order");
+        public Criteria andCreateDateLessThan(Date value) {
+            addCriterion("create_date <", value, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderLessThanOrEqualTo(Float value) {
-            addCriterion("order <=", value, "order");
+        public Criteria andCreateDateLessThanOrEqualTo(Date value) {
+            addCriterion("create_date <=", value, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderIn(List<Float> values) {
-            addCriterion("order in", values, "order");
+        public Criteria andCreateDateIn(List<Date> values) {
+            addCriterion("create_date in", values, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotIn(List<Float> values) {
-            addCriterion("order not in", values, "order");
+        public Criteria andCreateDateNotIn(List<Date> values) {
+            addCriterion("create_date not in", values, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderBetween(Float value1, Float value2) {
-            addCriterion("order between", value1, value2, "order");
+        public Criteria andCreateDateBetween(Date value1, Date value2) {
+            addCriterion("create_date between", value1, value2, "createDate");
             return (Criteria) this;
         }
 
-        public Criteria andOrderNotBetween(Float value1, Float value2) {
-            addCriterion("order not between", value1, value2, "order");
+        public Criteria andCreateDateNotBetween(Date value1, Date value2) {
+            addCriterion("create_date not between", value1, value2, "createDate");
             return (Criteria) this;
         }
 

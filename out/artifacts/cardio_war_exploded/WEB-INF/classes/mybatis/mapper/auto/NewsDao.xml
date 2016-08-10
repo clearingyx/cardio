@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.common.dao.auto.NewsDao">
+  <resultMap id="BaseResultMap" type="com.common.model.auto.NewsEntity">
+    <!--
+    @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="risk_level" jdbcType="INTEGER" property="riskLevel" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="video_url" jdbcType="VARCHAR" property="videoUrl" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="cover_img" jdbcType="VARCHAR" property="coverImg" />
+    <result column="cover_title" jdbcType="VARCHAR" property="coverTitle" />
+    <result column="cover_content" jdbcType="VARCHAR" property="coverContent" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="share" jdbcType="INTEGER" property="share" />
+    <result column="browser" jdbcType="INTEGER" property="browser" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.common.model.auto.NewsEntity">
+    <!--
+    @mbggenerated
+    -->
+    <result column="content" jdbcType="LONGVARCHAR" property="content" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <!--
+    @mbggenerated
+    -->
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    <!--
+    @mbggenerated
+    -->
+    id, risk_level, type, video_url, create_date, cover_img, cover_title, cover_content, 
+    status, share, browser
+  </sql>
+  <sql id="Blob_Column_List">
+    <!--
+    @mbggenerated
+    -->
+    content
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.common.model.auto.NewsExample" resultMap="ResultMapWithBLOBs">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from news
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.common.model.auto.NewsExample" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from news
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    <!--
+    @mbggenerated
+    -->
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from news
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    delete from news
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.common.model.auto.NewsExample">
+    <!--
+    @mbggenerated
+    -->
+    delete from news
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.common.model.auto.NewsEntity">
+    <!--
+    @mbggenerated
+    -->
+    insert into news (id, risk_level, type, 
+      video_url, create_date, cover_img, 
+      cover_title, cover_content, status, 
+      share, browser, content
+      )
+    values (#{id,jdbcType=INTEGER}, #{riskLevel,jdbcType=INTEGER}, #{type,jdbcType=INTEGER}, 
+      #{videoUrl,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, #{coverImg,jdbcType=VARCHAR}, 
+      #{coverTitle,jdbcType=VARCHAR}, #{coverContent,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{share,jdbcType=INTEGER}, #{browser,jdbcType=INTEGER}, #{content,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.common.model.auto.NewsEntity">
+    <!--
+    @mbggenerated
+    -->
+    insert into news
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="riskLevel != null">
+        risk_level,
+      </if>
+      <if test="type != null">
+        type,
+      </if>
+      <if test="videoUrl != null">
+        video_url,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+      <if test="coverImg != null">
+        cover_img,
+      </if>
+      <if test="coverTitle != null">
+        cover_title,
+      </if>
+      <if test="coverContent != null">
+        cover_content,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="share != null">
+        share,
+      </if>
+      <if test="browser != null">
+        browser,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="riskLevel != null">
+        #{riskLevel,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        #{type,jdbcType=INTEGER},
+      </if>
+      <if test="videoUrl != null">
+        #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="coverImg != null">
+        #{coverImg,jdbcType=VARCHAR},
+      </if>
+      <if test="coverTitle != null">
+        #{coverTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="coverContent != null">
+        #{coverContent,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="share != null">
+        #{share,jdbcType=INTEGER},
+      </if>
+      <if test="browser != null">
+        #{browser,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.common.model.auto.NewsExample" resultType="java.lang.Integer">
+    <!--
+    @mbggenerated
+    -->
+    select count(*) from news
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update news
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.riskLevel != null">
+        risk_level = #{record.riskLevel,jdbcType=INTEGER},
+      </if>
+      <if test="record.type != null">
+        type = #{record.type,jdbcType=INTEGER},
+      </if>
+      <if test="record.videoUrl != null">
+        video_url = #{record.videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createDate != null">
+        create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.coverImg != null">
+        cover_img = #{record.coverImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coverTitle != null">
+        cover_title = #{record.coverTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.coverContent != null">
+        cover_content = #{record.coverContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.share != null">
+        share = #{record.share,jdbcType=INTEGER},
+      </if>
+      <if test="record.browser != null">
+        browser = #{record.browser,jdbcType=INTEGER},
+      </if>
+      <if test="record.content != null">
+        content = #{record.content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update news
+    set id = #{record.id,jdbcType=INTEGER},
+      risk_level = #{record.riskLevel,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=INTEGER},
+      video_url = #{record.videoUrl,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      cover_img = #{record.coverImg,jdbcType=VARCHAR},
+      cover_title = #{record.coverTitle,jdbcType=VARCHAR},
+      cover_content = #{record.coverContent,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      share = #{record.share,jdbcType=INTEGER},
+      browser = #{record.browser,jdbcType=INTEGER},
+      content = #{record.content,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    <!--
+    @mbggenerated
+    -->
+    update news
+    set id = #{record.id,jdbcType=INTEGER},
+      risk_level = #{record.riskLevel,jdbcType=INTEGER},
+      type = #{record.type,jdbcType=INTEGER},
+      video_url = #{record.videoUrl,jdbcType=VARCHAR},
+      create_date = #{record.createDate,jdbcType=TIMESTAMP},
+      cover_img = #{record.coverImg,jdbcType=VARCHAR},
+      cover_title = #{record.coverTitle,jdbcType=VARCHAR},
+      cover_content = #{record.coverContent,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      share = #{record.share,jdbcType=INTEGER},
+      browser = #{record.browser,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.common.model.auto.NewsEntity">
+    <!--
+    @mbggenerated
+    -->
+    update news
+    <set>
+      <if test="riskLevel != null">
+        risk_level = #{riskLevel,jdbcType=INTEGER},
+      </if>
+      <if test="type != null">
+        type = #{type,jdbcType=INTEGER},
+      </if>
+      <if test="videoUrl != null">
+        video_url = #{videoUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null">
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="coverImg != null">
+        cover_img = #{coverImg,jdbcType=VARCHAR},
+      </if>
+      <if test="coverTitle != null">
+        cover_title = #{coverTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="coverContent != null">
+        cover_content = #{coverContent,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="share != null">
+        share = #{share,jdbcType=INTEGER},
+      </if>
+      <if test="browser != null">
+        browser = #{browser,jdbcType=INTEGER},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.common.model.auto.NewsEntity">
+    <!--
+    @mbggenerated
+    -->
+    update news
+    set risk_level = #{riskLevel,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      video_url = #{videoUrl,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      cover_img = #{coverImg,jdbcType=VARCHAR},
+      cover_title = #{coverTitle,jdbcType=VARCHAR},
+      cover_content = #{coverContent,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      share = #{share,jdbcType=INTEGER},
+      browser = #{browser,jdbcType=INTEGER},
+      content = #{content,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.common.model.auto.NewsEntity">
+    <!--
+    @mbggenerated
+    -->
+    update news
+    set risk_level = #{riskLevel,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      video_url = #{videoUrl,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      cover_img = #{coverImg,jdbcType=VARCHAR},
+      cover_title = #{coverTitle,jdbcType=VARCHAR},
+      cover_content = #{coverContent,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      share = #{share,jdbcType=INTEGER},
+      browser = #{browser,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByExampleWithBLOBsWithRowbounds" parameterType="com.common.model.auto.NewsExample" resultMap="ResultMapWithBLOBs">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from news
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExampleWithRowbounds" parameterType="com.common.model.auto.NewsExample" resultMap="BaseResultMap">
+    <!--
+    @mbggenerated
+    -->
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from news
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+</mapper>

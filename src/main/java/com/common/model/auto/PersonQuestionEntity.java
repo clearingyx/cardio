@@ -1,5 +1,7 @@
 package com.common.model.auto;
 
+import java.util.Date;
+
 public class PersonQuestionEntity {
     /**
      * <pre>
@@ -19,11 +21,11 @@ public class PersonQuestionEntity {
 
     /**
      * <pre>
-     * 顺序
-     * 表字段 : person_question.order
+     * 测评时间
+     * 表字段 : person_question.create_date
      * </pre>
      */
-    private Float order;
+    private Date createDate;
 
     /**
      * <pre>
@@ -253,27 +255,27 @@ public class PersonQuestionEntity {
 
     /**
      * <pre>
-     * 获取：顺序
-     * 表字段：person_question.order
+     * 获取：测评时间
+     * 表字段：person_question.create_date
      * </pre>
      *
-     * @return person_question.order：顺序
+     * @return person_question.create_date：测评时间
      */
-    public Float getOrder() {
-        return order;
+    public Date getCreateDate() {
+        return createDate;
     }
 
     /**
      * <pre>
-     * 设置：顺序
-     * 表字段：person_question.order
+     * 设置：测评时间
+     * 表字段：person_question.create_date
      * </pre>
      *
-     * @param order
-     *            person_question.order：顺序
+     * @param createDate
+     *            person_question.create_date：测评时间
      */
-    public void setOrder(Float order) {
-        this.order = order;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     /**
