@@ -8,4 +8,5 @@ public class BaseController {
 
     final static String SUCCESS = "success";
     final static String ERROR = "error";
+    final static String REPEAT = "repeat";
 }

@@ -1,17 +1,32 @@
 package com.common.modular.wechat.biz;
 
-import com.common.modular.wechat.emun.MsgTypeEmun;
+import com.common.component.resp.RspCodeMsg;
+import com.common.dao.auto.LastingImageTextResourceDao;
+import com.common.dao.auto.LastingResourceDao;
+import com.common.model.auto.LastingImageTextResourceEntity;
+import com.common.model.auto.LastingImageTextResourceExample;
+import com.common.model.auto.LastingResourceEntity;
+import com.common.model.auto.LastingResourceExample;
+import com.common.model.biz.LastingImageTextReq;
+import com.common.model.biz.LastingResourceReq;
 import com.common.modular.wechat.entity.source.ArticlesReq;
 import com.common.modular.wechat.entity.source.ArticlesReqRoot;
-import com.common.modular.wechat.entity.resp.ImageResp;
-import com.common.modular.wechat.entity.source.SourceResp;
 import com.common.modular.wechat.util.WexinConnectUtil;
+import com.exception.base.RspRuntimeException;
 import com.util.JSONUtil;
+import com.util.PageUtil;
+import org.apache.ibatis.session.RowBounds;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -21,86 +36,169 @@ import java.util.Map;
 @Controller
 @RequestMapping("/sourceBiz")
 public class SourceBiz extends BaseBiz{
-    public static void main(String[] args) {
-        new SourceBiz().lastingSourceAdd();
-    }
+
+    @Autowired
+    LastingResourceDao lastingResourceDao;
+    @Autowired
+    LastingImageTextResourceDao lastingImageTextResourceDao;
+
     /**
-     * 生成临时多媒体文件，这里是测试，使用image
-     * 会从前台得到该文件，将该文件存入本地的缓存文件中，然后再上传到微信，然后本地删除该文件
+     * 生成永久素材
+     * @param file
+     * @param request
+     * @param type
+     * @param map
+     * @return
      */
-    @RequestMapping("temporaryAdd")
-    @ResponseBody
-    public Object temporaryAdd(Map map){
-        //@RequestParam(value = "file")MultipartFile file
-        //FileResp fileResp = new FileUtil().UploadFile(file);//FileResp里面包含type和path
-        String all_path = "C:\\small.jpg";
+    @RequestMapping("lastingResourceAdd")
+    public String lastingAdd(@RequestParam(value = "file")MultipartFile file, HttpServletRequest request,String type, Map map){
+        //获得access_token
         String access_token = getAccess_token();
-        String url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token="+access_token+"&type="+ MsgTypeEmun.IMAGE.getValue();
+
+        //保存图片到服务器，上传到微信后再删除
+        String path = request.getSession().getServletContext().getRealPath("upload_temp") + "\\" + file.getOriginalFilename();
+        File targetFile = new File(path);
         try {
-            map = WexinConnectUtil.getConnectForFile(url,all_path);//path
+            file.transferTo(targetFile);
         } catch (Exception e) {
-            e.printStackTrace();
+            new RspRuntimeException(RspCodeMsg.FAIL,"上传永久素材到本地失败");
         }
 
-        //成功，删除本地媒体文件
-        //new FileUtil().deleteFile(all_path);
-
-        //微信返回数据封装，如果存入数据库的话
-        SourceResp sr = new SourceResp();
-        sr.setCreated_at(map.get("created_at").toString());
-        sr.setMedia_id(map.get("media_id").toString());
-        sr.setType(map.get("type").toString());
-        return sr;
-    }
-    /**
-     * 生成永久媒体
-     * 这里是做测试，使用的是image
-     * 最后样子同上
-     */
-    @RequestMapping("lastingAdd")
-    @ResponseBody
-    public Object lastingAdd(Map map){
-        String access_token = getAccess_token();
-        String url = "https://api.weixin.qq.com/cgi-bin/material/add_material?access_token="+access_token+"&type="+ MsgTypeEmun.IMAGE.getValue();
+        //向微信post发送永久素材
+        String url = "https://api.weixin.qq.com/cgi-bin/material/add_material?access_token="+access_token+"&type="+ type;
         try {
-            map = WexinConnectUtil.getConnectForFile(url,"C:\\small.jpg");//path
+            map = WexinConnectUtil.getConnectForFile(url,path);
+            //删除图片
+            targetFile.delete();
         } catch (Exception e) {
-            e.printStackTrace();
+            new RspRuntimeException(RspCodeMsg.WEIXIN_SOURCE_ERR,"微信上传素材返回信息解析失败");
         }
-        //微信返回数据封装，如果存入数据库的话
-        SourceResp sr = new SourceResp();
-        sr.setMedia_id(map.get("media_id").toString());
-        sr.setUrl(map.get("url").toString());
-        System.out.println(sr.getMedia_id());
-        return sr;
+
+        //微信返回数据封装，存入数据库
+        LastingResourceEntity lse = new LastingResourceEntity();
+        lse.setMediaId(map.get("media_id").toString());
+        lse.setUrl(map.get("url").toString());
+        lse.setType(type);
+        lse.setCreateDate(new Date());
+        //插入永久素材数据库
+        int temp = lastingResourceDao.insert(lse);
+        if(temp != 1) {
+            new RspRuntimeException(RspCodeMsg.FAIL,"永久素材存入数据库失败");
+        }
+
+        //返回到永久素材列表页面
+        return "redirect:./resourceList.do";
         //String midia_id = "5FZvGRE47npa6s7BhLbffIgH_3lxmuhEzShB3jRbyhI";
         //String p = "http://mmbiz.qpic.cn/mmbiz/HQ7r8nFZQKWIMianm9LnnViaADrB3AFVLRuCEPpbPbLMCNdlfbAibWgbhnGyo1mUPPgRC4EL8iaiaQINjusSkkcoDyg/0?wx_fmt=jpeg";
     }
+
     /**
-     * 生成永久素材
+     * 添加永久图文
+     * @param imageText
+     * @param model
+     * @return
      */
-    @RequestMapping("createLastingSource")
-    @ResponseBody
-    public Object lastingSourceAdd(){
+    @RequestMapping("lastingImageTextAdd")
+    public String lastingSourceAdd(LastingImageTextResourceEntity imageText, Model model){
         String access_token = getAccess_token();
-        //System.out.println(access_token);
-        //媒体文件的id，需要的是永久的素材，不能是临时的。
-        String media_id = "5FZvGRE47npa6s7BhLbffIgH_3lxmuhEzShB3jRbyhI";
-        String url = "https://api.weixin.qq.com/cgi-bin/material/add_news?access_token="+access_token;
-
         List list = new ArrayList();
-        ArticlesReq articlesReq = new ArticlesReq("推送视频",media_id,"zhangpeng","digest",1,"<p>这个是视频的页面</p>","http://www.baidu.com");
+
+        //向微信post发送永久素材
+        String url = "https://api.weixin.qq.com/cgi-bin/material/add_news?access_token="+access_token;
+        ArticlesReq articlesReq = new ArticlesReq(imageText.getTitle(), imageText.getThumbMediaId(),
+                imageText.getAuthor(), imageText.getDigest(), imageText.getShowCoverPic(),
+                imageText.getContent(), imageText.getContentSourceUrl());
         list.add(articlesReq);
-
         ArticlesReqRoot articlesReqRoot = new ArticlesReqRoot(list);
-
         Map map = WexinConnectUtil.getConnectForPost(url, JSONUtil.toJson(articlesReqRoot));
 
-        //用户素材的这个media_id是唯一的，是要存入数据库的
-        ImageResp imageResp = new ImageResp();
-        imageResp.setMediaId(map.get("media_id").toString());
-        return imageResp.getMediaId();
+        imageText.setMediaId(map.get("media_id").toString());
+        imageText.setCreateDate(new Date());
+        int temp = lastingImageTextResourceDao.insertSelective(imageText);
+        if(temp != 1) {
+            new RspRuntimeException(RspCodeMsg.FAIL,"永久图文存入数据库失败");
+        }
+
+        return "redirect:./imageTextList.do";
         //5FZvGRE47npa6s7BhLbffPjUIG-d9bsJ5OIYGKJFwdo
+    }
+
+    /**
+     * 生成临时素材文件
+     * 除了url都是永久素材
+     */
+    @RequestMapping("temporaryAdd")
+    public String temporaryAdd(Map map){
+        //String url = "https://api.weixin.qq.com/cgi-bin/media/upload?access_token="+access_token+"&type="+ MsgTypeEmun.IMAGE.getValue();
+        return "";
+    }
+
+    /**
+     * 测试，跳转添加永久素材界面
+     * @return
+     */
+    @RequestMapping("lastingAddPage")
+    public String lastingAddPage(){
+        return "weixin/lasting_resource_add.jsp";
+    }
+
+    /**
+     * 测试，跳转添加永久图文界面
+     */
+    @RequestMapping("imageTextAddPage")
+    public String imageTextAdd(Model model){
+
+        LastingResourceExample example = new LastingResourceExample();
+        List<LastingResourceEntity> list = lastingResourceDao.selectByExample(example);
+        model.addAttribute("list", list);
+        return "weixin/lasting_image_text_add.jsp";
+    }
+
+    /**
+     * 测试，永久素材列表
+     * @param lastingResourceReq
+     * @param model
+     * @return
+     */
+    @RequestMapping("/resourceList")
+    public String resourceList(LastingResourceReq lastingResourceReq,Model model){
+        LastingResourceExample example = new LastingResourceExample();
+        //各种条件，排序分页等，这里省略
+
+        // 分页参数
+        RowBounds rowBounds = PageUtil.initRowBounds(lastingResourceReq);
+
+        // 读取数据条数
+        int rowCount = lastingResourceDao.countByExample(example);
+        int pageCount = PageUtil.calculatePageCount(rowCount, lastingResourceReq.getPageSize());
+        //分页查询
+        List<LastingResourceEntity> list = lastingResourceDao.selectByExampleWithRowbounds(example,rowBounds);
+
+        model.addAttribute("list",list);
+        model.addAttribute("pageCount",pageCount);
+        return "weixin/lasting_resource_list.jsp";
+    }
+
+    /**
+     * 测试，图文列表
+     * @param imageTextReq
+     * @param model
+     * @return
+     */
+    @RequestMapping("imageTextList")
+    public String imageTextList(LastingImageTextReq imageTextReq, Model model){
+        LastingImageTextResourceExample example = new LastingImageTextResourceExample();
+
+        RowBounds rowBounds = PageUtil.initRowBounds(imageTextReq);
+
+        int rowCount = lastingImageTextResourceDao.countByExample(example);
+        int pageCount = PageUtil.calculatePageCount(rowCount, imageTextReq.getPageSize());
+
+        List<LastingImageTextResourceEntity> list = lastingImageTextResourceDao.selectByExampleWithRowbounds(example,rowBounds);
+
+        model.addAttribute("list",list);
+        model.addAttribute("pageCount",pageCount);
+        return "weixin/lasting_image_text_list.jsp";
     }
 
     /*

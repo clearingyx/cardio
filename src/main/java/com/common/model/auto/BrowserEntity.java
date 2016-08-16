@@ -14,10 +14,10 @@ public class BrowserEntity {
     /**
      * <pre>
      * 
-     * 表字段 : browser.person_id
+     * 表字段 : browser.open_id
      * </pre>
      */
-    private Integer personId;
+    private String openId;
 
     /**
      * <pre>
@@ -63,26 +63,26 @@ public class BrowserEntity {
     /**
      * <pre>
      * 获取：
-     * 表字段：browser.person_id
+     * 表字段：browser.open_id
      * </pre>
      *
-     * @return browser.person_id：
+     * @return browser.open_id：
      */
-    public Integer getPersonId() {
-        return personId;
+    public String getOpenId() {
+        return openId;
     }
 
     /**
      * <pre>
      * 设置：
-     * 表字段：browser.person_id
+     * 表字段：browser.open_id
      * </pre>
      *
-     * @param personId
-     *            browser.person_id：
+     * @param openId
+     *            browser.open_id：
      */
-    public void setPersonId(Integer personId) {
-        this.personId = personId;
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
     /**

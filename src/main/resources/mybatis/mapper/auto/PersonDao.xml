@@ -9,7 +9,7 @@
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="risk_level" jdbcType="INTEGER" property="riskLevel" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="headimgurl" jdbcType="VARCHAR" property="headimgurl" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="city" jdbcType="VARCHAR" property="city" />
@@ -87,7 +87,7 @@
     <!--
     @mbggenerated
     -->
-    id, phone, risk_level, nickname, openid, headimgurl, sex, city, province, country, 
+    id, phone, risk_level, nickname, open_id, headimgurl, sex, city, province, country, 
     use_status, create_date, source
   </sql>
   <select id="selectByExample" parameterType="com.common.model.auto.PersonExample" resultMap="BaseResultMap">
@@ -137,12 +137,12 @@
     @mbggenerated
     -->
     insert into person (id, phone, risk_level, 
-      nickname, openid, headimgurl, 
+      nickname, open_id, headimgurl, 
       sex, city, province, 
       country, use_status, create_date, 
       source)
     values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{riskLevel,jdbcType=INTEGER}, 
-      #{nickname,jdbcType=VARCHAR}, #{openid,jdbcType=VARCHAR}, #{headimgurl,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{openId,jdbcType=VARCHAR}, #{headimgurl,jdbcType=VARCHAR}, 
       #{sex,jdbcType=INTEGER}, #{city,jdbcType=VARCHAR}, #{province,jdbcType=VARCHAR}, 
       #{country,jdbcType=VARCHAR}, #{useStatus,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
       #{source,jdbcType=INTEGER})
@@ -165,8 +165,8 @@
       <if test="nickname != null">
         nickname,
       </if>
-      <if test="openid != null">
-        openid,
+      <if test="openId != null">
+        open_id,
       </if>
       <if test="headimgurl != null">
         headimgurl,
@@ -206,8 +206,8 @@
       <if test="nickname != null">
         #{nickname,jdbcType=VARCHAR},
       </if>
-      <if test="openid != null">
-        #{openid,jdbcType=VARCHAR},
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
       </if>
       <if test="headimgurl != null">
         #{headimgurl,jdbcType=VARCHAR},
@@ -262,8 +262,8 @@
       <if test="record.nickname != null">
         nickname = #{record.nickname,jdbcType=VARCHAR},
       </if>
-      <if test="record.openid != null">
-        openid = #{record.openid,jdbcType=VARCHAR},
+      <if test="record.openId != null">
+        open_id = #{record.openId,jdbcType=VARCHAR},
       </if>
       <if test="record.headimgurl != null">
         headimgurl = #{record.headimgurl,jdbcType=VARCHAR},
@@ -303,7 +303,7 @@
       phone = #{record.phone,jdbcType=VARCHAR},
       risk_level = #{record.riskLevel,jdbcType=INTEGER},
       nickname = #{record.nickname,jdbcType=VARCHAR},
-      openid = #{record.openid,jdbcType=VARCHAR},
+      open_id = #{record.openId,jdbcType=VARCHAR},
       headimgurl = #{record.headimgurl,jdbcType=VARCHAR},
       sex = #{record.sex,jdbcType=INTEGER},
       city = #{record.city,jdbcType=VARCHAR},
@@ -331,8 +331,8 @@
       <if test="nickname != null">
         nickname = #{nickname,jdbcType=VARCHAR},
       </if>
-      <if test="openid != null">
-        openid = #{openid,jdbcType=VARCHAR},
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
       </if>
       <if test="headimgurl != null">
         headimgurl = #{headimgurl,jdbcType=VARCHAR},
@@ -369,7 +369,7 @@
     set phone = #{phone,jdbcType=VARCHAR},
       risk_level = #{riskLevel,jdbcType=INTEGER},
       nickname = #{nickname,jdbcType=VARCHAR},
-      openid = #{openid,jdbcType=VARCHAR},
+      open_id = #{openId,jdbcType=VARCHAR},
       headimgurl = #{headimgurl,jdbcType=VARCHAR},
       sex = #{sex,jdbcType=INTEGER},
       city = #{city,jdbcType=VARCHAR},

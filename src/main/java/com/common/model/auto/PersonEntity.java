@@ -38,10 +38,10 @@ public class PersonEntity {
     /**
      * <pre>
      * 微信id
-     * 表字段 : person.openid
+     * 表字段 : person.open_id
      * </pre>
      */
-    private String openid;
+    private String openId;
 
     /**
      * <pre>
@@ -101,7 +101,7 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 0-点击关注，其他数字是医生的id
+     * 0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
      * 表字段 : person.source
      * </pre>
      */
@@ -210,26 +210,26 @@ public class PersonEntity {
     /**
      * <pre>
      * 获取：微信id
-     * 表字段：person.openid
+     * 表字段：person.open_id
      * </pre>
      *
-     * @return person.openid：微信id
+     * @return person.open_id：微信id
      */
-    public String getOpenid() {
-        return openid;
+    public String getOpenId() {
+        return openId;
     }
 
     /**
      * <pre>
      * 设置：微信id
-     * 表字段：person.openid
+     * 表字段：person.open_id
      * </pre>
      *
-     * @param openid
-     *            person.openid：微信id
+     * @param openId
+     *            person.open_id：微信id
      */
-    public void setOpenid(String openid) {
-        this.openid = openid == null ? null : openid.trim();
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
     /**
@@ -409,11 +409,11 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 获取：0-点击关注，其他数字是医生的id
+     * 获取：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
      * 表字段：person.source
      * </pre>
      *
-     * @return person.source：0-点击关注，其他数字是医生的id
+     * @return person.source：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
      */
     public Integer getSource() {
         return source;
@@ -421,12 +421,12 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 设置：0-点击关注，其他数字是医生的id
+     * 设置：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
      * 表字段：person.source
      * </pre>
      *
      * @param source
-     *            person.source：0-点击关注，其他数字是医生的id
+     *            person.source：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
      */
     public void setSource(Integer source) {
         this.source = source;

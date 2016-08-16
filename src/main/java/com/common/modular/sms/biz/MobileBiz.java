@@ -28,7 +28,6 @@ public class MobileBiz {
 
     /**
      * 发送短信
-     * @param content
      * @param mobiles
      * @param sendtime
      */
@@ -77,7 +76,6 @@ public class MobileBiz {
     /**
      * 余额查询
      */
-    @ApiRequest
     @RequestMapping("querySmsBalance")
     @ResponseBody
     public Object querySmsBalance(){

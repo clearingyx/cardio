@@ -14,10 +14,10 @@ public class ShareEntity {
     /**
      * <pre>
      * 
-     * 表字段 : share.person_id
+     * 表字段 : share.open_id
      * </pre>
      */
-    private Integer personId;
+    private String openId;
 
     /**
      * <pre>
@@ -63,26 +63,26 @@ public class ShareEntity {
     /**
      * <pre>
      * 获取：
-     * 表字段：share.person_id
+     * 表字段：share.open_id
      * </pre>
      *
-     * @return share.person_id：
+     * @return share.open_id：
      */
-    public Integer getPersonId() {
-        return personId;
+    public String getOpenId() {
+        return openId;
     }
 
     /**
      * <pre>
      * 设置：
-     * 表字段：share.person_id
+     * 表字段：share.open_id
      * </pre>
      *
-     * @param personId
-     *            share.person_id：
+     * @param openId
+     *            share.open_id：
      */
-    public void setPersonId(Integer personId) {
-        this.personId = personId;
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
     /**

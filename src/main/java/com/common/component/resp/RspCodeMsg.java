@@ -14,7 +14,7 @@ public enum RspCodeMsg {
 
     // 1 开头表示常见通用异常
     PARAM_CHECK_ERR("1001", "参数校验失败"), //
-    PHONE_TO_ADDRESS_ERR("1002","注册电话解析省市失败"),
+    DATE_REPEAT_ERR("1002","数据重复"),
 
     // 2-8 开头表示业务异常，建议每个开头，表示一个业务
 
@@ -30,7 +30,15 @@ public enum RspCodeMsg {
     // 3 微信错误
     WEIXIN_URL_ERR("3001","链接不是来自微信"),
     WEIXIN_REG_ERR("3002","微信信息插入数据库失败"),
+    WEIXIN_SOURCE_ERR("3003","链接不是来自微信"),
+    WEIXIN_QRCODE_ERR("3004","微信二维码参数错误"),
+    WEIXIN_OPENID_ERR("3005","openid不能为空"),
 
+    // 4 测评错误
+    RISK_PARAMS_ERR("4001","测评结果参数出错"),
+
+    // 5 答题参数错误
+    QUESTION_PARAMS_ERR("5001","答题参数错误"),
 
     // 9 开头表示系统、框架、模板异常
     UNKNOWN_ERR("9999", "未知错误"); //

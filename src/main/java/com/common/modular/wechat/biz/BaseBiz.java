@@ -5,7 +5,6 @@ import com.common.dao.biz.PersonBizDao;
 import com.common.component.resp.RspCodeMsg;
 import com.common.service.PersonService;
 import com.common.modular.wechat.util.WexinConnectUtil;
-import com.common.component.annotation.ApiRequest;
 import com.exception.base.RspRuntimeException;
 import com.util.SHA1;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -67,11 +66,14 @@ public class BaseBiz {
      * @param request
      * @throws IOException
      */
-    @ApiRequest
     @RequestMapping("weixin")
     @ResponseBody
-    public Object weixin(HttpServletResponse response, HttpServletRequest request,String signature,
-                         String echostr,String timestamp,String nonce){
+    public Object weixin(HttpServletResponse response, HttpServletRequest request, String signature,
+                       String echostr, String timestamp, String nonce){
+        //*******
+        //要是验证的话，return echostr;
+        //*******
+
         //定义发送回去的xml是utf-8格式，否则中文会乱码
         response.setContentType("text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
@@ -87,7 +89,8 @@ public class BaseBiz {
             //对微信发送过来的信息进行操作
             String backXmlString = eventBiz.backXmlString(request);
             if ("".equals(backXmlString)){
-                return "success";   //如果不使用success，那么微信就会弹出来“公众号暂时不能服务”，不是很合适，所以建议都是返回success
+                //如果不使用success，那么微信就会弹出来“公众号暂时不能服务”，不是很合适，所以建议都是返回success
+                return "success";
             }else {
                 return backXmlString;
             }

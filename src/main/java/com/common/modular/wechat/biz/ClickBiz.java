@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
  * Created by zhang.peng on 2016/8/3.
+ * 点击事件，暂时还没有
  */
 @Controller
 @RequestMapping("/clickBiz")

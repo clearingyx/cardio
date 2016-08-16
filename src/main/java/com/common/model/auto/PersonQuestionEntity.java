@@ -13,11 +13,11 @@ public class PersonQuestionEntity {
 
     /**
      * <pre>
-     * 用户id
-     * 表字段 : person_question.person_id
+     * 用户openid
+     * 表字段 : person_question.open_id
      * </pre>
      */
-    private Integer personId;
+    private String openId;
 
     /**
      * <pre>
@@ -129,7 +129,7 @@ public class PersonQuestionEntity {
      * 表字段 : person_question.tc
      * </pre>
      */
-    private Integer tc;
+    private Double tc;
 
     /**
      * <pre>
@@ -137,7 +137,7 @@ public class PersonQuestionEntity {
      * 表字段 : person_question.ldl
      * </pre>
      */
-    private Integer ldl;
+    private Double ldl;
 
     /**
      * <pre>
@@ -230,27 +230,27 @@ public class PersonQuestionEntity {
 
     /**
      * <pre>
-     * 获取：用户id
-     * 表字段：person_question.person_id
+     * 获取：用户openid
+     * 表字段：person_question.open_id
      * </pre>
      *
-     * @return person_question.person_id：用户id
+     * @return person_question.open_id：用户openid
      */
-    public Integer getPersonId() {
-        return personId;
+    public String getOpenId() {
+        return openId;
     }
 
     /**
      * <pre>
-     * 设置：用户id
-     * 表字段：person_question.person_id
+     * 设置：用户openid
+     * 表字段：person_question.open_id
      * </pre>
      *
-     * @param personId
-     *            person_question.person_id：用户id
+     * @param openId
+     *            person_question.open_id：用户openid
      */
-    public void setPersonId(Integer personId) {
-        this.personId = personId;
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
     /**
@@ -586,7 +586,7 @@ public class PersonQuestionEntity {
      *
      * @return person_question.tc：总胆固醇(mmol/L)（范围：0.0-30.0）  连续变量；90、>30；99、我不知道;
      */
-    public Integer getTc() {
+    public Double getTc() {
         return tc;
     }
 
@@ -599,7 +599,7 @@ public class PersonQuestionEntity {
      * @param tc
      *            person_question.tc：总胆固醇(mmol/L)（范围：0.0-30.0）  连续变量；90、>30；99、我不知道;
      */
-    public void setTc(Integer tc) {
+    public void setTc(Double tc) {
         this.tc = tc;
     }
 
@@ -611,7 +611,7 @@ public class PersonQuestionEntity {
      *
      * @return person_question.ldl：低密度脂蛋白胆固醇(mmol/L)(范围：0.0-20.0)   连续变量；90、>20；99、我不知道;
      */
-    public Integer getLdl() {
+    public Double getLdl() {
         return ldl;
     }
 
@@ -624,7 +624,7 @@ public class PersonQuestionEntity {
      * @param ldl
      *            person_question.ldl：低密度脂蛋白胆固醇(mmol/L)(范围：0.0-20.0)   连续变量；90、>20；99、我不知道;
      */
-    public void setLdl(Integer ldl) {
+    public void setLdl(Double ldl) {
         this.ldl = ldl;
     }
 

@@ -215,7 +215,7 @@ public class DateUtils {
     }
 
     /**
-     * 按小时增加日期
+     * 按分钟增加日期
      * 
      * @author haibin.xiong
      * @param date
@@ -227,6 +227,22 @@ public class DateUtils {
         calendar.setTime(date);
         // 把分钟增加相应分钟数。整数往后推,负数往前移动
         calendar.add(Calendar.MINUTE, minutes);
+        return calendar.getTime();
+    }
+
+    /**
+     * 按秒钟增加日期
+     *
+     * @author haibin.xiong
+     * @param date
+     * @param second
+     * @return
+     */
+    public static Date addDateBySecond(Date date, int second) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        // 把分钟增加相应分钟数。整数往后推,负数往前移动
+        calendar.add(Calendar.SECOND, second);
         return calendar.getTime();
     }
 

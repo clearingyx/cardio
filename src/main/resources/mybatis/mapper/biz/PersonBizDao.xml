@@ -9,7 +9,7 @@
     <result column="phone" jdbcType="VARCHAR" property="phone" />
     <result column="risk_level" jdbcType="INTEGER" property="riskLevel" />
     <result column="nickname" jdbcType="VARCHAR" property="nickname" />
-    <result column="openid" jdbcType="VARCHAR" property="openid" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="headimgurl" jdbcType="VARCHAR" property="headimgurl" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
     <result column="city" jdbcType="VARCHAR" property="city" />
@@ -87,7 +87,7 @@
     <!--
     @mbggenerated
     -->
-    id, phone, risk_level, nickname, openid, headimgurl, sex, city, province, country, 
+    id, phone, risk_level, nickname, open_id, headimgurl, sex, city, province, country,
     use_status, create_date, source
   </sql>
   <select id="selectPersonByOpenid" parameterType="java.lang.String" resultMap="BaseResultMap">
@@ -135,6 +135,14 @@
       </if>
     </set>
     where openid = #{openid}
+  </update>
+
+  <update id="updatePersonStatusByOpenid" parameterType="com.common.model.auto.PersonEntity">
+    UPDATE person SET use_status = #{useStatus,jdbcType=INTEGER} WHERE openid = #{openid}
+  </update>
+
+  <update id="updateRiskLevelByOpenid" parameterType="com.common.model.auto.PersonEntity">
+    UPDATE person SET risk_level = #{riskLevel,jdbcType=INTEGER} WHERE openid = #{openid}
   </update>
 
 </mapper>

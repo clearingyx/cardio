@@ -6,7 +6,7 @@
     @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="person_id" jdbcType="INTEGER" property="personId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="gender" jdbcType="INTEGER" property="gender" />
@@ -20,8 +20,8 @@
     <result column="familys" jdbcType="INTEGER" property="familys" />
     <result column="sbp" jdbcType="INTEGER" property="sbp" />
     <result column="hyprx" jdbcType="INTEGER" property="hyprx" />
-    <result column="tc" jdbcType="INTEGER" property="tc" />
-    <result column="ldl" jdbcType="INTEGER" property="ldl" />
+    <result column="tc" jdbcType="DOUBLE" property="tc" />
+    <result column="ldl" jdbcType="DOUBLE" property="ldl" />
     <result column="h_diab" jdbcType="INTEGER" property="hDiab" />
     <result column="cvd" jdbcType="INTEGER" property="cvd" />
     <result column="lvh" jdbcType="INTEGER" property="lvh" />
@@ -99,7 +99,7 @@
     <!--
     @mbggenerated
     -->
-    id, person_id, create_date, age, gender, weight, height, h_smk, h_drink, diet, activity, 
+    id, open_id, create_date, age, gender, weight, height, h_smk, h_drink, diet, activity, 
     stress, familys, sbp, hyprx, tc, ldl, h_diab, cvd, lvh, af, cognitive, poor_memory, 
     injury, mini_stroke
   </sql>
@@ -149,7 +149,7 @@
     <!--
     @mbggenerated
     -->
-    insert into person_question (id, person_id, create_date, 
+    insert into person_question (id, open_id, create_date, 
       age, gender, weight, 
       height, h_smk, h_drink, 
       diet, activity, stress, 
@@ -158,12 +158,12 @@
       lvh, af, cognitive, 
       poor_memory, injury, mini_stroke
       )
-    values (#{id,jdbcType=INTEGER}, #{personId,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+    values (#{id,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
       #{age,jdbcType=INTEGER}, #{gender,jdbcType=INTEGER}, #{weight,jdbcType=INTEGER}, 
       #{height,jdbcType=INTEGER}, #{hSmk,jdbcType=INTEGER}, #{hDrink,jdbcType=INTEGER}, 
       #{diet,jdbcType=INTEGER}, #{activity,jdbcType=INTEGER}, #{stress,jdbcType=INTEGER}, 
       #{familys,jdbcType=INTEGER}, #{sbp,jdbcType=INTEGER}, #{hyprx,jdbcType=INTEGER}, 
-      #{tc,jdbcType=INTEGER}, #{ldl,jdbcType=INTEGER}, #{hDiab,jdbcType=INTEGER}, #{cvd,jdbcType=INTEGER}, 
+      #{tc,jdbcType=DOUBLE}, #{ldl,jdbcType=DOUBLE}, #{hDiab,jdbcType=INTEGER}, #{cvd,jdbcType=INTEGER}, 
       #{lvh,jdbcType=INTEGER}, #{af,jdbcType=INTEGER}, #{cognitive,jdbcType=INTEGER}, 
       #{poorMemory,jdbcType=INTEGER}, #{injury,jdbcType=INTEGER}, #{miniStroke,jdbcType=INTEGER}
       )
@@ -177,8 +177,8 @@
       <if test="id != null">
         id,
       </if>
-      <if test="personId != null">
-        person_id,
+      <if test="openId != null">
+        open_id,
       </if>
       <if test="createDate != null">
         create_date,
@@ -254,8 +254,8 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="personId != null">
-        #{personId,jdbcType=INTEGER},
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
       </if>
       <if test="createDate != null">
         #{createDate,jdbcType=TIMESTAMP},
@@ -297,10 +297,10 @@
         #{hyprx,jdbcType=INTEGER},
       </if>
       <if test="tc != null">
-        #{tc,jdbcType=INTEGER},
+        #{tc,jdbcType=DOUBLE},
       </if>
       <if test="ldl != null">
-        #{ldl,jdbcType=INTEGER},
+        #{ldl,jdbcType=DOUBLE},
       </if>
       <if test="hDiab != null">
         #{hDiab,jdbcType=INTEGER},
@@ -346,8 +346,8 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.personId != null">
-        person_id = #{record.personId,jdbcType=INTEGER},
+      <if test="record.openId != null">
+        open_id = #{record.openId,jdbcType=VARCHAR},
       </if>
       <if test="record.createDate != null">
         create_date = #{record.createDate,jdbcType=TIMESTAMP},
@@ -389,10 +389,10 @@
         hyprx = #{record.hyprx,jdbcType=INTEGER},
       </if>
       <if test="record.tc != null">
-        tc = #{record.tc,jdbcType=INTEGER},
+        tc = #{record.tc,jdbcType=DOUBLE},
       </if>
       <if test="record.ldl != null">
-        ldl = #{record.ldl,jdbcType=INTEGER},
+        ldl = #{record.ldl,jdbcType=DOUBLE},
       </if>
       <if test="record.hDiab != null">
         h_diab = #{record.hDiab,jdbcType=INTEGER},
@@ -429,7 +429,7 @@
     -->
     update person_question
     set id = #{record.id,jdbcType=INTEGER},
-      person_id = #{record.personId,jdbcType=INTEGER},
+      open_id = #{record.openId,jdbcType=VARCHAR},
       create_date = #{record.createDate,jdbcType=TIMESTAMP},
       age = #{record.age,jdbcType=INTEGER},
       gender = #{record.gender,jdbcType=INTEGER},
@@ -443,8 +443,8 @@
       familys = #{record.familys,jdbcType=INTEGER},
       sbp = #{record.sbp,jdbcType=INTEGER},
       hyprx = #{record.hyprx,jdbcType=INTEGER},
-      tc = #{record.tc,jdbcType=INTEGER},
-      ldl = #{record.ldl,jdbcType=INTEGER},
+      tc = #{record.tc,jdbcType=DOUBLE},
+      ldl = #{record.ldl,jdbcType=DOUBLE},
       h_diab = #{record.hDiab,jdbcType=INTEGER},
       cvd = #{record.cvd,jdbcType=INTEGER},
       lvh = #{record.lvh,jdbcType=INTEGER},
@@ -463,8 +463,8 @@
     -->
     update person_question
     <set>
-      <if test="personId != null">
-        person_id = #{personId,jdbcType=INTEGER},
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
       </if>
       <if test="createDate != null">
         create_date = #{createDate,jdbcType=TIMESTAMP},
@@ -506,10 +506,10 @@
         hyprx = #{hyprx,jdbcType=INTEGER},
       </if>
       <if test="tc != null">
-        tc = #{tc,jdbcType=INTEGER},
+        tc = #{tc,jdbcType=DOUBLE},
       </if>
       <if test="ldl != null">
-        ldl = #{ldl,jdbcType=INTEGER},
+        ldl = #{ldl,jdbcType=DOUBLE},
       </if>
       <if test="hDiab != null">
         h_diab = #{hDiab,jdbcType=INTEGER},
@@ -543,7 +543,7 @@
     @mbggenerated
     -->
     update person_question
-    set person_id = #{personId,jdbcType=INTEGER},
+    set open_id = #{openId,jdbcType=VARCHAR},
       create_date = #{createDate,jdbcType=TIMESTAMP},
       age = #{age,jdbcType=INTEGER},
       gender = #{gender,jdbcType=INTEGER},
@@ -557,8 +557,8 @@
       familys = #{familys,jdbcType=INTEGER},
       sbp = #{sbp,jdbcType=INTEGER},
       hyprx = #{hyprx,jdbcType=INTEGER},
-      tc = #{tc,jdbcType=INTEGER},
-      ldl = #{ldl,jdbcType=INTEGER},
+      tc = #{tc,jdbcType=DOUBLE},
+      ldl = #{ldl,jdbcType=DOUBLE},
       h_diab = #{hDiab,jdbcType=INTEGER},
       cvd = #{cvd,jdbcType=INTEGER},
       lvh = #{lvh,jdbcType=INTEGER},

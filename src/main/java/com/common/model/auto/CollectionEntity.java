@@ -14,10 +14,10 @@ public class CollectionEntity {
     /**
      * <pre>
      * 用户id
-     * 表字段 : collection.person_id
+     * 表字段 : collection.open_id
      * </pre>
      */
-    private Integer personId;
+    private String openId;
 
     /**
      * <pre>
@@ -63,26 +63,26 @@ public class CollectionEntity {
     /**
      * <pre>
      * 获取：用户id
-     * 表字段：collection.person_id
+     * 表字段：collection.open_id
      * </pre>
      *
-     * @return collection.person_id：用户id
+     * @return collection.open_id：用户id
      */
-    public Integer getPersonId() {
-        return personId;
+    public String getOpenId() {
+        return openId;
     }
 
     /**
      * <pre>
      * 设置：用户id
-     * 表字段：collection.person_id
+     * 表字段：collection.open_id
      * </pre>
      *
-     * @param personId
-     *            collection.person_id：用户id
+     * @param openId
+     *            collection.open_id：用户id
      */
-    public void setPersonId(Integer personId) {
-        this.personId = personId;
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
     /**

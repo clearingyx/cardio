@@ -224,63 +224,73 @@ public class PersonQuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdIsNull() {
-            addCriterion("person_id is null");
+        public Criteria andOpenIdIsNull() {
+            addCriterion("open_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdIsNotNull() {
-            addCriterion("person_id is not null");
+        public Criteria andOpenIdIsNotNull() {
+            addCriterion("open_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdEqualTo(Integer value) {
-            addCriterion("person_id =", value, "personId");
+        public Criteria andOpenIdEqualTo(String value) {
+            addCriterion("open_id =", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdNotEqualTo(Integer value) {
-            addCriterion("person_id <>", value, "personId");
+        public Criteria andOpenIdNotEqualTo(String value) {
+            addCriterion("open_id <>", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdGreaterThan(Integer value) {
-            addCriterion("person_id >", value, "personId");
+        public Criteria andOpenIdGreaterThan(String value) {
+            addCriterion("open_id >", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("person_id >=", value, "personId");
+        public Criteria andOpenIdGreaterThanOrEqualTo(String value) {
+            addCriterion("open_id >=", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdLessThan(Integer value) {
-            addCriterion("person_id <", value, "personId");
+        public Criteria andOpenIdLessThan(String value) {
+            addCriterion("open_id <", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdLessThanOrEqualTo(Integer value) {
-            addCriterion("person_id <=", value, "personId");
+        public Criteria andOpenIdLessThanOrEqualTo(String value) {
+            addCriterion("open_id <=", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdIn(List<Integer> values) {
-            addCriterion("person_id in", values, "personId");
+        public Criteria andOpenIdLike(String value) {
+            addCriterion("open_id like", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdNotIn(List<Integer> values) {
-            addCriterion("person_id not in", values, "personId");
+        public Criteria andOpenIdNotLike(String value) {
+            addCriterion("open_id not like", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdBetween(Integer value1, Integer value2) {
-            addCriterion("person_id between", value1, value2, "personId");
+        public Criteria andOpenIdIn(List<String> values) {
+            addCriterion("open_id in", values, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("person_id not between", value1, value2, "personId");
+        public Criteria andOpenIdNotIn(List<String> values) {
+            addCriterion("open_id not in", values, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdBetween(String value1, String value2) {
+            addCriterion("open_id between", value1, value2, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdNotBetween(String value1, String value2) {
+            addCriterion("open_id not between", value1, value2, "openId");
             return (Criteria) this;
         }
 
@@ -1074,52 +1084,52 @@ public class PersonQuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andTcEqualTo(Integer value) {
+        public Criteria andTcEqualTo(Double value) {
             addCriterion("tc =", value, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcNotEqualTo(Integer value) {
+        public Criteria andTcNotEqualTo(Double value) {
             addCriterion("tc <>", value, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcGreaterThan(Integer value) {
+        public Criteria andTcGreaterThan(Double value) {
             addCriterion("tc >", value, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcGreaterThanOrEqualTo(Integer value) {
+        public Criteria andTcGreaterThanOrEqualTo(Double value) {
             addCriterion("tc >=", value, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcLessThan(Integer value) {
+        public Criteria andTcLessThan(Double value) {
             addCriterion("tc <", value, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcLessThanOrEqualTo(Integer value) {
+        public Criteria andTcLessThanOrEqualTo(Double value) {
             addCriterion("tc <=", value, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcIn(List<Integer> values) {
+        public Criteria andTcIn(List<Double> values) {
             addCriterion("tc in", values, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcNotIn(List<Integer> values) {
+        public Criteria andTcNotIn(List<Double> values) {
             addCriterion("tc not in", values, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcBetween(Integer value1, Integer value2) {
+        public Criteria andTcBetween(Double value1, Double value2) {
             addCriterion("tc between", value1, value2, "tc");
             return (Criteria) this;
         }
 
-        public Criteria andTcNotBetween(Integer value1, Integer value2) {
+        public Criteria andTcNotBetween(Double value1, Double value2) {
             addCriterion("tc not between", value1, value2, "tc");
             return (Criteria) this;
         }
@@ -1134,52 +1144,52 @@ public class PersonQuestionExample {
             return (Criteria) this;
         }
 
-        public Criteria andLdlEqualTo(Integer value) {
+        public Criteria andLdlEqualTo(Double value) {
             addCriterion("ldl =", value, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlNotEqualTo(Integer value) {
+        public Criteria andLdlNotEqualTo(Double value) {
             addCriterion("ldl <>", value, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlGreaterThan(Integer value) {
+        public Criteria andLdlGreaterThan(Double value) {
             addCriterion("ldl >", value, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlGreaterThanOrEqualTo(Integer value) {
+        public Criteria andLdlGreaterThanOrEqualTo(Double value) {
             addCriterion("ldl >=", value, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlLessThan(Integer value) {
+        public Criteria andLdlLessThan(Double value) {
             addCriterion("ldl <", value, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlLessThanOrEqualTo(Integer value) {
+        public Criteria andLdlLessThanOrEqualTo(Double value) {
             addCriterion("ldl <=", value, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlIn(List<Integer> values) {
+        public Criteria andLdlIn(List<Double> values) {
             addCriterion("ldl in", values, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlNotIn(List<Integer> values) {
+        public Criteria andLdlNotIn(List<Double> values) {
             addCriterion("ldl not in", values, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlBetween(Integer value1, Integer value2) {
+        public Criteria andLdlBetween(Double value1, Double value2) {
             addCriterion("ldl between", value1, value2, "ldl");
             return (Criteria) this;
         }
 
-        public Criteria andLdlNotBetween(Integer value1, Integer value2) {
+        public Criteria andLdlNotBetween(Double value1, Double value2) {
             addCriterion("ldl not between", value1, value2, "ldl");
             return (Criteria) this;
         }

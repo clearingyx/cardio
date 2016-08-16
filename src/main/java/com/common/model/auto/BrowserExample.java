@@ -224,63 +224,73 @@ public class BrowserExample {
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdIsNull() {
-            addCriterion("person_id is null");
+        public Criteria andOpenIdIsNull() {
+            addCriterion("open_id is null");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdIsNotNull() {
-            addCriterion("person_id is not null");
+        public Criteria andOpenIdIsNotNull() {
+            addCriterion("open_id is not null");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdEqualTo(Integer value) {
-            addCriterion("person_id =", value, "personId");
+        public Criteria andOpenIdEqualTo(String value) {
+            addCriterion("open_id =", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdNotEqualTo(Integer value) {
-            addCriterion("person_id <>", value, "personId");
+        public Criteria andOpenIdNotEqualTo(String value) {
+            addCriterion("open_id <>", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdGreaterThan(Integer value) {
-            addCriterion("person_id >", value, "personId");
+        public Criteria andOpenIdGreaterThan(String value) {
+            addCriterion("open_id >", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdGreaterThanOrEqualTo(Integer value) {
-            addCriterion("person_id >=", value, "personId");
+        public Criteria andOpenIdGreaterThanOrEqualTo(String value) {
+            addCriterion("open_id >=", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdLessThan(Integer value) {
-            addCriterion("person_id <", value, "personId");
+        public Criteria andOpenIdLessThan(String value) {
+            addCriterion("open_id <", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdLessThanOrEqualTo(Integer value) {
-            addCriterion("person_id <=", value, "personId");
+        public Criteria andOpenIdLessThanOrEqualTo(String value) {
+            addCriterion("open_id <=", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdIn(List<Integer> values) {
-            addCriterion("person_id in", values, "personId");
+        public Criteria andOpenIdLike(String value) {
+            addCriterion("open_id like", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdNotIn(List<Integer> values) {
-            addCriterion("person_id not in", values, "personId");
+        public Criteria andOpenIdNotLike(String value) {
+            addCriterion("open_id not like", value, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdBetween(Integer value1, Integer value2) {
-            addCriterion("person_id between", value1, value2, "personId");
+        public Criteria andOpenIdIn(List<String> values) {
+            addCriterion("open_id in", values, "openId");
             return (Criteria) this;
         }
 
-        public Criteria andPersonIdNotBetween(Integer value1, Integer value2) {
-            addCriterion("person_id not between", value1, value2, "personId");
+        public Criteria andOpenIdNotIn(List<String> values) {
+            addCriterion("open_id not in", values, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdBetween(String value1, String value2) {
+            addCriterion("open_id between", value1, value2, "openId");
+            return (Criteria) this;
+        }
+
+        public Criteria andOpenIdNotBetween(String value1, String value2) {
+            addCriterion("open_id not between", value1, value2, "openId");
             return (Criteria) this;
         }
 

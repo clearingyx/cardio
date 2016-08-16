@@ -1,24 +1,28 @@
 package com.common.modular.wechat.biz;
 
-import com.common.component.annotation.ApiRequest;
 import com.common.component.resp.RspCodeMsg;
+import com.common.dao.auto.NewsDao;
 import com.common.dao.auto.PersonDao;
 import com.common.dao.biz.PersonBizDao;
+import com.common.model.auto.NewsEntity;
+import com.common.model.auto.NewsExample;
 import com.common.model.auto.PersonEntity;
+import com.common.model.biz.NewsReq;
 import com.common.modular.wechat.entity.user.UserAuthorize;
 import com.exception.base.RspRuntimeException;
 import com.util.GetHttp;
 import com.util.JSONUtil;
+import com.util.PageUtil;
+import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.List;
 
 /**
  * Created by zhang.peng on 2016/8/3.
@@ -30,6 +34,8 @@ public class ViewBiz{
     PersonBizDao personBizDao;
     @Autowired
     PersonDao personDao;
+    @Autowired
+    NewsDao newsDao;
 
     /**
      * 微信：我的信息按钮
@@ -43,14 +49,14 @@ public class ViewBiz{
 
         //电话为空，则说明没有注册，跳转到注册页面
         if (null == person.getPhone() || "".equals(person.getPhone())){
-            model.addAttribute("openid", person.getOpenid());
+            model.addAttribute("openid", person.getOpenId());
             return "weixin/reg.jsp";
         } else {
             //评估结果为-1，则跳转到答题页面
             if (-1 == person.getRiskLevel()) {
                 //跳转到答题页面
-                model.addAttribute("person_id", person.getId());
-                return "weixin/question.jsp";
+                model.addAttribute("openid", person.getOpenId());
+                return "weixin/question1.jsp";
             } else {
                 //跳转到信息页面
                 model.addAttribute("person", person);
@@ -72,12 +78,12 @@ public class ViewBiz{
 
         //电话为空，则说明没有注册，跳转到注册页面
         if (null == person.getPhone() || "".equals(person.getPhone())){
-            model.addAttribute("openid",person.getOpenid());
+            model.addAttribute("openid",person.getOpenId());
             return "weixin/reg.jsp";
         } else {
             //跳转到答题页面
-            model.addAttribute("person_id", person.getId());
-            return "weixin/question.jsp";
+            model.addAttribute("openid", person.getOpenId());
+            return "weixin/question1.jsp";
         }
     }
 
@@ -125,6 +131,57 @@ public class ViewBiz{
         if (temp != 1){
             throw new RspRuntimeException(RspCodeMsg.FAIL,"根据openid添加用户微信详情失败");
         }
-        return personBizDao.selectPersonByOpenid(person.getOpenid());
+        return personBizDao.selectPersonByOpenid(person.getOpenId());
+    }
+
+    /**
+     * 模拟视频页面
+     */
+    @RequestMapping("video")
+    public String video(HttpServletRequest request, Model model){
+        String json = request.getParameter("json");
+        model.addAttribute("params",json);
+        return "weixin/video.jsp";
+    }
+
+    /**
+     * 知识、资讯、视频列表
+     * @param newsReq
+     * @param openid
+     * @param model
+     * @return
+     */
+    @RequestMapping("news")
+    public String getNewsList(NewsReq newsReq, Model model){
+        //判断危险等级
+        PersonEntity personEntity = personBizDao.selectPersonByOpenid(newsReq.getOpenId());
+
+        //页面展示，sql条件
+        NewsExample example = new NewsExample();
+        NewsExample.Criteria criteria = example.createCriteria();
+
+        //type 0-疾病知识，1-健康咨询,2-科普视频
+        criteria.andTypeEqualTo(newsReq.getType());
+        //视频不分等级
+        if(newsReq.getType()==2) {
+            //评估级别：0-轻；1-中；2-重；3-极重
+            criteria.andRiskLevelEqualTo(personEntity.getRiskLevel());
+        }
+        //按照时间倒叙
+        example.setOrderByClause("create_date desc");
+
+        // 分页参数
+        RowBounds rowBounds = PageUtil.initRowBounds(newsReq);
+
+        // 读取数据条数
+        int rowCount = newsDao.countByExample(example);
+        int pageCount = PageUtil.calculatePageCount(rowCount, newsReq.getPageSize());
+        List<NewsEntity> list = newsDao.selectByExample(example);
+
+        model.addAttribute("openid", newsReq.getOpenId());
+        model.addAttribute("list", list);
+        model.addAttribute("rowCount",rowCount);
+        model.addAttribute("pageCount",pageCount);
+        return "weixin/news.jsp";
     }
 }

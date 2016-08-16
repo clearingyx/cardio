@@ -6,7 +6,7 @@
     @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="person_id" jdbcType="INTEGER" property="personId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="question_id" jdbcType="INTEGER" property="questionId" />
     <result column="person_anwser" jdbcType="VARCHAR" property="personAnwser" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
@@ -79,7 +79,7 @@
     <!--
     @mbggenerated
     -->
-    id, person_id, question_id, person_anwser, create_date
+    id, open_id, question_id, person_anwser, create_date
   </sql>
   <select id="selectByExample" parameterType="com.common.model.auto.RadomQuestionRecordExample" resultMap="BaseResultMap">
     <!--
@@ -127,9 +127,9 @@
     <!--
     @mbggenerated
     -->
-    insert into radom_question_record (id, person_id, question_id, 
+    insert into radom_question_record (id, open_id, question_id, 
       person_anwser, create_date)
-    values (#{id,jdbcType=INTEGER}, #{personId,jdbcType=INTEGER}, #{questionId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, #{questionId,jdbcType=INTEGER}, 
       #{personAnwser,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.common.model.auto.RadomQuestionRecordEntity">
@@ -141,8 +141,8 @@
       <if test="id != null">
         id,
       </if>
-      <if test="personId != null">
-        person_id,
+      <if test="openId != null">
+        open_id,
       </if>
       <if test="questionId != null">
         question_id,
@@ -158,8 +158,8 @@
       <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="personId != null">
-        #{personId,jdbcType=INTEGER},
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
       </if>
       <if test="questionId != null">
         #{questionId,jdbcType=INTEGER},
@@ -190,8 +190,8 @@
       <if test="record.id != null">
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.personId != null">
-        person_id = #{record.personId,jdbcType=INTEGER},
+      <if test="record.openId != null">
+        open_id = #{record.openId,jdbcType=VARCHAR},
       </if>
       <if test="record.questionId != null">
         question_id = #{record.questionId,jdbcType=INTEGER},
@@ -213,7 +213,7 @@
     -->
     update radom_question_record
     set id = #{record.id,jdbcType=INTEGER},
-      person_id = #{record.personId,jdbcType=INTEGER},
+      open_id = #{record.openId,jdbcType=VARCHAR},
       question_id = #{record.questionId,jdbcType=INTEGER},
       person_anwser = #{record.personAnwser,jdbcType=VARCHAR},
       create_date = #{record.createDate,jdbcType=TIMESTAMP}
@@ -227,8 +227,8 @@
     -->
     update radom_question_record
     <set>
-      <if test="personId != null">
-        person_id = #{personId,jdbcType=INTEGER},
+      <if test="openId != null">
+        open_id = #{openId,jdbcType=VARCHAR},
       </if>
       <if test="questionId != null">
         question_id = #{questionId,jdbcType=INTEGER},
@@ -247,7 +247,7 @@
     @mbggenerated
     -->
     update radom_question_record
-    set person_id = #{personId,jdbcType=INTEGER},
+    set open_id = #{openId,jdbcType=VARCHAR},
       question_id = #{questionId,jdbcType=INTEGER},
       person_anwser = #{personAnwser,jdbcType=VARCHAR},
       create_date = #{createDate,jdbcType=TIMESTAMP}

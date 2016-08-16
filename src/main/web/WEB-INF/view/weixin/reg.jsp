@@ -6,7 +6,7 @@
 </head>
 <body>
     <form action="../reg/reg.do" method="post">
-        <input value="${openid}" name="openid" type="hidden">
+        <input value="${openid}" name="openid" type="text">
         <input value="" name="phone">
         <input name="code"><!-- 验证码 -->
         <input type="submit" value="submit">

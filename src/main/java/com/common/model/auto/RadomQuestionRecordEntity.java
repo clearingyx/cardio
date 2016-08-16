@@ -14,10 +14,10 @@ public class RadomQuestionRecordEntity {
     /**
      * <pre>
      * 回答试题的用户id
-     * 表字段 : radom_question_record.person_id
+     * 表字段 : radom_question_record.open_id
      * </pre>
      */
-    private Integer personId;
+    private String openId;
 
     /**
      * <pre>
@@ -71,26 +71,26 @@ public class RadomQuestionRecordEntity {
     /**
      * <pre>
      * 获取：回答试题的用户id
-     * 表字段：radom_question_record.person_id
+     * 表字段：radom_question_record.open_id
      * </pre>
      *
-     * @return radom_question_record.person_id：回答试题的用户id
+     * @return radom_question_record.open_id：回答试题的用户id
      */
-    public Integer getPersonId() {
-        return personId;
+    public String getOpenId() {
+        return openId;
     }
 
     /**
      * <pre>
      * 设置：回答试题的用户id
-     * 表字段：radom_question_record.person_id
+     * 表字段：radom_question_record.open_id
      * </pre>
      *
-     * @param personId
-     *            radom_question_record.person_id：回答试题的用户id
+     * @param openId
+     *            radom_question_record.open_id：回答试题的用户id
      */
-    public void setPersonId(Integer personId) {
-        this.personId = personId;
+    public void setOpenId(String openId) {
+        this.openId = openId == null ? null : openId.trim();
     }
 
     /**
