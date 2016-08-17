@@ -22,7 +22,7 @@ public class PersonService {
      * 公众号关注事务
      * @return risk_level，需要判断4个视频取哪个
      */
-    public int insertSelectiveRetrunRisk(PersonEntity personEntity){
+    public int insertSelective(PersonEntity personEntity){
         //数据库判断成功与否的临时变量
         int temp;
 

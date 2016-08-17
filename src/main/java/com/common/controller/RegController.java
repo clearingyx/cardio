@@ -50,7 +50,7 @@ public class RegController {
         } else {
             PersonEntity person = personBizDao.selectPersonByOpenid(personEntity.getOpenId());
             //跳转到答题页面
-            model.addAttribute("openId", person.getOpenId());
+            model.addAttribute("openid", person.getOpenId());
             return "weixin/question1.jsp";
         }
     }

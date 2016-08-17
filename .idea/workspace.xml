@@ -2,363 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c93481f-d370-4d41-adc1-13f18aab7462" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/annotation/ApiRequest.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/aspect/ApiRequestAspect.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/aspect/AspectUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/param/AbstractPageParam.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/param/AbstractParam.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/resp/PageResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/resp/Response.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/resp/ResponseData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/component/resp/RspCodeMsg.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/BaseController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/CollectionController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/PersonController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/QuestionController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/RadomQuestionController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/RedisController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/RedisImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/RegController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/controller/UserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/AdminDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/BrowserDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/CollectionDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/LastingImageTextResourceDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/LastingQrcodeDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/LastingResourceDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/NewsDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/PersonDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/PersonQuestionDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/RadomQuestionDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/RadomQuestionRecordDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/ShareDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/SmsDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/auto/UserMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/biz/CollectionBizDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/biz/NewsBizDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/biz/PersonBizDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/biz/PersonQuestionBizDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/biz/RadomQuestionBizDao.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/dao/biz/UserBizMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/AdminEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/AdminExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/AdminExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/AdminExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/AdminExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/BrowserEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/BrowserExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/BrowserExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/BrowserExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/BrowserExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/CollectionEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/CollectionExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/CollectionExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/CollectionExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/CollectionExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingImageTextResourceEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingImageTextResourceExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingImageTextResourceExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingImageTextResourceExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingImageTextResourceExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingQrcodeEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingQrcodeExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingQrcodeExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingQrcodeExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingQrcodeExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingResourceEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingResourceExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingResourceExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingResourceExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/LastingResourceExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/NewsEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/NewsExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/NewsExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/NewsExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/NewsExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonQuestionEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonQuestionExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonQuestionExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonQuestionExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/PersonQuestionExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionRecordEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionRecordExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionRecordExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionRecordExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/RadomQuestionRecordExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/ShareEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/ShareExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/ShareExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/ShareExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/ShareExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/SmsEntity.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/SmsExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/SmsExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/SmsExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/SmsExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/User.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/UserExample$Criteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/UserExample$Criterion.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/UserExample$GeneratedCriteria.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/auto/UserExample.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/CollectionReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/LastingImageTextReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/LastingResourceReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/NewsReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/QuestionAnswer.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/RiskReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/SmsReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/UserReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/model/biz/UserResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/redis/biz/Mobiles.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/risk/RiskBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/risk/RiskFemale.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/risk/RiskMale.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/sms/biz/MobileBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/sms/entity/Mobile.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/biz/BaseBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/biz/ButtonBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/biz/ClickBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/biz/EventBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/biz/QRcodeBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/biz/SourceBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/biz/ViewBiz.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/emun/EventEmun.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/emun/MsgTypeEmun.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/emun/QRcodeEmun.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/BaseReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/BaseResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/button/ButtonReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/button/ButtonReqRoot.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/button/ButtonSubReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/event/BaseEvent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/event/LocationEvent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/event/MenuEvent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/event/QRCodeEvent.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/news/NewsArticle.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/news/NewsResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/qrcode/ActionInfo.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/qrcode/QRcodeReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/qrcode/QRcodeResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/qrcode/Scene.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/req/ImageReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/req/LinkReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/req/LocationReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/req/TextReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/req/VideoReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/req/VoiceReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/resp/FileResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/resp/ImageResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/resp/TextResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/source/ArticlesReq.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/source/ArticlesReqRoot.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/source/SourceResp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/entity/user/UserAuthorize.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/util/FileUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/util/QRcodeUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/util/WexinConnectUtil$1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/util/WexinConnectUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/modular/wechat/util/XmlUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/service/PersonQuestionService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/service/PersonService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/common/service/UserService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/exception/ParamCheckException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/exception/base/RspRuntimeException.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/BeanUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/ConnectUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/DateUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/DateUtils$DTFormat.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/DateUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/GetHttp.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/JSONUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/LogUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/MobileUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/MoneyUtils.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/PageUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/Pagination.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/QRcodeUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/com/util/SHA1.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/aopalliance-1.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/asm-3.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/aspectjrt-1.8.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/aspectjweaver-1.8.7.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/cglib-2.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-codec-1.10.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-dbcp-1.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-fileupload-1.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-httpclient-3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-io-2.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-lang3-3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-logging-1.1.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-pool-1.5.4.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/commons-pool2-2.4.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/core-3.2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/dom4j-1.6.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/druid-1.0.18.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/fastjson-1.2.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/guava-15.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/httpclient-4.5.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/httpcore-4.4.3.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/httpmime-4.5.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jackson-annotations-2.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jackson-core-2.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jackson-core-asl-1.9.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jackson-databind-2.3.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jackson-mapper-asl-1.9.13.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/javase-3.2.0.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jcl-over-slf4j-1.7.21.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jconsole.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jedis-2.8.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/jstl-1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/log4j-1.2.17.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/mybatis-3.2.8.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/mybatis-generator-core-1.0.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/mybatis-spring-1.2.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/mysql-connector-java-5.1.34.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/slf4j-api-1.7.21.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/slf4j-log4j12-1.7.21.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-aop-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-beans-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-context-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-context-support-4.2.6.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-core-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-data-commons-1.12.2.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-data-keyvalue-1.1.2.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-data-redis-1.7.2.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-expression-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-jdbc-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-oxm-4.2.6.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-tx-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-web-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/spring-webmvc-4.2.5.RELEASE.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/standard-1.1.2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/tools.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/lib/xml-apis-1.0.b2.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/BW.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/foot-btn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/footer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/hqyzm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/logo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/qran.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/shouji.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/suo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/word.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/img/shouye/yjbj1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/BW.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/foot-btn.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/footer.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/header.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/hqyzm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/line.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/logo1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/qran.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/shouji.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/suo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/word.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/img/shouye/yjbj1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/.project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/generator.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/generatorConfig.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/logback.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/AdminDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/BrowserDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/CollectionDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/LastingImageTextResourceDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/LastingQrcodeDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/LastingResourceDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/NewsDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/PersonDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/PersonQuestionDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/RadomQuestionDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/RadomQuestionRecordDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/ShareDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/SmsDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/auto/UserMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/CollectionBizDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/NewsBizDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/PersonBizDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/PersonQuestionBizDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/RadomQuestionBizDao.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mapper/biz/UserBizMapper.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/mybatis/mybatis-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/config.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/dbconfig.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/imageTextDesc.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/spring-core.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/spring-database.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/spring/spring-redis.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/classes/wx.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/error/404.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/error/500.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/jquery-1.7.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/lasting_image_text_add.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/lasting_image_text_list.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/lasting_resource_add.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/lasting_resource_list.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/news.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/person_info.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/qr_code.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/question.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/question1.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/question2.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/question3.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/question4.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/question5.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/reg.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/result.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/shouye/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/view/weixin/video.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/css/shouye/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/css/shouye/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/css/shouye/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/jquery-1.7.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/js/jquery-1.7.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/js/shouye/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/js/shouye/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/js/shouye/zepto.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/test.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/artifacts/cardio_war_exploded/weixin_upload_file.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/WEB-INF/view/weixin/shouye/index.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/css/shouye/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/css/shouye/index.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/css/shouye/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/js/jquery-1.7.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/js/shouye/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/js/shouye/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/web/js/shouye/zepto.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/cardio_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/PageShow.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/event/BaseEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/entity/event/BaseEvent.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/event/LocationEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/entity/event/LocationEvent.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/event/MenuEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/entity/event/MenuEvent.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/event/QRCodeEvent.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/modular/wechat/entity/event/QRCodeEvent.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/controller/BaseController.class" afterPath="$PROJECT_DIR$/target/classes/com/common/controller/BaseController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/dao/biz/PersonBizDao.class" afterPath="$PROJECT_DIR$/target/classes/com/common/dao/biz/PersonBizDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/model/auto/PersonEntity.class" afterPath="$PROJECT_DIR$/target/classes/com/common/model/auto/PersonEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/model/auto/PersonExample$Criteria.class" afterPath="$PROJECT_DIR$/target/classes/com/common/model/auto/PersonExample$Criteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/model/auto/PersonExample$GeneratedCriteria.class" afterPath="$PROJECT_DIR$/target/classes/com/common/model/auto/PersonExample$GeneratedCriteria.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/common/service/PersonService.class" afterPath="$PROJECT_DIR$/target/classes/com/common/service/PersonService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/util/DateUtils.class" afterPath="$PROJECT_DIR$/target/classes/com/util/DateUtils.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/cardio_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/cardio_war_exploded.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cardio.iml" afterPath="$PROJECT_DIR$/.idea/cardio.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/controller/QuestionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/controller/QuestionController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/common/controller/RegController.java" afterPath="$PROJECT_DIR$/src/main/java/com/common/controller/RegController.java" />
@@ -373,11 +16,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/web/WEB-INF/view/weixin/question4.jsp" afterPath="$PROJECT_DIR$/src/main/web/WEB-INF/view/weixin/question4.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/web/WEB-INF/view/weixin/question5.jsp" afterPath="$PROJECT_DIR$/src/main/web/WEB-INF/view/weixin/question5.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/web/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/generatorConfig.xml" afterPath="$PROJECT_DIR$/target/classes/generatorConfig.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/mapper/auto/PersonDao.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/mapper/auto/PersonDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mybatis/mapper/biz/PersonBizDao.xml" afterPath="$PROJECT_DIR$/target/classes/mybatis/mapper/biz/PersonBizDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/config.properties" afterPath="$PROJECT_DIR$/target/classes/spring/config.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/spring-core.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-core.xml" />
     </list>
     <ignored path="cardio.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1794,7 +1432,7 @@
       <workItem from="1470704734805" duration="24457000" />
       <workItem from="1470791622973" duration="30113000" />
       <workItem from="1471336096195" duration="9716000" />
-      <workItem from="1471395259859" duration="410000" />
+      <workItem from="1471395259859" duration="630000" />
     </task>
     <task id="LOCAL-00001" summary="8-8">
       <created>1470644589263</created>
@@ -1838,7 +1476,13 @@
       <option name="project" value="LOCAL" />
       <updated>1470818655652</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="8-17">
+      <created>1471395681786</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1471395681786</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1847,7 +1491,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237438000" />
+    <option name="totallyTimeSpent" value="237658000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1866,7 +1510,7 @@
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32604167" sideWeight="0.49569893" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32604167" sideWeight="0.49569893" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32604167" sideWeight="0.5043011" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1933,7 +1577,8 @@
     <MESSAGE value="8-9" />
     <MESSAGE value="8-10" />
     <MESSAGE value="8-10（1）" />
-    <option name="LAST_COMMIT_MESSAGE" value="8-10（1）" />
+    <MESSAGE value="8-17" />
+    <option name="LAST_COMMIT_MESSAGE" value="8-17" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2153,6 +1798,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

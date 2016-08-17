@@ -13,7 +13,7 @@ import com.common.modular.wechat.entity.BaseResp;
 import com.common.modular.wechat.entity.news.NewsArticle;
 import com.common.modular.wechat.entity.news.NewsResp;
 import com.common.modular.wechat.entity.resp.*;
-import com.common.modular.wechat.entity.event.MenuEvent;
+import com.common.modular.wechat.event.MenuEvent;
 import com.common.modular.wechat.util.XmlUtil;
 import com.exception.base.RspRuntimeException;
 import com.util.JSONUtil;
@@ -142,7 +142,7 @@ public class EventBiz{
         if(null != eventKey && !"".equals(eventKey)){
             //插入数据
             person.setSource(1);//点击是0，扫医生码是1
-            int risk_level = personService.insertSelectiveRetrunRisk(person);
+            int risk_level = personService.insertSelective(person);
 
             //根据二维码参数进行图文推送
             xmlBack = sendOutImageText(menuEvent, risk_level);
@@ -151,14 +151,18 @@ public class EventBiz{
             //2、普通点击关注
             //插入成功，看看要不要推送东西
             person.setSource(0);//扫码是1，点击是0
-            int risk_level = personService.insertSelectiveRetrunRisk(person);
+            int temp = personService.insertSelective(person);
+            if(temp == 1){
 
-            //这里举例子返回text
-            BaseResp br = new TextResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
-                    menuEvent.getMsgType(),  MsgTypeEmun.TEXT.getValue(),
-                    "您不是扫描医生二维码关注的，请进行风险评估，如果您之前都没有注册过，点击风险评估会先进行注册。");
-            xmlBack = XmlUtil.weixinBuildXml(br);
+                //这里举例子返回text
+                BaseResp br = new TextResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
+                        menuEvent.getMsgType(),  MsgTypeEmun.TEXT.getValue(),
+                        "您不是扫描医生二维码关注的，请进行风险评估，如果您之前都没有注册过，点击风险评估会先进行注册。");
+                xmlBack = XmlUtil.weixinBuildXml(br);
 
+            } else {
+                throw new RspRuntimeException(RspCodeMsg.FAIL,"微信信息插入数据库失败");
+            }
             return xmlBack;
         }
     }

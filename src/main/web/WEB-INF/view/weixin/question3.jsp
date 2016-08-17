@@ -21,7 +21,7 @@
 </head>
 <body onload="btnclick()">
 <form action="../question/answer.do" method="post">
-    <input name="openId" value="${openId}" type="hidden">
+    <input name="openid" value="${openid}" type="hidden">
     <input name="page" value="3" type="hidden">
     <table border="1px" id="address" style="width: 21%">
         <tr>

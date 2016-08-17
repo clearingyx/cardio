@@ -40,13 +40,13 @@ public class QuestionController {
      * @return
      */
     @RequestMapping("answer")
-    public String answer(PersonQuestionEntity person, HttpSession session, Model model,
+    public String answer(PersonQuestionEntity person, String openid, HttpSession session, Model model,
                          Integer page){
         session.setAttribute("person"+page,person);
-        model.addAttribute("openid",person.getOpenId());
+        model.addAttribute("openid",openid);
         if (page == 5) {
             //已经到了最后一页码，将session进行封装计算
-            RiskReq riskReq = jumpRisk(session, person.getOpenId());
+            RiskReq riskReq = jumpRisk(session, openid);
             model.addAttribute("risk",riskReq);
             return "weixin/result.jsp";
         } else {

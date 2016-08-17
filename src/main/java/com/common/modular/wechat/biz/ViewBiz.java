@@ -50,7 +50,7 @@ public class ViewBiz{
         //电话为空，则说明没有注册，跳转到注册页面
         if (null == person.getPhone() || "".equals(person.getPhone())){
             model.addAttribute("openid", person.getOpenId());
-            return "weixin/shouye/index.jsp";
+            return "weixin/reg.jsp";
         } else {
             //评估结果为-1，则跳转到答题页面
             if (-1 == person.getRiskLevel()) {
@@ -78,17 +78,13 @@ public class ViewBiz{
 
         //电话为空，则说明没有注册，跳转到注册页面
         if (null == person.getPhone() || "".equals(person.getPhone())){
-            model.addAttribute("openId",person.getOpenId());
-            return "weixin/shouye/index.jsp";
+            model.addAttribute("openid",person.getOpenId());
+            return "weixin/reg.jsp";
         } else {
             //跳转到答题页面
-            model.addAttribute("openId", person.getOpenId());
+            model.addAttribute("openid", person.getOpenId());
             return "weixin/question1.jsp";
         }
-    }
-    @RequestMapping("test")
-    public String test(){
-        return "weixin/shouye/index.jsp";
     }
 
     /**
