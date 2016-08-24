@@ -11,7 +11,7 @@ import com.common.model.biz.LastingImageTextReq;
 import com.common.model.biz.LastingResourceReq;
 import com.common.modular.wechat.entity.source.ArticlesReq;
 import com.common.modular.wechat.entity.source.ArticlesReqRoot;
-import com.common.modular.wechat.util.WexinConnectUtil;
+import com.common.modular.wechat.util.WeixinConnectUtil;
 import com.exception.base.RspRuntimeException;
 import com.util.JSONUtil;
 import com.util.PageUtil;
@@ -67,7 +67,7 @@ public class SourceBiz extends BaseBiz{
         //向微信post发送永久素材
         String url = "https://api.weixin.qq.com/cgi-bin/material/add_material?access_token="+access_token+"&type="+ type;
         try {
-            map = WexinConnectUtil.getConnectForFile(url,path);
+            map = WeixinConnectUtil.getConnectForFile(url,path);
             //删除图片
             targetFile.delete();
         } catch (Exception e) {
@@ -110,7 +110,7 @@ public class SourceBiz extends BaseBiz{
                 imageText.getContent(), imageText.getContentSourceUrl());
         list.add(articlesReq);
         ArticlesReqRoot articlesReqRoot = new ArticlesReqRoot(list);
-        Map map = WexinConnectUtil.getConnectForPost(url, JSONUtil.toJson(articlesReqRoot));
+        Map map = WeixinConnectUtil.getConnectForPost(url, JSONUtil.toJson(articlesReqRoot));
 
         imageText.setMediaId(map.get("media_id").toString());
         imageText.setCreateDate(new Date());
@@ -213,7 +213,7 @@ public class SourceBiz extends BaseBiz{
 
         String url = "https://api.weixin.qq.com/cgi-bin/media/get?access_token="+access_token+"&media_id="+media_id;
 
-        /*Map<String,Object> map = WexinConnectUtil.getConnectForGet(url);
+        /*Map<String,Object> map = weixinConnectUtil.getConnectForGet(url);
         System.out.println(map.toString());*/
     }
 }

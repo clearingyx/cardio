@@ -4,19 +4,18 @@ import com.common.component.resp.RspCodeMsg;
 import com.common.dao.auto.LastingImageTextResourceDao;
 import com.common.dao.auto.PersonDao;
 import com.common.dao.biz.PersonBizDao;
-import com.common.dao.biz.RadomQuestionBizDao;
 import com.common.model.auto.PersonEntity;
+import com.common.modular.redis.biz.CourseUrlWithRedis;
+import com.common.modular.wechat.entity.Course;
 import com.common.service.PersonService;
 import com.common.modular.wechat.emun.EventEmun;
 import com.common.modular.wechat.emun.MsgTypeEmun;
 import com.common.modular.wechat.entity.BaseResp;
 import com.common.modular.wechat.entity.news.NewsArticle;
 import com.common.modular.wechat.entity.news.NewsResp;
-import com.common.modular.wechat.entity.resp.*;
-import com.common.modular.wechat.event.MenuEvent;
+import com.common.modular.wechat.entity.event.MenuEvent;
 import com.common.modular.wechat.util.XmlUtil;
 import com.exception.base.RspRuntimeException;
-import com.util.JSONUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,7 +38,10 @@ public class EventBiz{
     @Autowired
     LastingImageTextResourceDao lastingImageTextResourceDao;
     @Autowired
-    RadomQuestionBizDao radomQuestionBizDao;
+    CourseUrlWithRedis courseUrlWithRedis;
+
+    //得到图文的配置，暂时只有2个，所以写到配置文件里面了
+    ResourceBundle rb = ResourceBundle.getBundle("spring/imageTextDesc");
 
     /**
      * 根据微信发送回来的信息判断用户事件
@@ -58,7 +60,7 @@ public class EventBiz{
             backXmlString = eventHandl(map);
         } else {
             //用户发送信息，这个分类也较多，暂时和业务不相关，可以查看MsgTypeEmun类
-            backXmlString = infoHandl(map);
+            backXmlString = "";
         }
         return backXmlString;
     }
@@ -87,7 +89,20 @@ public class EventBiz{
             //是一个32位无符号整数，即创建二维码时的二维码scene_id
             //得到openid对象的危险等级
             PersonEntity person = personBizDao.selectPersonByOpenid(openid);
-            backXmlString = sendOutImageText(menuEvent,person.getRiskLevel());
+
+            String courseId = getCourseId(menuEvent);
+            Course course = new Course(person.getUniqueCode(), openid,
+                    person.getRiskLevel(), courseId);
+            courseUrlWithRedis.saveCourseByOpenid(course);
+
+            //弹出图文
+            if (person.getRiskLevel() == -1) {
+                //弹出测评图文
+                return pushRiskImageText(menuEvent);
+            } else {
+                //弹出视频图文
+                return pushVideoImageText(menuEvent, getImageTextUrl(course));
+            }
         }
 
         //3.取消关注
@@ -113,112 +128,101 @@ public class EventBiz{
     }
 
     /**
-     * 用户发送信息反馈处理
-     * 用户输入文本，图像，音频等（暂时不用）
-     */
-    public String infoHandl(Map<String,String> map){
-        String backXmlString = "";
-
-        return backXmlString;
-    }
-
-    /**
      * 扫码关注、点击关注，类似于创建新用户
      * 二维码参数是4个视频url
      * @param menuEvent
      * @return
      */
     public String FollowInsert(MenuEvent menuEvent){
-        String xmlBack = "";
-
         //数据库insert新用户
         PersonEntity person = new PersonEntity();
         person.setOpenId(menuEvent.getFromUserName());
         person.setCreateDate(new Date(menuEvent.getCreateTime()));
 
-        //1、扫码后进行关注，关注后推送图文
-        String eventKey = menuEvent.getEventKey();
+        //生成唯一标识码，时间戳
+        String uniqueCode = String.valueOf(new Date().getTime());
+        person.setUniqueCode(uniqueCode);
 
-        if(null != eventKey && !"".equals(eventKey)){
+        //1、扫码后进行关注，关注后推送图文
+        if(null != menuEvent.getEventKey() && !"".equals(menuEvent.getEventKey())){
             //插入数据
-            person.setSource(1);//点击是0，扫医生码是1
+            person.setSource(1);//其他方式是0，扫医生码是1
+            //person.setCourseId(getCourseId(menuEvent));
             int risk_level = personService.insertSelective(person);
 
-            //根据二维码参数进行图文推送
-            xmlBack = sendOutImageText(menuEvent, risk_level);
-            return xmlBack;
+            //将course对象存入redis
+
+            Course course = new Course(uniqueCode, person.getOpenId(), risk_level, getCourseId(menuEvent));
+            courseUrlWithRedis.saveCourseByOpenid(course);
+
+            //没做测评，弹出测评图文
+            if (risk_level == -1) {
+                //弹出测评图文
+                return pushRiskImageText(menuEvent);
+            } else {
+                //弹出视频图文
+                person.setRiskLevel(risk_level);
+                return pushVideoImageText(menuEvent, getImageTextUrl(course));
+            }
         } else {
             //2、普通点击关注
-            //插入成功，看看要不要推送东西
-            person.setSource(0);//扫码是1，点击是0
-            int temp = personService.insertSelective(person);
-            if(temp == 1){
 
-                //这里举例子返回text
-                BaseResp br = new TextResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
-                        menuEvent.getMsgType(),  MsgTypeEmun.TEXT.getValue(),
-                        "您不是扫描医生二维码关注的，请进行风险评估，如果您之前都没有注册过，点击风险评估会先进行注册。");
-                xmlBack = XmlUtil.weixinBuildXml(br);
+            person.setSource(0);//扫码是1，其他方式是0
 
-            } else {
-                throw new RspRuntimeException(RspCodeMsg.FAIL,"微信信息插入数据库失败");
-            }
-            return xmlBack;
+            personService.insertSelective(person);
+
+            //根据二维码参数进行图文推送
+            return pushRiskImageText(menuEvent);
         }
     }
 
     /**
-     * 根据二维码参数进行图文推送
+     * 得到扫码的课程id
      * @param menuEvent
-     * @param riskLevel
      * @return
      */
-    public String sendOutImageText(MenuEvent menuEvent, int riskLevel){
-        //得到图文的配置，暂时只有2个，所以写到配置文件里面了
-        ResourceBundle rb = ResourceBundle.getBundle("spring/imageTextDesc");
-
+    public String getCourseId(MenuEvent menuEvent){
         //得到事件key
         String eventKey = menuEvent.getEventKey();
-        try {
-            //如果包含qrscene_，则说明是首次扫码关注；否则是已经关注后再扫码
-            if (eventKey.contains("qrscene_")) {
-                eventKey = eventKey.replace("qrscene_", "");
-            }
-        }catch (RspRuntimeException e){
-            throw new RspRuntimeException(RspCodeMsg.WEIXIN_QRCODE_ERR,"微信二维码参数错误");
-        }
 
+        //如果包含qrscene_，则说明是首次扫码关注；否则是已经关注后再扫码
+        if (eventKey.contains("qrscene_")) {
+            eventKey = eventKey.replace("qrscene_", "");
+        }
+//        System.out.println(eventKey.substring(eventKey.lastIndexOf("?i=")+3));
+
+        //返回课程id
+        return eventKey.substring(eventKey.lastIndexOf("?i=")+3);
+    }
+
+    /**
+     * 得到图文url
+     * @param course
+     * @return
+     */
+    public  String getImageTextUrl(Course course){
+        StringBuffer url = new StringBuffer(ResourceBundle.getBundle("spring/config").getString("sub_platform_url"));
+        url.append("?i=" + course.getCourseId());
+        url.append("&tp=" + course.getUniqueCode());
+        url.append("&wd=" + course.getOpenId());
+        url.append("&pc=" + course.getRiskLevel());
+        String address = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+ BaseBiz.appid +
+                "&redirect_uri="+ url.toString() +
+                "&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1#wechat_redirect";
+        return address;
+    }
+
+    /**
+     * 弹出视频图文
+     * @param menuEvent
+     * @param video_url
+     * @return
+     */
+    public String pushVideoImageText(MenuEvent menuEvent, String video_url){
         List<NewsArticle> list = new ArrayList<NewsArticle>();
-        NewsArticle newsArticle = new NewsArticle();
-
-        //做了测评，弹出视频图文
-        if (riskLevel != -1) {
-            //获得4个url，需要判断分隔符“，”
-            String[] videos = eventKey.split(",");
-
-            Map map = new HashMap();
-            map.put("openid", menuEvent.getFromUserName());
-            //因为riskLevel是0-3，二维码携带的参数顺序也是0-3
-            map.put("videoid", videos[riskLevel]);
-            //得到两道题
-            map.put("questions", radomQuestionBizDao.selectTwoRadomQuestion());
-            String json = JSONUtil.toJson(map);
-            String video_url = rb.getString("base_url") + "&json=" + json;
-
-            //弹出视频图文
-            newsArticle = new NewsArticle(rb.getString("video_title"),
-                    rb.getString("video_description"), rb.getString("video_picurl"),
-                    video_url);
-
-        }
-        //没做测评，弹出测评图文
-        else if (riskLevel == -1) {
-            //弹出测评图文
-            newsArticle = new NewsArticle(rb.getString("risk_title"),
-                    rb.getString("risk_description"), rb.getString("risk_picurl"),
-                    rb.getString("risk_url") + menuEvent.getFromUserName());
-
-        }
+        NewsArticle newsArticle = new NewsArticle(rb.getString("video_title"),
+                rb.getString("video_description"), rb.getString("video_picurl"),
+                video_url);
         list.add(newsArticle);
 
         //生成对象，给微信发送
@@ -228,6 +232,28 @@ public class EventBiz{
         return XmlUtil.weixinBuildXml(br);
     }
 
+    /**
+     * 弹出测评图文
+     * @param menuEvent
+     * @return
+     */
+    public String pushRiskImageText(MenuEvent menuEvent){
+        String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid="+ BaseBiz.appid +
+                "&redirect_uri=http://chinamillionclubs.hongshouhuan.com/viewBiz/reg.do?openId="+ menuEvent.getFromUserName() +
+                "&response_type=code&scope=snsapi_base&state=STATE&connect_redirect=1#wechat_redirect";
+        List<NewsArticle> list = new ArrayList<NewsArticle>();
+        NewsArticle newsArticle = new NewsArticle(rb.getString("risk_title"),
+                rb.getString("risk_description"), rb.getString("risk_picurl"),
+                url);
+
+        list.add(newsArticle);
+
+        //生成对象，给微信发送
+        BaseResp br = new NewsResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
+                menuEvent.getMsgType(), MsgTypeEmun.NEWS.getValue(), 1, list);
+
+        return XmlUtil.weixinBuildXml(br);
+    }
 
 //    if ("push_text".equals(map.get("EventKey"))) {
 //        BaseResp br = new TextResp(menuEvent.getFromUserName(), menuEvent.getToUserName(),
@@ -249,5 +275,4 @@ public class EventBiz{
 //                1,list);
 //        backXmlString = XmlUtil.weixinBuildXml(br);
 //    }
-
 }

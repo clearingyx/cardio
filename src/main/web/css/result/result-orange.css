@@ -1,0 +1,310 @@
+﻿
+html,body{
+    font-family: "汉仪中黑简";
+}
+
+.bjtp{
+    background: url("../../img/result/DBJT.png")no-repeat;
+    background-size: 100% 100%;
+}
+
+.bk{
+    width: 16.8rem;
+    height: 22.6rem;
+    background-color: #fff;
+    margin: 0.62rem auto;
+    margin-bottom: 4.8rem;
+    border-radius: 1.1rem;
+    padding-top: 0.33rem;
+}
+
+.xx{
+    width: 16rem;
+    height: 22rem;
+    border-radius: 1rem;
+    border: 2px dotted #c4c9c6;
+    margin:0rem auto;
+}
+.sb{
+   width: 1.7rem;
+    height: 1.7rem;
+    background-color: #fc9700;
+    border-radius: 0.9rem;
+    position: absolute;
+    margin-left: 3.1rem;
+    margin-top: -2.5rem;
+    color: #ffffff;
+    font-size:0.85rem;
+    text-align:center;
+    line-height:1.5rem
+}
+
+.lsyj{
+   color:#fc9700;
+    font-size: 1.9rem;
+    position: absolute;
+    font-family: 方正兰亭粗黑_GBK;
+    margin-left: 7.5rem;
+    margin-top: -3.5rem
+}
+
+.bf{
+    color:#fc9700;
+    font-size: 1.43rem;
+    position: absolute;
+    margin-left: 4rem;
+    margin-top: -3rem
+}
+
+.gl{
+    position: absolute;
+    color: #0099b8;
+    font-size: 1rem;
+    margin-top: -1.5rem;
+    margin-left: 4rem
+}
+
+.jkfx{
+    color: #0099b8;
+    font-size: 1.27rem;
+    position: absolute;
+    margin-top: -5.5rem;
+    margin-left: 7.5rem;
+}
+
+.dyh{
+    font-size:2.3rem;
+    color:#00849f;
+    position: absolute;
+    margin-top: -3.3rem;
+    margin-left: 4.8rem
+}
+
+.sbwz{
+    color:#0099b8;
+    font-size: 0.9rem;
+    position: absolute;
+    margin-top: -3rem;
+    margin-left:8.8rem;
+    width: 7rem
+}
+.xgwx{
+    margin-top: 1rem;
+    margin-left:2rem;
+    height: 1.45rem;
+    width: 7rem;
+    border-radius: 0.8rem;
+    border: 2px solid #00849f
+}
+
+.yfcs{
+   width:14rem;
+    height: 1.45rem;
+    background-color:#00849f;
+    border-radius: 0.8rem;
+    margin: 0 auto;
+    color: #ffffff;
+    text-align: center;
+    line-height:1.45rem;
+    font-size: 0.95rem;
+}
+
+.lyw{
+    position: absolute;
+    z-index: 100;
+    width: 2rem;
+    margin-left: 1rem;
+    margin-top: 0.5rem
+}
+.lyw1{
+    position: absolute;
+    z-index: 100;
+    width: 2rem;
+    margin-left: 1rem;
+    margin-top: -0.3rem
+}
+.lyw2{
+    position: absolute;
+    z-index: 100;
+    width: 2rem;
+    margin-left: 1rem;
+    margin-top: 0rem
+}
+.lyw3{
+    position: absolute;
+    z-index: 100;
+    width: 2rem;
+    margin-left: 1rem;
+    margin-top: 0.1rem
+}
+.lyw4{
+    position: absolute;
+    z-index: 100;
+    width: 2rem;
+    margin-left: 1rem;
+    margin-top:0rem
+}
+.ywzl{
+     position: absolute;
+     margin-top: 0.65rem;
+     margin-left: 2rem;
+     width: 4.5rem;
+     height: 1.45rem;
+     border-radius: 0.75rem;
+     border: 2px solid #00849f
+ }
+.ywzl1{
+    position: absolute;
+    margin-left: 2rem;
+    width: 6.5rem;
+    height: 1.45rem;
+    border-radius: 0.75rem;
+    border: 2px solid #00849f
+}
+.ywzl2{
+    position: absolute;
+    margin-top: 0.1rem;
+    margin-left: 2rem;
+    width: 4.5rem;
+    height: 1.45rem;
+    border-radius: 0.75rem;
+    border: 2px solid #00849f
+}
+.ywzl3{
+    position: absolute;
+    margin-top: 0.7rem;
+    margin-left: 2rem;
+    width: 6.5rem;
+    height: 1.45rem;
+    border-radius: 0.75rem;
+    border: 2px solid #00849f
+}
+.ywzl4{
+    position: absolute;
+    margin-top:0.2rem;
+    margin-left: 2rem;
+    width: 4.5rem;
+    height: 1.45rem;
+    border-radius: 0.75rem;
+    border: 2px solid #00849f
+}
+.kj{
+    margin: 1rem auto;
+    width: 14.1rem;
+    height: 3rem;
+    border: 1px solid #99ced9;
+    border-radius: 0.3rem
+}
+.kj1{
+    margin: 0rem auto;
+    width: 14.1rem;
+    height: 2.4rem;
+    border: 1px solid #99ced9;
+    border-radius: 0.3rem;
+    margin-top: 3rem;
+}
+.dl{
+    position: absolute;
+    color: #00849f;
+    font-size:0.7rem;
+    margin-top:3rem;
+    margin-left: 1rem
+}
+.ys{
+    position: absolute;
+    color: #00849f;
+    font-size:0.7rem;
+    margin-top:3rem;
+    margin-left: 4.5rem
+}
+.jz{
+    position: absolute;
+    color: #00849f;
+    font-size:0.7rem;
+    margin-top:3rem;
+    margin-left: 7.9rem
+}
+.jy{
+    position: absolute;
+    color: #00849f;
+    font-size:0.7rem;
+    margin-top:3rem;
+    margin-left: 11.4rem
+}
+.sq{
+    font-size: 0.6rem;
+    color:#00849f;
+    margin-top: 2.6rem;
+    margin-left: 2rem;
+    letter-spacing: 1.5px;
+}
+.sq1{
+    width:3.5rem;
+    margin-top: -0.12rem;
+    position:absolute;
+    margin-left: 7rem
+}
+.yqw{
+    font-size: 0.6rem;
+    color:#00849f;
+    margin-top: 0.6rem;
+    margin-left: 2rem;
+    letter-spacing: 1.5px;
+}
+.yqw1{
+    width:3.5rem;
+    margin-top: -0.2rem;
+    position: absolute;
+    margin-left: 7rem
+}
+.yuan{
+    font-size: 0.85rem;
+    color:#029b31;
+    position: absolute;
+    margin-left:12rem
+}
+.jt{
+    width:5rem;
+    position: absolute;
+    margin-left: 8.6rem;
+    margin-top: 1.2rem
+}
+.jt1{
+    position: absolute;
+    width: 6.3rem;
+    margin-left: 6.5rem;
+    margin-top: 0.5rem
+ }
+.lws{
+    font-size: 0.65rem;
+    color: #00849f;
+    position: absolute;
+    margin-top: 2rem;
+    margin-left: 2.5rem
+}
+.lws1{
+    position: absolute;
+    height: 2rem;
+    margin-left: 4rem;
+    margin-top: -0.5rem
+}
+.lws2{
+    color:#ff7800;
+    font-size: 0.8rem;
+    position: absolute;
+    margin-top: 1.8rem;
+    margin-left: 11rem
+}
+.jkzj{
+    position: absolute;
+    color:#00849f;
+    font-size:0.65rem;
+    margin-top: 2.2rem;
+    margin-left: 2rem
+}
+.jkzj1{
+    position: absolute;
+    height: 2.5rem;
+    margin-left: 5rem;
+    margin-top: -1rem
+}

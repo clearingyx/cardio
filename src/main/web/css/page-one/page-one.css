@@ -1,0 +1,328 @@
+.content{
+	background-image: url(../../img/page-one/bg-1.png);
+	background-size:100% 100%;
+}
+.problem{
+	padding-left: 1.87rem;
+	position: relative;
+}
+.problem-1{
+	height: 6rem;
+	overflow: hidden;
+	margin-top: 1.06rem;
+}
+.word-1{
+	height: 3.55rem;
+	width: 100%;
+}
+.circle-1{
+	width: 3.3rem;
+	height: 3.3rem;
+	float: left;
+	border-radius: 100%;
+	margin-top: .31rem;
+	position: relative;
+}
+.circle-11{
+	width: 2.6rem;
+	height: 2.6rem;
+	text-align: center;
+	line-height: 2.8rem;
+	font-size: 1.53rem;
+	color: #3b80c3;
+	border: 1px solid #3d84d2;
+	border-radius: 100%;
+	position: absolute;
+	top: .33rem;
+	left: .33rem;
+	/*z-index: 100;*/
+}
+.circle-big{
+	background: -webkit-linear-gradient(#cecece, #fefefe); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#cecece, #fefefe); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#cecece, #fefefe); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#cecece, #fefefe); /* 标准的语法 */
+}
+.circle-smal{
+	background: -webkit-linear-gradient(#fff, #e2e2e2); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#fff, #e2e2e2); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#fff, #e2e2e2); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#fff, #e2e2e2); /* 标准的语法 */
+}
+.word-1 p{
+	height: 3.4rem;
+	line-height: 3.55rem;
+	float: left;
+	color: #3b80c3;
+}
+.massege1{
+	font-size: .96rem;
+	padding-left: .23rem;
+}
+.age{
+	font-size: 1.58rem;
+	padding-left: 1.63rem;
+}
+.age-w{
+	font-size:.7rem;
+	padding-left: .25rem;
+	line-height: 4rem;
+}
+.slide-box{
+	height: 2.65rem;
+	padding-left: 1.96rem;
+}
+.circle-2{
+	width: 1.55rem;
+	height: 1.55rem;
+	border-radius: 100%;
+	position: relative;
+}
+.circle-3{
+	width: 1.25rem;
+	height: 1.25rem;
+	border-radius: 100%;
+	position: absolute;
+	top: .105rem;
+	left: .105rem;
+	border:1px solid #a2a2a2;
+	text-align: center;
+	line-height: 1.25rem;
+	font-size: .98rem;
+	color: #808080;
+}
+
+.slide{
+	width:9.96rem;
+	height: 1.46rem;
+	margin: 0 .17rem;
+	float: left;
+	border-radius:.7rem;
+	background: -webkit-linear-gradient(#d9d9d9, #fcfcfc); /* Safari 5.1 - 6.0 */
+	background: -o-linear-gradient(#d9d9d9, #fcfcfc); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#d9d9d9, #fcfcfc); /* Firefox 3.6 - 15 */
+	background: linear-gradient(#d9d9d9, #fcfcfc); /* 标准的语法 */
+}
+.scale{
+	width: 8.58rem;
+	height: .1rem;
+	background: #d2d2d4;
+	margin: .7rem auto;
+	position: relative;
+}
+.bar-slide{
+	width: 0;
+	height: .1rem;
+	background: #12a7ec;
+}
+.btn{
+	width: 1.28rem;
+	height: 1.28rem;
+	background: #12a6ec;
+	border: 1px solid #13506f;
+	position: absolute;
+	border-radius:100%;
+	top:-.64rem; 
+}
+/*++++++++纺锤线++++++++++++*/
+.or-spacer {
+    width: 13rem;
+    position: absolute;
+    bottom: -.8rem;
+    left: 3.7rem;
+}
+.or-spacer .mask {
+    overflow: hidden;
+    height: 20px;
+}
+.or-spacer .mask:after {
+    content: '';
+    display: block;
+    margin: -25px auto 0;
+    width: 100%;
+    height: 25px;
+    border-radius: 125px/12px;
+    box-shadow: 0 0 8px black;
+}
+/**/
+.problem-2{
+	height: 6rem;
+	padding-top:.2rem;
+	position: relative;
+}
+.sex-box{
+	width: 8.75rem;
+	height: 3rem;
+	position: absolute;
+	bottom: 0;
+	right: 3.7rem;
+}
+.sex-bar{
+	width: 5.03rem;
+	height: 1.9rem;
+	border-radius:1.2rem;	
+}
+.sex-box p{
+	float: left;
+	line-height: 1.9rem;
+	padding-right: .33rem;
+}
+.btn-scale{
+	width: 2.5rem;
+	margin-top: .9rem;
+	position: relative;
+}
+.btn-box{
+	position: absolute;
+	width: 2.35rem;
+	height: 1.38rem;
+	background: #12a6ec;
+	border: 1px solid #003e61;
+	border-radius: 1.2rem;
+	top: -.64rem;
+	left: -42%;
+}
+/**/
+.problem-3{
+	height: 11.9rem;
+	position: relative;
+}
+.height-box{
+	position: absolute;
+	top: 3.25rem;
+	left: 3.55rem;
+	height: 8.25rem;
+	width: 13.7rem;
+	/*background: pink;*/
+}
+fieldset{
+	height: 3.36rem;
+	width: 13.6rem;
+	border: 1px solid #4384c6;
+	border-radius:.4rem;
+	margin-top: -0.3rem;
+}
+legend{
+	text-align:center;
+	font-size: .73rem;
+	color: #616161;
+}
+.h-unit{
+	color: #3f85c3;
+	font-size: .56rem;
+}
+.weight{
+	font-size:.96rem;
+	padding: 0 .43rem 0 .16rem;
+	color: #3f85c3;
+}
+.weight.gay{
+	color: #c9c9c9;
+}
+.h-unit.gay{
+	color: #c9c9c9;
+}
+.btn.gay3{
+	background: #cfcfcf;
+	border:1px solid #cfcfcf;
+}
+.bar-slide.gay4{
+	background: #d2d2d2;
+}
+legend .button{
+	display: inline-block;
+	width: .7rem;
+	height: .7rem;
+	border: 1px solid #bebebe;
+	border-radius:100%;
+	margin-left:1.56rem;
+	position: relative;
+	top: .1rem;
+	background: #fff;
+}
+legend .button i{
+	position: absolute;
+	width: .4rem;
+	height: .4rem;
+	border-radius:100%;
+	background: #12a6ec;
+	left:50%;
+	top: 50%;
+	margin-left: -.2rem;
+	margin-top: -.2rem;
+	display: none;
+}
+legend .button i.h-avtive{
+	display: block;
+}
+.height-word{
+	font-size: .73rem;
+	color: #616161;
+	padding: 0 .2rem 0 .4rem;
+}
+fieldset .slide-box{
+	padding-left: .16rem;
+}
+.field-mag{
+	margin-top: .7rem;
+}
+/**/
+footer{
+	width: 100%;
+	height: 2.3rem;
+	/*margin-top: .37rem;*/
+	background:url(../../img/result/foot-result.png);
+	background-size: 100% 100%;
+	padding-top: .95rem;
+	position: relative;
+}
+.foot-box{
+	width: 7.57rem;
+	height: 1.32rem;
+	background: url(../../img/foot-btn.png) no-repeat;
+	background-size:7.57rem 1.32rem;
+	margin-left:9.61rem;
+	margin-top:.25rem;
+}
+.foot-box span{
+	display: inline-block;
+	height: 1.32rem;
+	line-height: 1.32rem;
+	font-size: .74rem;
+	color: #fff;
+}
+.pre{
+	width: 2.81rem;
+	padding-left: .66rem;
+}
+.next{
+	width: 3.11rem;
+	padding-left: .38rem;
+}
+.dot{
+	width:4.67rem;
+	height: .4rem;
+	background: #ececec;
+	padding-left: .6rem;
+	padding-top: .33rem;
+	position: absolute;
+	bottom:1.33rem;
+	left: 2.56rem;
+	border-radius: .6rem;
+	box-shadow:0 2px 3px  #c4c4c4 inset;
+}
+.li-dot{
+	width: .15rem;
+	height: .15rem;
+	background: #a8a8a8;
+	border-radius:100%;
+	margin-left: .6rem;
+	float: left;
+}
+.li-dot.li-active{
+	position: relative;
+	top:-.02rem;
+	width: .2rem;
+	height: .2rem;
+	background: #4184c3;
+}

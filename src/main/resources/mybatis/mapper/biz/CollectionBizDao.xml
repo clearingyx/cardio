@@ -81,15 +81,36 @@
     id, open_id, news_id, create_date
   </sql>
 
-  <select id="selectCollectionVerifyRepeat" parameterType="com.common.model.biz.CollectionReq" resultType="Integer">
-    SELECT count(id) FROM collection WHERE openid = #{openId} AND news_id = #{newsId}
+  <select id="selectCollectionVerifyRepeat" parameterType="com.common.model.auto.CollectionEntity"
+          resultType="Integer">
+    SELECT count(id) FROM collection WHERE open_id = #{openId} AND news_id = #{newsId}
   </select>
 
-  <insert id="insert" parameterType="com.common.model.biz.CollectionReq">
-    insert into collection (openid, news_id,create_date)
-    values (#{openId,jdbcType=VARCHAR}, #{newsId,jdbcType=INTEGER},
-    #{createDate,jdbcType=TIMESTAMP})
+  <insert id="insertSelective" parameterType="com.common.model.auto.CollectionEntity"
+  useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+    insert into collection
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="openId != null">
+        open_id,
+      </if>
+      <if test="newsId != null">
+        news_id,
+      </if>
+      <if test="createDate != null">
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="openId != null">
+        #{openId,jdbcType=VARCHAR},
+      </if>
+      <if test="newsId != null">
+        #{newsId,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null">
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
   </insert>
-
 
 </mapper>

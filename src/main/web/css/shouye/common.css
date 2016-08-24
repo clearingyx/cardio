@@ -22,7 +22,10 @@ header{
 	height: 1.43rem;
 	background: url(../../img/shouye/header.png) no-repeat;
 	background-size: 100% 100%;
-	/*padding-top: .36rem;*/
+	text-align: center;
+	font-size: .966rem;
+	color: #fff;
+	padding-top: .36rem;
 	position: absolute;
 	top: 0;
 	left: 0;

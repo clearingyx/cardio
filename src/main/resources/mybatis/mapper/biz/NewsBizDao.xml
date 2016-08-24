@@ -110,11 +110,20 @@
 
   <select id="selectNewsByCollectionWithRowbounds" parameterType="com.common.model.biz.NewsReq" resultMap="BaseResultMap">
     SELECT <include refid="News_Column_List"/> FROM collection c, news n WHERE
-    c.openid = #{openid} and c.news_id = n.id and n.type=#{type} and n.status=#{status}
+    c.open_id = #{openId} and c.news_id = n.id
+    <if test="type == 2">
+      and n.type=#{type}
+    </if>
+    ORDER BY c.create_date desc
   </select>
 
-  <select id="count" parameterType="Map" resultType="Integer">
+  <select id="countNewsByCollection" parameterType="com.common.model.biz.NewsReq" resultType="Integer">
     select count(n.id) from collection c, news n where
-    c.openid = #{openid} and c.news_id = n.id and n.type=#{type} and n.status=#{status}
+    c.open_id = #{openId} and c.news_id = n.id
+    <if test="type == 2">
+      and n.type=#{type}
+    </if>
+    ORDER BY c.create_date desc
   </select>
+
 </mapper>

@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by zhang.peng on 2016/8/10.
@@ -18,9 +20,6 @@ import java.math.BigDecimal;
 @Controller
 @RequestMapping("/risk")
 public class RiskBiz {
-    @Autowired
-    PersonQuestionService personQuestionService;
-
     //基本的权重属性
     double ce_age;
     double ce_sbp;
@@ -32,27 +31,12 @@ public class RiskBiz {
     double ce_lvh;
     double ce_inter = 0.0;//女性特有，首先实例化
 
-    //修正参数的其他因素
-    double rr_bmi = 0.2;
-    //double rr_race = 0.2;
-    double rr_diet = 0.2;
-    double rr_drink = 0.1;
-    double rr_stress = 0.1;
-    double rr_activity = 0.1;
-    double rr_family = 0.05;
-
-    //修正参数的权重属性
-    double rr_cognitive = 1.8;
-    double rr_poor_memory = 1.4;
-    double rr_injury = 1.2;
-    int rr_mini_stroke = 15;
-
     /**
      * 计算测评结果
      * @param personQuestionEntity
      */
     @RequestMapping(value = "risk",method = RequestMethod.POST)
-    public RiskReq risk(PersonQuestionEntity personQuestionEntity
+    public Map risk(PersonQuestionEntity personQuestionEntity
             //, Model model
                        ){
         //修正实体类参数，初始化权重
@@ -64,36 +48,27 @@ public class RiskBiz {
         double base_risk;
         //模型计算 得到男性基本模型
         if (question.getGender() == 1) {
-            risk = getManRisk(question);
-            base_risk = getBaseRiskForMan(question);
+            risk = RiskMale.getManRisk(question);
+            base_risk = RiskMale.getBaseRiskForMan(question);
         } else {
             //得到女性基本模型
-            risk = getWomanRisk(question);
-            base_risk = getBaseRiskForWoman(question);
+            risk = RiskFemale.getWomanRisk(question);
+            base_risk = RiskFemale.getBaseRiskForWoman(question);
         }
 
-        //得到风险修正测评参数，保留2位小数
+        //患病几率
         double risk_correct = getRiskCorrect(question, risk);
 
-        //用户和基础的患病几率的倍数
-        double multiple = risk_correct/base_risk;
-        BigDecimal bd1 = new BigDecimal(multiple);
-        multiple = bd1.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        //患病倍数
+        int multiple = getMultiple(risk_correct,base_risk);
 
-        BigDecimal bd = new BigDecimal(risk_correct);
-        risk_correct = bd.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-        if(risk_correct > 92.99){
-            risk_correct = 92.99;
-        }
-
-        //得到危险等级
+        //危险等级
         int risk_level = getRiskLevel(risk_correct);
 
         //返回页面类
         RiskReq riskReq = new RiskReq();
         riskReq.setRisk_level(risk_level);
         riskReq.setRisk_correct(risk_correct);
-
         riskReq.setMultiple(multiple);
 
         if(personQuestionEntity.getTc() >= 5.2){
@@ -106,75 +81,39 @@ public class RiskBiz {
             riskReq.sethDiab(1);
         }
         double bmi = ( question.getWeight() / (Math.pow( (double)question.getHeight()/100, 2 ) ) ) - 24;
-        if (bmi > 24) {
-            riskReq.setBmi(1);
+        if (bmi < 0) {
+            riskReq.setBmi(0.0);
+        } else {
+            riskReq.setBmi(0.02 * ( 1 + bmi ));
         }
         if(personQuestionEntity.gethSmk() == 1){
             riskReq.sethSmk(1);
         }
 
-        //得到测评等级结果，insert person_question 并且 update person，走事务，已经都抛出异常了，只有等于1才会return回这里
-        personQuestionService.saveRisk(personQuestionEntity,risk_level);
-
-        return riskReq;
-        //返回页面，根据用户危险等级查看结果页面
-//        model.addAttribute("question",personQuestionEntity);
-//        model.addAttribute("risk_level",risk_level);
-//        model.addAttribute("risk_correct",risk_correct);
-//        return "weixin/result.jsp";
+        Map<String, Object> map = new HashMap();
+        map.put("personQuestion", personQuestionEntity);
+        map.put("riskReq", riskReq);
+        return map;
     }
 
     /**
-     * 男性风险
-     */
-    public double getManRisk(PersonQuestionEntity question){
-        double L = (question.getAge() * ce_age) + (question.getSbp() * ce_sbp) +
-                (question.getHyprx() * ce_hyprx) + (question.gethDiab() * ce_dm) +
-                (question.gethSmk() * ce_cigs) + (question.getCvd() * ce_cvd) +
-                (question.getAf() * ce_af) + (question.getLvh() * ce_lvh);
-
-        //得到初始测评参数
-        return 100 * (1 - Math.pow( 0.9044, Math.exp( L - 5.6770 )));
-    }
-
-    /**
-     * 女性风险
-     */
-    public double getWomanRisk(PersonQuestionEntity question){
-        double L = (question.getAge() * ce_age) + (question.getSbp() * ce_sbp) +
-                ( question.getHyprx() * ( ce_hyprx - ce_inter * question.getSbp() ) ) +
-                (question.gethDiab() * ce_dm) + (question.gethSmk() * ce_cigs) +
-                (question.getCvd() * ce_cvd) + (question.getAf() * ce_af) +
-                (question.getLvh() * ce_lvh);
-
-        //得到初始测评参数
-        return 1 - Math.pow( 0.9353, Math.exp( L - 7.5766 ) );
-    }
-
-    /**
-     * 男性基础风险
-     * @param question
+     * 得到患病的倍数
      * @return
      */
-    public double getBaseRiskForMan(PersonQuestionEntity question){
-        double L = (question.getAge()*ce_age)+(119*ce_sbp);
-        return 100 * (1 - Math.pow( 0.9044, Math.exp( L - 5.6770 )));
-    }
-
-    /**
-     * 女性基础风险
-     * @param question
-     * @return
-     */
-    public double getBaseRiskForWoman(PersonQuestionEntity question){
-        double L = (question.getAge()*ce_age)+(119*ce_sbp);
-        return 1 - Math.pow( 0.9353, Math.exp( L - 7.5766 ) );
+    public int getMultiple(double risk_correct, double base_risk){
+        double multiple = risk_correct/base_risk - 1;
+        BigDecimal bd = new BigDecimal(multiple);
+        return bd.setScale(0, BigDecimal.ROUND_HALF_UP).intValue();
     }
 
     /**
      * 根据测评结果计算危险等级
      */
     public int getRiskLevel(double risk){
+        if(risk > 92.99){
+            risk = 92.99;
+        }
+
         if (risk >= 0 && risk < 5){
             return 0;
         } else if (risk >= 5 && risk < 10) {
@@ -189,36 +128,56 @@ public class RiskBiz {
     }
 
     /**
+     * 获得修正后的bmi
+     * @param question
+     * @return
+     */
+    public double getRr_bmi(PersonQuestionEntity question){
+        //得到bmi，中国看模型是减去24，如果为负数，则为0
+        // 体重/身高（米）平方，中国 -24
+        double rr_bmi;
+        double dbmi = ( question.getWeight() / (Math.pow( (double)question.getHeight()/100, 2 ) ) ) - 24;
+        if (dbmi < 0) {
+            rr_bmi = 0;
+        } else {
+            rr_bmi = 0.02*(1 + dbmi);
+        }
+        return rr_bmi;
+    }
+
+    /**
      * 修正参数后风险
      */
     public double getRiskCorrect(PersonQuestionEntity question, double risk){
-        //得到bmi，中国看模型是减去24，如果为负数，则为0
-        // 体重/身高（米）平方，中国 -24
-        double bmi = ( question.getWeight() / (Math.pow( (double)question.getHeight()/100, 2 ) ) ) - 24;
-        if (bmi < 0) {
-            bmi = 0;
-        }
+        //获得修正后的bmi
+        double rr_bmi = getRr_bmi(question);
 
         //修正测评参数
-        risk = risk + ( bmi * rr_bmi + //rr_race * d33 +  //d33来源： race == "white" d33 = 1；这里不用
-                rr_diet * question.getDiet() + rr_drink * question.gethDrink() +
-                rr_stress * question.getStress() + rr_activity * question.getActivity() +
-                rr_family * question.getFamilys()
+        risk = risk + ( rr_bmi + 0.2 * 1 + //rr_race * d33 +  //d33来源： race == "white" d33 = 1；这里不用
+                0.2 * question.getDiet() + 0.1 * question.gethDrink() +
+                0.1 * question.getStress() + 0.1 * question.getActivity() +
+                0.05 * question.getFamilys()
         );
         //认知障碍
         if (question.getCognitive() == 1) {
-            risk = risk * rr_cognitive;
+            risk = 1.8 * risk;
             //记忆力差
         } else if (question.getCognitive() == 0 && question.getPoorMemory() == 1) {
-            risk = risk * rr_poor_memory;
+            risk = 1.4 * risk;
         }
         //脑损伤
         if (question.getInjury() == 1) {
-            risk = risk * rr_injury;
+            risk = 1.2 * risk;
         }
         //小中风
         if (question.getMiniStroke() == 1) {
-            risk = risk + rr_mini_stroke;
+            risk = 15 + risk;
+        }
+
+        BigDecimal bd = new BigDecimal(risk);
+        risk = bd.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+        if(risk > 92.99){
+            risk = 92.99;
         }
         return risk;
     }

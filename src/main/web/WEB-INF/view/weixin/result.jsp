@@ -3,16 +3,18 @@
 <html>
 <head>
     <title>结果页</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 </head>
 <body>
+    openId:${openId}<br>
     危险等级：<c:if test="${risk.risk_level==0}">低危险</c:if>
     <c:if test="${risk.risk_level==1}">中危险</c:if>
     <c:if test="${risk.risk_level==2}">高危险</c:if>
     <c:if test="${risk.risk_level==3}">极高危险</c:if>
     <br>
-    患病百分比：${risk.risk_correct}%<br>
+    患病概率：${risk.risk_correct}%<br>
     <br>
-    倍数：${risk.multiple}<br>
+    患病倍数：${risk.multiple}<br>
     <br>
     以下是展示选项
     <br>

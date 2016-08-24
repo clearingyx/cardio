@@ -1,21 +1,21 @@
 package com.common.dao.biz;
 
-import com.common.model.biz.CollectionReq;
+import com.common.model.auto.CollectionEntity;
+import com.common.model.auto.NewsEntity;
 
 
 public interface CollectionBizDao {
     /**
      * 验证重复
-     * @param collectionReq
+     * @param collection
      * @return
      */
-    int selectCollectionVerifyRepeat(CollectionReq collectionReq);
+    int selectCollectionVerifyRepeat(CollectionEntity collection);
 
     /**
-     * insert
-     * @param collectionReq
-     * @return
+     * 返回主键
+     * @param record
      */
-    int insert(CollectionReq collectionReq);
+    int insertSelective(CollectionEntity collection);
 
 }

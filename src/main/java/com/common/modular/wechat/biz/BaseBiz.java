@@ -3,8 +3,9 @@ package com.common.modular.wechat.biz;
 import com.common.dao.auto.PersonDao;
 import com.common.dao.biz.PersonBizDao;
 import com.common.component.resp.RspCodeMsg;
+import com.common.modular.redis.biz.AccessTokenWithRedis;
 import com.common.service.PersonService;
-import com.common.modular.wechat.util.WexinConnectUtil;
+import com.common.modular.wechat.util.WeixinConnectUtil;
 import com.exception.base.RspRuntimeException;
 import com.util.SHA1;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,8 @@ public class BaseBiz {
     PersonService personService;
     @Autowired
     EventBiz eventBiz;
+    @Autowired
+    AccessTokenWithRedis accessTokenWithRedis;
 
     //获取appid和secret
     static ResourceBundle rb = ResourceBundle.getBundle("wx");
@@ -49,15 +52,22 @@ public class BaseBiz {
      * 获得运营的access_token，保存2小时
      * ps：存入redis最好，如果到了2小时，redis缓存无数据了，再走这个方法
      */
-    @RequestMapping("getAccess_token")
+    @RequestMapping("at")
     public String getAccess_token(){
         //先判断缓存是否存在，如果不存在再走微信后台
-        String url = "https://api.weixin.qq.com/cgi-bin/token?"
-                +"grant_type=client_credential"
-                +"&appid=" + appid
-                +"&secret=" + secret;
-        Map<String,Object> map = WexinConnectUtil.getConnectForGet(url);
-        return map.get("access_token").toString();
+        String token = accessTokenWithRedis.judgeExist();
+        if(null == token || "".equals(token)) {
+            String url = "https://api.weixin.qq.com/cgi-bin/token?"
+                    + "grant_type=client_credential"
+                    + "&appid=" + appid
+                    + "&secret=" + secret;
+            Map<String, Object> map = WeixinConnectUtil.getConnectForGet(url);
+            String accessToken = map.get("access_token").toString();
+            accessTokenWithRedis.saveAccessToken(accessToken);
+            return accessToken;
+        } else {
+            return token;
+        }
     }
 
     /**
@@ -71,7 +81,8 @@ public class BaseBiz {
     public Object weixin(HttpServletResponse response, HttpServletRequest request, String signature,
                        String echostr, String timestamp, String nonce){
         //*******
-        //要是验证的话，return echostr;
+        //要是验证的话，
+        // return echostr;
         //*******
 
         //定义发送回去的xml是utf-8格式，否则中文会乱码
@@ -106,8 +117,4 @@ public class BaseBiz {
 //        return "http://file.api.weixin.qq.com/cgi-bin/media/upload?access_token="+access_token+"&type="+type;
 //    }
 
-    public static void main(String[] args) {
-        String str = new BaseBiz().getAccess_token();
-        System.out.println(str);
-    }
 }

@@ -1,0 +1,83 @@
+.content{
+	width:100%;
+	height: 28.35rem;
+	background: url(../../img/shouye/DBJT.png);
+	background-size: 100% 100%;
+}
+.head-img{
+	height: 4.36rem;
+	overflow: hidden;
+}
+.img-left{
+	width: 4.96rem;
+	height: 3.96rem;
+	background: url(../../img/page-test/test-cloud.png);
+	background-size: 100% 100%;
+	margin-top: .53rem;
+	float: left;
+}
+.img-right{
+	float: right;
+	width: 6.4rem;
+	height: 4.86rem;
+}
+.img-logo{
+	width: 4.63rem;
+	height: 3.35rem;
+	background: url(../../img/shouye/LOGO.png);
+	background-size: 100% 100%;
+	margin-top: 0.83rem;
+}
+/**/
+.sy-box{
+	width: 15.3rem;
+	height: 19.21rem;
+	margin: 0 auto;
+	background: url(../../img/page-test/zhi.png);
+	background-size: 100% 100%;
+	padding-top: .5rem;
+}
+.lamp{
+	width: 6.83rem;
+	height: 2.1rem;
+	background: url(../../img/shouye/teng.png);
+	background-size:100% 100%;
+	margin: 0 auto;
+}
+.til{
+	height: 1.41rem;
+	line-height: 1.41rem;
+	font-size: 1.01rem;
+	color: #ba1a25;
+	text-align: center;
+}
+.declare{
+	width: 12.21rem;
+	padding-top: .1rem;
+	height: 1.61rem;
+	margin: 0 auto;
+	border-bottom: 1px solid #00849f;
+	text-align: center;
+	font-size: .93rem;
+	color: #00849f;
+	font-weight: 100;
+}
+.note{
+	padding-top: .45rem;
+	width: 12.21rem;
+	font-size: .76rem;
+	line-height: 1.1rem;
+	color: #00849f;
+	margin: 0 auto;
+}
+/**/
+.next{
+	width: 1.55rem;
+	height: 1.55rem;
+	border-radius:100%;
+	background:url(../../img/page-test/right.png);
+	background-size:100% 100%;
+	position: absolute;
+	right: .75rem;
+	bottom: 3rem;
+}

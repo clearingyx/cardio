@@ -10,16 +10,16 @@ public class ResponseData extends Response {
 
     private Object data;
 
-    public ResponseData(String code, Object data) {
-        this(code, null, data);
+    public ResponseData(String code, String status, Object data) {
+        this(code, "", status, data);
     }
 
     public ResponseData(RspCodeMsg rsp, Object data) {
-        this(rsp.getCode(), rsp.getMsg(), data);
+        this(rsp.getCode(), rsp.getMsg().equals("处理成功")?"":rsp.getMsg(), rsp.getStatus(), data);
     }
 
-    public ResponseData(String code, String msg, Object data) {
-        super(code, msg);
+    public ResponseData(String code, String msg, String status, Object data) {
+        super(code, msg, status);
         this.data = data;
     }
 

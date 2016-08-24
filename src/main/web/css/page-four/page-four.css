@@ -1,0 +1,88 @@
+.content{
+	background-image: url(../../img/page-four/bg-4.png);
+	background-size:100% 100%;
+}
+/**/
+.problem{
+	position: relative;
+}
+.problem-13{
+	height: 5.6rem;
+	margin-top: .88rem;
+}
+.problem .massege1{
+	height: auto;
+	padding-top: .7rem;
+	line-height: 1.2rem;
+	font-size: .93rem;
+}
+.select-box{
+	position: absolute;
+	bottom: 0;
+	right: .8rem;
+	width: 11.67rem;
+	height: 3.2rem;
+/*	background: orange;*/
+}
+.select-box .button{
+	display: inline-block;
+	width: .7rem;
+	height: .7rem;
+	border: 1px solid #bebebe;
+	border-radius:100%;
+	margin-left:.35rem;
+	position: relative;
+	top: .1rem;
+	background: #fff;
+}
+.select-box .button i{
+	position: absolute;
+	width: .4rem;
+	height: .4rem;
+	border-radius:100%;
+	background: #12a6ec;
+	left:50%;
+	top: 50%;
+	margin-left: -.2rem;
+	margin-top: -.2rem;
+	display: none;
+}
+.select-box .button i.h-avtive{
+	display: block;
+}
+.select-word{
+	font-size: .77rem;
+	color: #646464;
+	margin-left: -.2rem;
+}
+.button-mag{
+	margin-top: .1rem;
+}
+.button-mag .button-mar{
+	margin-left: 1.63rem;
+}
+/**/
+.problem-14{
+	height: 6.6rem;
+}
+.problem-14 .circle-1{
+	margin-top: .6rem;
+}
+/**/
+.problem-15{
+	height: 6.4rem;
+}
+.problem-15 .circle-1{
+	margin-top: .6rem;
+}
+/**/
+.problem-16{
+	height: 5.3rem;
+}
+.problem-16 .circle-1{
+	margin-top: .2rem;
+}
+/*==================================*/
+footer{
+	margin-top: .35rem;
+}

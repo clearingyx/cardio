@@ -4,9 +4,7 @@
     <title>Title</title>
 </head>
 <body>
-    这是视频页面的url<br>
-    ${params}
-
-
+    courseId<br>
+    ${i}
 </body>
 </html>

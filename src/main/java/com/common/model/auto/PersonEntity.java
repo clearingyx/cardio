@@ -101,11 +101,19 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
+     * 0-其他途径；1-医生；2-分享
      * 表字段 : person.source
      * </pre>
      */
     private Integer source;
+
+    /**
+     * <pre>
+     * 生成唯一码
+     * 表字段 : person.unique_code
+     * </pre>
+     */
+    private String uniqueCode;
 
     /**
      * <pre>
@@ -409,11 +417,11 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 获取：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
+     * 获取：0-其他途径；1-医生；2-分享
      * 表字段：person.source
      * </pre>
      *
-     * @return person.source：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
+     * @return person.source：0-其他途径；1-医生；2-分享
      */
     public Integer getSource() {
         return source;
@@ -421,14 +429,39 @@ public class PersonEntity {
 
     /**
      * <pre>
-     * 设置：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
+     * 设置：0-其他途径；1-医生；2-分享
      * 表字段：person.source
      * </pre>
      *
      * @param source
-     *            person.source：0-微信直接点击关注；其他的数字是扫医生码关注的医生的id
+     *            person.source：0-其他途径；1-医生；2-分享
      */
     public void setSource(Integer source) {
         this.source = source;
+    }
+
+    /**
+     * <pre>
+     * 获取：生成唯一码
+     * 表字段：person.unique_code
+     * </pre>
+     *
+     * @return person.unique_code：生成唯一码
+     */
+    public String getUniqueCode() {
+        return uniqueCode;
+    }
+
+    /**
+     * <pre>
+     * 设置：生成唯一码
+     * 表字段：person.unique_code
+     * </pre>
+     *
+     * @param uniqueCode
+     *            person.unique_code：生成唯一码
+     */
+    public void setUniqueCode(String uniqueCode) {
+        this.uniqueCode = uniqueCode == null ? null : uniqueCode.trim();
     }
 }

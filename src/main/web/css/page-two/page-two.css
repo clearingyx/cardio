@@ -1,0 +1,91 @@
+.content{
+	background: url(../../img/page-two/bg-2.png) no-repeat;
+	background-size:100% 100%;
+	background-position: 0 -.5rem;
+}
+/**/
+.problem-4{
+	height: 3.7rem;
+	position: relative;
+}
+.word-1 .massege2{
+	font-size: .65em;
+	height: 1rem;
+	margin-top: .9rem;
+	line-height: 1.25rem;
+}
+.smoke-box{
+	position: absolute;
+	height: 1.6rem;
+	width: 7rem;
+	bottom: 0;
+	left: 5.54rem;
+}
+.smoke-box p{
+	font-size: .76rem;
+	color: #646464;
+	float: left;
+	line-height: 1.16rem;
+}
+.smoke-bar{
+	width: 3.43rem;
+	height: 1.3rem;
+}
+.smoke-bar .btn-scale{
+	width: 1.67rem;
+	margin: .63rem auto;
+}
+.smoke-bar .btn-scale .btn-box{
+	width: 1.6rem;
+	height: .93rem;
+	top: -.5rem;
+	left: .62rem;
+}
+/**/
+.problem-5{
+	height: 4.1rem;
+	position: relative;
+}
+.problem-5 .massege2{
+	width: 11.66rem;
+	padding-right: .78rem;
+	margin-top: .5rem;
+	line-height: 1.1rem;
+}
+/**/
+.problem-6 .circle-big{
+	position: relative;
+	top: -.4rem;
+}
+/**/
+.problem-7 .circle-big{
+	position: relative;
+	top: -.6rem;
+}
+/**/
+.problem-8{
+	height: 4.28rem;
+}
+.problem-8 .massege2{
+	margin-top: .42rem;
+}
+.problem-8 .circle-big{
+	position: relative;
+	top: -.6rem;
+}
+/**/
+.problem-9 .circle-big{
+	position: relative;
+	top: -.8rem;
+}
+/**/
+.btm-box{
+	height: 2.89rem;
+	width: 100%;
+	position: relative;
+}
+footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}

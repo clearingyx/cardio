@@ -2,6 +2,7 @@ package com.common.modular.sms.biz;
 
 import com.common.dao.auto.SmsDao;
 import com.common.model.auto.SmsEntity;
+import com.common.modular.redis.biz.MobilesWithRedis;
 import com.common.modular.sms.entity.Mobile;
 import com.exception.base.RspRuntimeException;
 import com.common.component.annotation.ApiRequest;
@@ -25,6 +26,8 @@ import java.util.Random;
 public class MobileBiz {
     @Autowired
     SmsDao smsDao;
+    @Autowired
+    MobilesWithRedis mobilesWithRedis;
 
     /**
      * 发送短信
@@ -32,14 +35,14 @@ public class MobileBiz {
      * @param sendtime
      */
     @ApiRequest
-    @RequestMapping(value = "sendSms", method = RequestMethod.GET)
+    @RequestMapping(value = "sendSms", method = RequestMethod.POST)
     @ResponseBody
     public Object sendSms(String mobiles, String sendtime){
         Mobile mobile = Mobile.getMobile();
 
         //6位随机验证码
         String radom_code = getRandNum(6);
-        //存入redis服务，设置5分钟失效
+
         String content = "您的验证码是：" + radom_code + "，请在5分钟内注册有效。";
         //发送短信的url
         StringBuffer url = new StringBuffer("http://115.29.47.5:8080/CxfSmsWs/service/SmsWebServices/sendSms?");
@@ -56,7 +59,7 @@ public class MobileBiz {
         String[] sms_back = str.split(",");
         //如果发送失败
         if (!"0".equals(sms_back[0])) {
-            judgeStatus(sms_back[0]);
+            throw new RspRuntimeException(RspCodeMsg.FAIL,judgeStatus(sms_back[0]));
         } else {
             //短信插入数据库
             SmsEntity smsEntity = new SmsEntity();
@@ -69,6 +72,10 @@ public class MobileBiz {
                 //log
                 throw new RspRuntimeException(RspCodeMsg.FAIL,"短信插入数据库失败！");
             }
+
+            //最后存入redis服务，设置5分钟失效
+            mobilesWithRedis.saveMobiles(mobiles, radom_code);
+
         }
         return "success";
     }
@@ -77,8 +84,7 @@ public class MobileBiz {
      * 余额查询
      */
     @RequestMapping("querySmsBalance")
-    @ResponseBody
-    public Object querySmsBalance(){
+    public String querySmsBalance(){
         Mobile mobile = Mobile.getMobile();
 
         StringBuffer url = new StringBuffer("http://115.29.47.5:8080/CxfSmsWs/service/SmsWebServices/queryBalance?");

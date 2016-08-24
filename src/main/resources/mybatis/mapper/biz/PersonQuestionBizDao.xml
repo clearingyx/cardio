@@ -6,7 +6,7 @@
     @mbggenerated
     -->
     <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="person_id" jdbcType="INTEGER" property="personId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="gender" jdbcType="INTEGER" property="gender" />
@@ -20,8 +20,8 @@
     <result column="familys" jdbcType="INTEGER" property="familys" />
     <result column="sbp" jdbcType="INTEGER" property="sbp" />
     <result column="hyprx" jdbcType="INTEGER" property="hyprx" />
-    <result column="tc" jdbcType="INTEGER" property="tc" />
-    <result column="ldl" jdbcType="INTEGER" property="ldl" />
+    <result column="tc" jdbcType="DOUBLE" property="tc" />
+    <result column="ldl" jdbcType="DOUBLE" property="ldl" />
     <result column="h_diab" jdbcType="INTEGER" property="hDiab" />
     <result column="cvd" jdbcType="INTEGER" property="cvd" />
     <result column="lvh" jdbcType="INTEGER" property="lvh" />
@@ -99,12 +99,22 @@
     <!--
     @mbggenerated
     -->
-    id, person_id, create_date, age, gender, weight, height, h_smk, h_drink, diet, activity, 
+    id, open_id, create_date, age, gender, weight, height, h_smk, h_drink, diet, activity, 
     stress, familys, sbp, hyprx, tc, ldl, h_diab, cvd, lvh, af, cognitive, poor_memory, 
     injury, mini_stroke
   </sql>
 
-  <select id="selectByPersonId" resultMap="BaseResultMap" parameterType="Integer">
-    select <include refid="Base_Column_List"/> from person_question where person_id = #{person_id}
+  <select id="selectByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM person_question  WHERE open_id = #{openId,jdbcType=VARCHAR}
   </select>
+
+  <select id="selectLastQuestionByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM person_question  WHERE open_id = #{openId,jdbcType=VARCHAR}
+    ORDER BY create_date desc LIMIT 0,1
+  </select>
+
 </mapper>

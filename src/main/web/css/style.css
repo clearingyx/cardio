@@ -1,0 +1,240 @@
+/**/
+/*绝对定位*/
+/*position: absolute;*/
+
+
+body,h1,h2,h3,h4,h5,h6,p,div,ul,li,button,dl,dd,dt,img,fieldset,span,i,input{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+html{
+    height:auto;
+    width: auto;
+}
+body{
+    font-family: 微软雅黑;
+    width: auto;
+    height: auto;
+    background-color: #ececec;
+    margin: 0px;
+}
+
+a{text-decoration:none;}
+
+ul{
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 0em;
+    -webkit-margin-after:0.5em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0px;
+}
+
+li{
+    list-style-type:none
+}
+/**/
+.sy-head{
+	height:4.31rem;
+	width: 16.38rem;
+	margin: 0 auto;
+	border-bottom: 1px solid #006dbb;
+}
+
+/**/
+.center{
+    text-align: center;
+}
+
+.logo {
+    text-align: center;
+    font-size: 1.3rem;;
+    color:#046ab5 ;
+}
+.logo img{
+	width: 4.51rem;
+	height: 1.83rem;
+	position: relative;
+	bottom: -.2rem;
+}
+.logo2{
+    height: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    color:#046ab5 ;
+    margin-top: -10px;
+}
+.YW{
+	height:0.9rem;
+    text-align: center;
+    color:#046ab5 ;
+    font-size: 0.46rem;
+    letter-spacing:3px;
+}
+
+.YW2{
+    text-align: center;
+    color:#046ab5 ;
+    font-size: 0.8rem;
+    letter-spacing:5px;
+    margin-top:-1.5rem;
+}
+.hycy{
+    color:#2b5881;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.FXPG{
+    text-align: center;
+    font-size: .73rem;
+    color:#046ab5 ;
+   /* margin-top: -0.7rem;*/
+}
+.sy-box{
+	height: 8.53rem;
+	width: 100%;
+}
+.one{
+    font-size: 1.12rem;
+    color: #046ab5;
+    height: 2rem;
+    padding-top: 0.5rem;
+}
+
+.two{
+	display: block;
+    border:1px solid #217fc2;
+    width:12.06rem;
+    padding-left: 2.17rem;
+    height: 1.93rem;
+    border-radius:1.25rem;
+    margin:0 auto;
+    font-size: 0.6rem;
+    color: #000000;
+}
+.end{
+    /*background: url("../img/shouji.png") no-repeat;*/
+   	background: url(../img/shouji.png) no-repeat;
+    background-size: .56rem .93rem;
+    background-position: 1.1rem center;
+    background-color: #FFFFFF;
+}
+.end1{
+    margin-top: .58rem;
+    background: url("../img/suo.png") no-repeat;
+   /* padding-left: 2.5rem;*/
+    background-size: .87rem .87rem;
+    background-position: 1rem center;
+    background-color: #FFFFFF;
+}
+/**/
+.psw-btn{
+	width: 5.45rem;
+	height: 1.7rem;
+	background: #006dbb;
+	line-height: 1.7rem;
+	text-align: center;
+	font-size: .58rem;
+	color: #fcfeff;
+	border-radius:.8rem ;
+	position: absolute;
+	right:2.05rem;
+	top: .15rem;
+	z-index: 2222;
+}
+
+.psw-btn1{
+    width: 5.45rem;
+    height: 1.7rem;
+    background: #006dbb;
+    line-height: 1.7rem;
+    text-align: center;
+    border-radius:3rem ;
+    position: absolute;
+    margin-left: 58%;
+   	margin-top:2.75rem;
+}
+/**/
+.nor{
+    border: 3px solid #000;
+    top: 50%;
+    left: 50%;
+    position:absolute;
+    border-radius: 100%;
+}
+#circle{
+    width: 200px;
+    height: 200px;
+}
+#circle_min {
+    width: 100px;
+    height: 100px;
+}
+#circle_m_m {
+    width: 50px;
+    height: 50px;
+}
+/**/
+.bg-box{
+	width: 100%;
+	height: 13.4rem;
+    padding-top: -5rem;
+	position: relative;
+}
+.bg-img{
+	width: 100%;
+	height:100%;
+}
+
+.qd{
+    width: 100%;
+    font-size: 1.5rem;
+    position: absolute;
+    margin-top: -5.5rem;
+    color: #FFFFFF;
+    letter-spacing: 5px;
+    text-align: center;
+    margin-left: -2px;
+}
+
+.gx{
+    display:block;
+    color:#FFF;
+    text-align:center;
+    font-size: 1.5rem;
+    padding-top: 1.5rem;
+    margin-bottom: -0.75rem;;
+}
+.zccg{
+
+    color: #FFFFFF;
+    text-align:center;
+    font-size: 0.9rem;
+}
+.yuanquan{
+    width:7rem;
+    height:7rem;
+    background-color:#699dbe;
+    border-radius:4rem;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+}
+.xdq{
+    height:100%;
+}
+
+.hqyzm{
+    width: 30%;
+    height: 1.9rem;
+    position: absolute;
+    margin-left: -6rem;
+    margin-top: 1.2rem;
+}
+/*验证码*/
+.psw-btn.pwd-active{
+	background: #BEBEBE;
+}

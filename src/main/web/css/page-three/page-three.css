@@ -1,0 +1,213 @@
+.content{
+	background: url(../../img/page-three/bg-3.png);
+	background-size:100% 100%;
+	background-position-y: -.46rem;
+}
+.problem-10{
+	height: 6.72rem;
+}
+.problem-10 .massege1{
+	width: 11.5rem;
+	line-height: 1.2rem;
+	padding-top: .6rem;
+	height: 2.17rem;
+}
+.problem-10 .word-1{
+	height: 4.6rem;
+}
+.problem-10 .age{
+	height: 1.84rem;
+	line-height: 1.84rem;
+	font-size: 1.2rem;
+	padding-left: 0.92rem;
+}
+.problem-10 .age.gay{
+	color: #c9c9c9;
+}
+.problem-10 .age-w{
+	height: 1.26rem;
+	padding-top: .5rem;
+	font-size: .4rem;
+	padding-left: .43rem;
+	line-height: 1.26rem;
+}
+.problem-10 .age-w.gay{
+	color: #c9c9c9;
+}
+.problem-10 .button{
+	display: inline-block;
+	width: .7rem;
+	height: .7rem;
+	border: 1px solid #bebebe;
+	border-radius:100%;
+	margin-left:2rem;
+	position: relative;
+	top: .75rem;
+	background: #fff;
+}
+.problem-10 i{
+	position: absolute;
+	width: .4rem;
+	height: .4rem;
+	border-radius:100%;
+	background: #12a6ec;
+	left:50%;
+	top: 50%;
+	margin-left: -.2rem;
+	margin-top: -.2rem;
+	display: none;
+}
+.problem-10 .button i.h-avtive{
+	display: block;
+}
+.problem-10 .height-word{
+	display: inline-block;
+	font-size: .73rem;
+	color: #616161;
+	padding: .73rem .2rem 0 .2rem;
+}
+/*======================*/
+.problem-11{
+	height: 4.03rem;
+}
+.problem-11 .circle-1{
+	margin-top: -.4rem;
+}
+.problem-11 .massege1{
+	line-height: 1.5rem;
+	padding-top: .2rem;
+	height: 1.6rem;
+}
+.problem-11 .sex-box{
+	height: 2rem;
+}
+.problem-11 .sex-bar{
+	width:4.3rem;
+	height: 1.63rem;
+}
+.problem-11 .btn-scale{
+	width:2.1rem;
+	margin: .78rem auto;
+}
+/*.problem-11 .btn-box{
+	width: 2.35rem;
+	height: 1.38rem;
+}*/
+.problem-11 .sex-box p{
+	font-size: .74rem;
+}
+/*==============================================*/
+.problem-12{
+	height: 13.8rem;
+}
+.problem-12 .circle-1{
+	margin-top: -.5rem;
+}
+.problem-12 .massege1{
+	width: 11.5rem;
+	line-height: 1.2rem;
+	padding-top: .4rem;
+	height: 2.66rem;
+}
+.problem-12 .height-box{
+	height: 10.9rem;
+	top:2.95rem;
+}
+/*.problem-12 .height-box legend{
+}*/
+.problem-12 .height-box fieldset{
+	height: 4.9rem;
+}
+.TC-num{
+	width: 100%;
+	height: 2.2rem;
+}
+.TC-left{
+	width: 7.5rem;
+	height: 2.2rem;
+	float: left;
+}
+.tc-number{
+	display: inline-block;
+	font-size: 1.2rem;
+	color: #4184c3;
+	padding-left:2.3rem;
+	margin-top: .6rem;
+}
+.tc-number.gay{
+	color: #c9c9c9;
+}
+.tc-unit{
+	display: inline-block;
+	font-size: .5rem;
+	color: #4184c3;
+	margin-top: 1.2rem;
+}
+.tc-unit.gay{
+	color: #c9c9c9;
+}
+.TC-right{
+	width: 5.95rem;
+	height: 2rem;
+	float: left;
+}
+.problem-12 .button{
+	display: inline-block;
+	width: .7rem;
+	height: .7rem;
+	border: 1px solid #bebebe;
+	border-radius:100%;
+	margin-left:.6rem;
+	position: relative;
+	top: .1rem;
+	background: #fff;
+}
+.problem-12 i{
+	position: absolute;
+	width: .4rem;
+	height: .4rem;
+	border-radius:100%;
+	background: #12a6ec;
+	left:50%;
+	top: 50%;
+	margin-left: -.2rem;
+	margin-top: -.2rem;
+	display: none;
+}
+.problem-12 .button i.h-avtive{
+	display: block;
+}
+.height-word-blue{
+	font-size:.72rem;
+	color: #4184c3;
+	padding-left: .33rem;
+}
+.right-unit{
+	font-size: .5rem;
+	color: #4184c3;
+}
+.problem-12 .slide-box{
+	padding-top: .15rem;
+	height: 1.7rem;
+}
+.problem-12 .field-mag{
+	margin-top:0rem;
+	height: 5.2rem;
+}
+.field-mag .tc-number{
+	padding-left: 1.48rem;
+}
+/*==================================*/
+/*footer{*/
+	/*margin-top:.18rem;*/
+/*}*/
+
+footer{
+	width: 100%;
+	height: 2.3rem;
+	background:url(../../img/result/foot-result.png);
+	background-size: 100% 100%;
+	padding-top: .95rem;
+	position: relative;
+	margin-top: -0.7rem;
+}

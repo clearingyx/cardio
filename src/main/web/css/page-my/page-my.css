@@ -1,0 +1,67 @@
+
+
+footer{
+    width: 100%;
+    height: 2.38rem;
+    /*!*height: 1.66rem;*!*/
+    /*overflow: hidden;*/
+    margin-top: 2.15rem;
+    background:url(../../img/page-my/APP23.png)no-repeat;
+    background-size: 100% 100%;
+    padding-top: 0.95rem;
+
+}
+
+
+.yuan{
+    width: 5rem;
+    height: 5rem;
+    border-radius:100%;
+    border:5px solid #dddddd;
+    margin: 0 auto;
+    margin-top:3rem;
+}
+
+.tan{
+    font-size: 1rem;
+    color: #1c538b;
+    font-weight: 600;
+    margin-left: 5.5rem;
+    margin-bottom: 1rem;
+   padding-left: 8%;
+    text-decoration: none;
+}
+
+.yy{
+    background: url("../../img/page-my/yy.png")no-repeat;
+    background-size: 7rem 1rem;
+    width: auto;
+    height: 1rem;
+    margin-top: 0.5rem;
+}
+
+.cx{
+    font-size: 0.9rem;
+    text-align: center;
+    font-weight: 900
+}
+
+.or-spacer {
+    margin: 0.7rem auto;
+    width: 20rem;
+    position: relative;
+}
+.or-spacer .mask {
+    overflow: hidden;
+    height: 20px;
+}
+.or-spacer .mask:after {
+    content: '';
+    display: block;
+    margin: -25px auto 0;
+    width: 70%;
+    height: 25px;
+    border-radius: 125px/12px;
+    box-shadow: 0 0 8px black;
+    margin-left: 10%;
+}

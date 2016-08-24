@@ -1,0 +1,97 @@
+.content{
+    background: url(../../img/DBJ.png);
+    background-size:100% 100%;
+    background-position-y: -.46rem;
+}
+
+
+p{
+    line-height: 1.3 ;
+    font-size: 0.8rem;
+}
+
+.wc{
+    position:absolute;
+    height:22.8rem;
+    overflow-y:auto;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    width: 80%;
+}
+
+.xian{
+     border-bottom: 2px solid #bdbdbd;
+     margin-bottom: 1rem;
+
+     margin-right: 3%
+ }
+
+.lj{
+     text-align: right;
+     padding-right: 15%;
+     text-decoration:none;
+     color: #000000;
+    font-size: 0.7rem;
+ }
+
+.lj1{
+    text-decoration:none;
+    color: #000000;
+    font-size: 0.7rem;
+}
+
+
+
+footer{
+    width: 100%;
+    height: 2.2rem;
+    /*!*height: 1.66rem;*!*/
+    /*overflow: hidden;*/
+    margin-top: .37rem;
+    background:url(../../img/page-collect/APP23.png);
+    background-size: 100% 100%;
+    padding-top: .95rem;
+}
+
+.qdyz{
+    color:#1c538a;
+    font-size: 1.1rem;
+    /*margin-top: 2rem;*/
+    margin-bottom: 0.5rem;
+
+}
+
+.yfqd{
+    text-decoration:none;
+    color: #4c4948;
+    font-size: 0.8rem;
+    margin-left: 0.8rem;
+    /*margin-top: 0.3rem;*/
+    padding-top: -1rem;
+}
+
+.wzjs{
+    color:#4b4a48;
+    text-indent: 1rem;
+    font-size: 0.8rem;
+    line-height: 1rem
+}
+
+.dys{
+    font-size:0.8rem;
+    color:#20558b;
+    margin: 0.5rem 0
+}
+
+.tp{
+    width: 13.5rem;
+    height: 4.5rem;
+    background-color: #dcdcdc;
+    margin-top: 0.5rem
+}
+
+.tj{
+    margin-top:-0.5rem;
+    position:absolute;
+    color: #4b4a48;
+}

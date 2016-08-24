@@ -5,10 +5,8 @@ import com.common.component.resp.RspCodeMsg;
 import com.common.dao.auto.LastingQrcodeDao;
 import com.common.model.auto.LastingQrcodeEntity;
 import com.common.modular.wechat.emun.QRcodeEmun;
-import com.common.modular.wechat.entity.qrcode.ActionInfo;
-import com.common.modular.wechat.entity.qrcode.QRcodeResp;
-import com.common.modular.wechat.entity.qrcode.Scene;
-import com.common.modular.wechat.util.WexinConnectUtil;
+import com.common.modular.wechat.entity.qrcode.*;
+import com.common.modular.wechat.util.WeixinConnectUtil;
 import com.exception.base.RspRuntimeException;
 import com.util.DateUtils;
 import com.util.JSONUtil;
@@ -34,37 +32,61 @@ public class QRcodeBiz extends BaseBiz{
 
     /**
      * 生成永久二维码，最多10万条，行内注释同上
-     * @param scene_str 参数，图文数据库id
+     * @param courseId 对方发送的url？+参数
      * @param remark 参数，生成的二维码备注信息
      */
     @ApiRequest
-    @RequestMapping(value = "createQR_LIMIT_STR_SCENE", method = RequestMethod.POST)
+    @RequestMapping(value = "createQR_LIMIT_STR_SCENE", method = RequestMethod.GET)
     @ResponseBody
-    public Object createQR_LIMIT_STR_SCENE(String scene_str, String remark){
+    public Object createQR_LIMIT_STR_SCENE(String courseId, String remark){
         String access_token = getAccess_token();
-        QRcodeResp qRcodeResp = new QRcodeResp(QRcodeEmun.QR_LIMIT_STR_SCENE.toString(),new ActionInfo(new Scene(scene_str)));
 
-        Map map = WexinConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
-                +access_token,JSONUtil.toJson(qRcodeResp));
+        //处理courseId变为url
+        //课程id-主机id-action标识
+        //[参数2]/[参数3]?i=[参数1]
+        if(null == courseId || "".equals(courseId)){
+            throw new RspRuntimeException(RspCodeMsg.WEIXIN_QRCODE_ERR, "二维码参数错误，参数名必须是courseId");
+        }
+        String[] params = courseId.split("-");
+        if(params.length!=3){
+            throw new RspRuntimeException(RspCodeMsg.WEIXIN_QRCODE_ERR, "二维码参数错误，无法解析出3个参数");
+        }
+        StringBuffer scene_str = new StringBuffer(ResourceBundle.getBundle("spring/config")
+                .getString("host_"+params[1].trim()));
+        scene_str.append("/"+params[2].trim());
+        scene_str.append("?i="+params[0].trim());
 
-//        QRcodeReq qRcodeReq = new QRcodeReq(map.get("ticket").toString(),
-//                Integer.valueOf(map.get("expire_seconds").toString()),
-//                map.get("url").toString());
-        //生成二维码
-//        new QRcodeUtil().Encode(url+qRcodeReq.getTicket(),"C:/Users/admin/Desktop/","QRcodeUtil.png");
+//        System.out.println(scene_str.toString());
 
-        //将永久二维码的ticket和remark放入数据库
+        QRcodeResp qRcodeResp = new QRcodeResp(QRcodeEmun.QR_LIMIT_STR_SCENE.toString(),
+                new ActionInfo(new Scene(scene_str.toString())));
+
+        Map map = WeixinConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
+                + access_token, JSONUtil.toJson(qRcodeResp));
+
+        //将永久二维码的ticket和remark放入数据库，测试用，要看看存进去的url是个什么
         LastingQrcodeEntity qrcodeEntity = new LastingQrcodeEntity();
         qrcodeEntity.setTicket(map.get("ticket").toString());
         qrcodeEntity.setCreateDate(new Date());
-        qrcodeEntity.setRemark(remark);
+        qrcodeEntity.setRemark(scene_str.toString());
         //永久的过期时间为空，这里不添加
         int temp = lastingQrcodeDao.insertSelective(qrcodeEntity);
         if (temp != 1) {
             throw new RspRuntimeException(RspCodeMsg.FAIL, "微信信息插入数据库失败");
         }
-        //return "redirect:./showQR.do?ticket=" + qrcodeEntity.getTicket();
-        return map.get("ticket").toString();
+
+        if(null != map.get("errmsg")){
+            throw new RspRuntimeException(RspCodeMsg.SERVER_FAIL, map.get("errcode").toString()+"  "+map.get("errmsg").toString());
+        } else {
+            if(null != map.get("ticket") && null != map.get("url")) {
+                QRcodeThird qRcodeThird = new QRcodeThird();
+                qRcodeThird.setTicket(map.get("ticket").toString());
+                qRcodeThird.setUrl(map.get("url").toString());
+                return qRcodeThird;
+            } else {
+                throw new RspRuntimeException(RspCodeMsg.WEIXIN_QRCODE_ERR, "二维码返回参数错误，没有ticket或url");
+            }
+        }
     }
 
     /**
@@ -102,7 +124,7 @@ public class QRcodeBiz extends BaseBiz{
         String access_token = new BaseBiz().getAccess_token();
 
         //post连接，生成二维码
-        Map map = WexinConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
+        Map map = WeixinConnectUtil.getConnectForPost("https://api.weixin.qq.com/cgi-bin/qrcode/create?access_token="
                 +access_token, JSONUtil.toJson(qRcodeResp));
 
 //        //封装微信发送回来的信息，可以直接放入数据库，这里的封装并没有什么意义，测试用
@@ -132,5 +154,4 @@ public class QRcodeBiz extends BaseBiz{
         }
         return "redirect:./showQR.do?ticket=" + qrcodeEntity.getTicket();
     }
-
 }

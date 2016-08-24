@@ -4,7 +4,10 @@ import com.common.component.resp.RspCodeMsg;
 import com.common.dao.biz.PersonBizDao;
 import com.common.model.auto.PersonQuestionEntity;
 import com.common.model.biz.RiskReq;
+import com.common.modular.redis.biz.CourseUrlWithRedis;
 import com.common.modular.risk.RiskBiz;
+import com.common.modular.wechat.biz.EventBiz;
+import com.common.modular.wechat.entity.Course;
 import com.common.service.PersonQuestionService;
 import com.exception.base.RspRuntimeException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * Created by zhang.peng on 2016/8/15.
@@ -28,29 +32,85 @@ public class QuestionController {
     PersonQuestionService personQuestionSrvice;
     @Autowired
     PersonBizDao personBizDao;
+    @Autowired
+    PersonQuestionService personQuestionService;
+    @Autowired
+    CourseUrlWithRedis courseUrlWithRedis;
 
-
+    /**
+     * 跳转答题第一页
+     * @param openId
+     * @param model
+     * @return
+     */
+    @RequestMapping("jumpPageOne")
+    public String jumpPageOne(String openId, Model model){
+        model.addAttribute("openId", openId);
+        return "weixin/page-one/page-one.jsp";
+    }
 
     /**
      * 答题
-     * @param openid，回答人的openid
+     * @param person，回答人的openId
      * @param session，存入题目
      * @param model，返回person_id
      * @param page，答题当前页码
      * @return
      */
     @RequestMapping("answer")
-    public String answer(PersonQuestionEntity person, String openid, HttpSession session, Model model,
+    public String answer(PersonQuestionEntity person, HttpSession session, Model model,
                          Integer page){
         session.setAttribute("person"+page,person);
-        model.addAttribute("openid",openid);
+        model.addAttribute("openId",person.getOpenId());
         if (page == 5) {
             //已经到了最后一页码，将session进行封装计算
-            RiskReq riskReq = jumpRisk(session, openid);
+            RiskReq riskReq = jumpRisk(session, person.getOpenId());
             model.addAttribute("risk",riskReq);
-            return "weixin/result.jsp";
+            model.addAttribute("riskLevel",riskReq.getRisk_level());
+            //begin if
+            if(riskReq.getRisk_level() == 0){
+                return "weixin/result/result-green.jsp";
+            } else if(riskReq.getRisk_level() == 1) {
+                return "weixin/result/result-yellow.jsp";
+            } else if(riskReq.getRisk_level() == 2) {
+                return "weixin/result/result-orange.jsp";
+            } else {
+                return "weixin/result/result-red.jsp";
+            }
+            //end if
+        } else if (page == 1) {
+            return "weixin/page-two/page-two.jsp";
+        } else if (page == 2) {
+            return "weixin/page-three/page-three.jsp";
+        } else if (page == 3) {
+            return "weixin/page-four/page-four.jsp";
+        } else if (page == 4) {
+            return "weixin/page-five/page-five.jsp";
         } else {
-            return "weixin/question"+(page+1)+".jsp";
+            throw new RspRuntimeException(RspCodeMsg.PARAM_CHECK_ERR,"参数page不能为1-5之外的值");
+        }
+    }
+
+    /**
+     * 答题返回上一页
+     * @param openId
+     * @param page
+     * @param model
+     * @return
+     */
+    @RequestMapping("backPage")
+    public String backPage(String openId, Integer page, Model model){
+        model.addAttribute("openId",openId);
+        if (page == 2) {
+            return "weixin/page-one/page-one.jsp";
+        } else if (page == 3) {
+            return "weixin/page-two/page-two.jsp";
+        } else if (page == 4) {
+            return "weixin/page-three/page-three.jsp";
+        } else if (page == 5) {
+            return "weixin/page-four/page-four.jsp";
+        } else {
+            throw new RspRuntimeException(RspCodeMsg.PARAM_CHECK_ERR,"参数page不能为1-5之外的值");
         }
     }
 
@@ -101,6 +161,79 @@ public class QuestionController {
 
         person.setCreateDate(new Date());
         person.setOpenId(openid);
-        return riskBiz.risk(person);
+
+        Map map = riskBiz.risk(person);
+        //得到测评等级结果，insert person_question 并且 update person，走事务，已经都抛出异常了
+        RiskReq riskReq = (RiskReq)map.get("riskReq");
+        personQuestionService.saveRisk((PersonQuestionEntity)map.get("personQuestion"),
+                riskReq.getRisk_level());
+        return riskReq;
+    }
+
+    /**
+     * 结果页面的跳转
+     * @param flag，标志是第几页，一共有3页，第一页不用判断，不是这里跳
+     * @param riskLevel
+     * @param openId
+     * @return
+     */
+    @RequestMapping("result")
+    public String result(Integer flag, Integer riskLevel, String openId, Model model){
+        model.addAttribute("openId", openId);
+        model.addAttribute("riskLevel", riskLevel);
+        if(flag == 1) {
+            if(riskLevel == 0) {
+                return "weixin/result/result-green1.jsp";
+            } else if(riskLevel == 1) {
+                return "weixin/result/result-yellow1.jsp";
+            } else if(riskLevel == 2) {
+                return "weixin/result/result-orange1.jsp";
+            } else {
+                return "weixin/result/result-red1.jsp";
+            }
+        } else {
+            //判断是否是视频
+            Course course = courseUrlWithRedis.takeOutCourseByOpenid(openId);
+            if(null != course && null != course.getCourseId()){
+                String url = new EventBiz().getImageTextUrl(course);
+                model.addAttribute("url", url);
+            } else {
+                model.addAttribute("url","");
+            }
+            if(riskLevel == 0) {
+                return "weixin/result/result-green2.jsp";
+            } else if(riskLevel == 1) {
+                return "weixin/result/result-yellow2.jsp";
+            } else if(riskLevel == 2) {
+                return "weixin/result/result-orange2.jsp";
+            } else {
+                return "weixin/result/result-red2.jsp";
+            }
+        }
+    }
+
+    /*
+     * 下面两个方法是试题总体测试用
+     */
+    @RequestMapping("risk")
+    public String risk(){
+        return "weixin/question_all_test.jsp";
+    }
+    @RequestMapping("allTest")
+    public String allTest(PersonQuestionEntity person, Model model ,String openId){
+        Map map = riskBiz.risk(person);
+        RiskReq riskReq = (RiskReq)map.get("riskReq");
+        model.addAttribute("risk",riskReq);
+        model.addAttribute("riskLevel",riskReq.getRisk_level());
+        model.addAttribute("openId",openId);
+        if(riskReq.getRisk_level() == 0){
+            return "weixin/result/result-green.jsp";
+        } else if(riskReq.getRisk_level() == 1) {
+            return "weixin/result/result-yellow.jsp";
+        } else if(riskReq.getRisk_level() == 2) {
+            return "weixin/result/result-orange.jsp";
+        } else {
+            return "weixin/result/result-red.jsp";
+        }
     }
 }

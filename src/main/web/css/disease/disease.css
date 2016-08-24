@@ -1,0 +1,101 @@
+.content{
+	background: url(../../img/disease/bg-disease.png);
+	background-size:100% 100%;
+}
+.dise-list{
+	padding-top: 3.96rem;
+	height: 20.5rem;
+	width: 100%;
+	/*background:yellowgreen;*/
+	position: relative;
+}
+.dise-li{
+	padding-left: 1.34rem;
+	height: 4.53rem;
+	padding-top: .16rem;
+}
+.li-word{
+	height: 4.23rem;
+	width:14.6rem;
+	background: #e60315;
+	border: .16rem solid #ececec;
+	margin: 0 auto;
+	border-radius:1.52rem;
+	font-size: 1.26rem;
+	text-align: center;
+	line-height: 4.23rem;
+	color: #ececec;
+    font-weight: 900;
+	position: relative;
+	text-shadow:2px 2px 4px #000000;
+}
+/*.li-word b{
+	font-size: 1.26rem;
+	font-weight: 900;
+}*/
+.li-circle{
+	width: 1.8rem;
+	height: 1.8rem;
+	border-radius: 100%;
+	border: .16rem solid #ececec;
+	position: absolute;
+	top: 50%;
+	margin-top: -.9rem;
+	margin-left: -1.1rem;
+	background: #e60012;
+}
+.li-smal{
+	width: .75rem;
+	height: .75rem;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -.375rem;
+	margin-left: -.375rem;
+	background: #ebebeb;
+	border-radius: 100%;
+}
+.li-2{
+	background: #f39800;
+}
+.li-2 .li-circle{
+	background: #f39800;
+}
+.li-3{
+	background: #c7ca00;
+}
+.li-3 .li-circle{
+	background: #c7ca00;
+}
+.li-4{
+	background: #119200;
+}
+.li-4 .li-circle{
+	background: #119200;
+}
+/*++++++++++遮罩层+++++++++++*/
+.dise-box{
+	width: 11.03rem;
+	height: 22.41rem;
+	border: 1px solid #fbfbfb;
+	position: absolute;
+	top: 2.28rem;
+	right: 2.63rem;
+	border-radius:1.4rem;
+}
+.white-box{
+	width: 10.83rem;
+	height: 22.2rem;
+	background: #fff;
+	opacity: .2;
+	margin:.105rem auto;
+}
+/*+++++++++++++++++++++++++++++++++++*/
+footer{
+	width: 100%;
+	height: 2.8rem;
+	background:url(../../img/result/foot-result.png);
+	background-size: 100% 100%;
+	padding-top: .6rem;
+	margin-top: 0.5rem;
+}

@@ -9,7 +9,7 @@
 下面开始list遍历：<br>
     <c:forEach var="list" items="${list}">
         ${list.mediaId}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${list.type}&nbsp;&nbsp;&nbsp;&nbsp;${list.url}
-        &nbsp;&nbsp;&nbsp;&nbsp;${list.desc}
+        &nbsp;&nbsp;&nbsp;&nbsp;
     </c:forEach>
     ${pageCount}
 </body>

@@ -7,34 +7,33 @@ package com.common.component.resp;
  * @create 2015年8月19日
  */
 public class Response {
-    public static final String DEFAULT_VERSION = "1.0";
 
     public Response(String code) {
-        this(code, null, DEFAULT_VERSION);
+        this(code, null);
     }
 
     public Response(RspCodeMsg rsp) {
-        this(rsp.getCode(), rsp.getMsg(), DEFAULT_VERSION);
+        this(rsp.getCode(), rsp.getMsg(), rsp.getStatus());
     }
 
     public Response(RspCodeMsg rsp, String msg) {
         // 如果 msg 为空，使用 rsp 的 msg，否则使用 msg
-        this(rsp.getCode(), msg == null ? rsp.getMsg() : msg, DEFAULT_VERSION);
+        this(rsp.getCode(), msg == null ? rsp.getMsg() : msg, rsp.getStatus());
     }
 
     public Response(String code, String msg) {
-        this(code, msg, DEFAULT_VERSION);
+        this(code, msg, null);
     }
 
-    public Response(String code, String msg, String ver) {
+    public Response(String code, String msg, String status) {
         this.code = code;
         this.msg = msg;
-        this.ver = ver;
+        this.status = status;
     }
 
     private String code;
     private String msg;
-    private String ver;
+    private String status;
 
     public String getCode() {
         return code;
@@ -52,11 +51,11 @@ public class Response {
         this.msg = msg;
     }
 
-    public String getVer() {
-        return ver;
+    public String getStatus() {
+        return status;
     }
 
-    public void setVer(String ver) {
-        this.ver = ver;
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

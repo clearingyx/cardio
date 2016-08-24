@@ -1,0 +1,67 @@
+.img-cloude1{
+	height: 3.73rem;
+	width: 2.55rem;
+	background: url(../../img/page-zc/zc-clude1.png);
+	background-size:100% 100%;
+	position: relative;
+	top:-.23rem;
+}
+.img-cloude2{
+	bottom: -1.75rem;
+}
+/**/
+.sy-box{
+	height: 7.61rem;
+	padding-top:0;
+}
+.zc-word{
+	font-size: 1.5rem;
+	color: #fff;
+	text-align: center;
+	font-weight: 100;
+}
+.zc-pad{
+	height: 1.63rem;
+	padding-top: .2rem;
+}
+.zc-line{
+	height: 1.9rem;
+	line-height: 1.9rem;
+}
+.img-millions{
+	height: 1.6rem;
+	font-size: 1.3rem;
+	color: #fff;
+	text-align: center;
+}
+.img-millions img{
+	display: inline-block;
+	width: 8.7rem;
+	height: 1.6rem;
+	position: relative;
+	bottom: -.2rem;
+	margin: 0 .1rem;
+}
+.english{
+	padding-top: .2rem;
+	height: .85rem;
+	line-height: .85rem;
+	font-size: .8rem;
+	color: #fff;
+	text-align: center;
+}
+/**/
+.nxt{
+	margin: 0 auto;
+	overflow: hidden;
+}
+.strat{
+	width: 2.67rem;
+	height: 2.46rem;
+	font-size: 1.16rem;
+	color: #fff;
+	text-align: center;
+	line-height: 1.16rem;
+	font-weight: 100;
+	margin: 1.35rem 0 0 1.35rem;
+}

@@ -7,11 +7,11 @@ package com.common.model.biz;
 public class RiskReq {
     private Integer risk_level; //危险等级
     private Double risk_correct; //患病百分比
-    private Double multiple; //是正常的倍数
+    private Integer multiple; //是正常的倍数
     private Integer tc;//总胆固醇，≥ 5.2 -> 1
     private Integer sbp;//血压,＞140 -> 1
     private Integer hDiab;//糖尿病,1,2 -> 1
-    private Integer bmi;//bmi >24 -> 1
+    private Double bmi;//bmi >24 -> 1
     private Integer hSmk;//吸烟 1 -> 1
 
 
@@ -31,11 +31,11 @@ public class RiskReq {
         this.risk_correct = risk_correct;
     }
 
-    public Double getMultiple() {
+    public Integer getMultiple() {
         return multiple;
     }
 
-    public void setMultiple(Double multiple) {
+    public void setMultiple(Integer multiple) {
         this.multiple = multiple;
     }
 
@@ -71,11 +71,11 @@ public class RiskReq {
         this.hSmk = hSmk;
     }
 
-    public Integer getBmi() {
+    public Double getBmi() {
         return bmi;
     }
 
-    public void setBmi(Integer bmi) {
+    public void setBmi(Double bmi) {
         this.bmi = bmi;
     }
 }

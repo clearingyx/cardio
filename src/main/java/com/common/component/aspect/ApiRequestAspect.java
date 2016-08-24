@@ -1,5 +1,6 @@
 package com.common.component.aspect;
 
+import com.common.modular.wechat.entity.qrcode.QRcodeThird;
 import com.exception.ParamCheckException;
 import com.common.component.param.AbstractParam;
 import com.common.component.resp.Response;

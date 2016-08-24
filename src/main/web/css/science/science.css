@@ -1,0 +1,22 @@
+.list{
+	padding: .27rem 0 0 1.15rem;
+}
+.list-li{
+	height:3.6rem;
+	line-height: .84rem;
+}
+.li-left img{
+	height: 3rem;
+}
+.li-right h3{
+	font-size: .77rem;
+	height: auto;
+}
+.li-right p{
+	height: .93rem;
+	line-height: .93rem;
+}
+.li-plice{
+	padding: 0 .57rem;
+}
+

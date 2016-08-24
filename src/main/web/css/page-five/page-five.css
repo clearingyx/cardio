@@ -1,0 +1,111 @@
+.content{
+	background: url(../../img/page-five/bg-5.png);
+	background-size: 100% 100%;
+	background-position-y: -.2rem;
+}
+.problem{
+	position: relative;
+}
+.problem .circle-1{
+	margin-top: .1rem;
+}
+/**/
+.problem-17{
+	height: 5.7rem;
+	margin-top: 1.34rem;
+}
+.problem-17 .massege1{
+	padding-top: .35rem;
+	font-size: .93rem;
+	line-height: 1.2rem;
+	width: 11.66rem;
+}
+.select-box{
+	position: absolute;
+	bottom: 0;
+	right: .8rem;
+	width: 11.67rem;
+	height: 3rem;
+/*	background: orange;*/
+}
+.select-box .button{
+	display: inline-block;
+	width: .7rem;
+	height: .7rem;
+	border: 1px solid #bebebe;
+	border-radius:100%;
+	margin-left:.35rem;
+	position: relative;
+	top: .1rem;
+	background: #fff;
+}
+.select-box .button i{
+	position: absolute;
+	width: .4rem;
+	height: .4rem;
+	border-radius:100%;
+	background: #12a6ec;
+	left:50%;
+	top: 50%;
+	margin-left: -.2rem;
+	margin-top: -.2rem;
+	display: none;
+}
+.select-box .button i.h-avtive{
+	display: block;
+}
+.select-word{
+	font-size: .77rem;
+	color: #646464;
+	margin-left: -.2rem;
+}
+.button-mag{
+	margin-top: .05rem;
+}
+.button-mag .button-mar{
+	margin-left: 1.63rem;
+}
+/**/
+.problem-18{
+	height: 5.8rem;
+}
+.problem .massege3{
+	padding-top: .56rem;
+	font-size: .93rem;
+	line-height: 1.2rem;
+	width: 11.66rem;
+}
+.problem-18 .select-box{
+	padding-top: 0.25rem;
+	height:2.7rem;
+}
+/**/
+.problem-19{
+	height: 5.9rem;
+}
+.problem19 .circle-1{
+	margin-top: .35rem;
+}
+/**/
+.problem-20{
+	height: 6.2rem;
+}
+.problem20 .circle-1{
+	margin-top: .3rem;
+}
+.problem-20 .select-box{
+	bottom:.35rem;
+}
+/*==================================*/
+footer{
+	margin-top: .18rem;
+}
+.foot-box{
+	width: 8.2rem;
+	background: url(../../img/page-five/footer-5.png) no-repeat;
+	background-size:8.2rem 1.32rem;
+	margin-left: 9.21rem;
+}
+.next{
+	padding-left: .58rem;
+}
