@@ -50,11 +50,17 @@ public class CourseUrlWithRedis {
      */
     public Course takeOutCourseByOpenid(String openid){
         Jedis redis = redisFactory.getJedis();
+        Course course = new Course();
+        if(null != redis.hget(openid, RISKLEVEL)) {
+            course.setRiskLevel(Integer.valueOf(redis.hget(openid, RISKLEVEL)));
+        }
+        if(null != redis.hget(openid, COURSEID)) {
+            course.setCourseId(redis.hget(openid, COURSEID));
+        }
+        if(null != redis.hget(openid, UNIQUECODE)) {
+            course.setUniqueCode(redis.hget(openid, UNIQUECODE));
+        }
 
-        Integer riskLevel = Integer.valueOf(redis.hget(openid, RISKLEVEL));
-        String courseId = redis.hget(openid, COURSEID);
-        String uniqueCode = redis.hget(openid, UNIQUECODE);
-
-        return new Course(uniqueCode, openid, riskLevel ,courseId);
+        return course;
     }
 }

@@ -15,7 +15,7 @@ $(function(){
 				$('.end').val('');
 			}
 			else{
-				var countdown = 30;
+				var countdown = 60;
 				console.log('mfbnjs');
 				function timeCountDown(){
 					if(countdown==0){

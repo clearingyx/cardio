@@ -18,6 +18,7 @@
     <result column="use_status" jdbcType="INTEGER" property="useStatus" />
     <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
     <result column="source" jdbcType="INTEGER" property="source" />
+    <result column="unique_code" jdbcType="VARCHAR" property="uniqueCode" />
   </resultMap>
   <sql id="Example_Where_Clause">
     <!--
@@ -88,7 +89,7 @@
     @mbggenerated
     -->
     id, phone, risk_level, nickname, open_id, headimgurl, sex, city, province, country,
-    use_status, create_date, source
+    use_status, create_date, source, unique_code
   </sql>
   <select id="selectPersonByOpenid" parameterType="java.lang.String" resultMap="BaseResultMap">
     select <include refid = "Base_Column_List" /> from person where open_id = #{openId}

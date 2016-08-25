@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,6 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>评估结果</title>
+    <base href="<%=basePath%>">
     <link rel="stylesheet" href="css/result/result-green.css" />
     <link rel="stylesheet" type="text/css" href="css/result/common.css"/>
 </head>
@@ -54,8 +56,14 @@
                 <p style="position: absolute;font-size: 0.8rem;color:#ec0004;margin-top: 2rem;margin-left: 11rem">20000元</p>
             </div>
         </div>
-        <a href="result-green1.jsp"><img src="img/result/left.png" style="width: 1.55rem;margin-top: 1rem;position: absolute;float:left"></a>
-        <a href="../../page-tv/page-tv.html"><img src="img/result/sp.png" style="width: 1.55rem;float:right;margin-top: 1rem"></a>
+        <a onclick="history.go(-1)">
+            <img src="img/result/left.png" style="width: 1.55rem;margin-top: 1rem;position: absolute;float:left">
+        </a>
+        <c:if test="${null != url && '' != url}">
+            <a href="${url}">
+                <img src="img/result/sp.png" style="width: 1.55rem;float:right;margin-top: 1rem">
+            </a>
+        </c:if>
     </div>
 </div>
 

@@ -11,7 +11,7 @@ public class RiskReq {
     private Integer tc;//总胆固醇，≥ 5.2 -> 1
     private Integer sbp;//血压,＞140 -> 1
     private Integer hDiab;//糖尿病,1,2 -> 1
-    private Double bmi;//bmi >24 -> 1
+    private Integer bmi;//bmi >24 -> 1
     private Integer hSmk;//吸烟 1 -> 1
 
 
@@ -71,11 +71,11 @@ public class RiskReq {
         this.hSmk = hSmk;
     }
 
-    public Double getBmi() {
+    public Integer getBmi() {
         return bmi;
     }
 
-    public void setBmi(Double bmi) {
+    public void setBmi(Integer bmi) {
         this.bmi = bmi;
     }
 }

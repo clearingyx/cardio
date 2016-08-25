@@ -28,6 +28,10 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
             <source src="../..${news.videoUrl}" type="video/mp4" />
         </video>
     </div>
+    <div style="border: 1px solid #bdbdbd; width: 80%;margin: 0.5rem auto;"></div>
+    <div style="margin: 0 auto;width: 80%;margin-left: 12%" id="content">
+        ${news.content}
+    </div>
     <div style="padding-left: 55%;margin:0.5rem 0 ">
         <a class="jjk" id="collection"><img style="width: 10%" src="../../img/page-tv1/sc.png">
             <c:if test="${collectionId == 0}">收藏</c:if>
@@ -43,6 +47,8 @@ String basePath = request.getScheme() + "://" + request.getServerName() + ":" + 
 <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 <script type="text/javascript">
     $(function(){
+        $("#content img").attr("style","width:100%;display: block;");
+
         var collectionId = ${collectionId};
         var url;
         if (collectionId == 0){ //没有收藏

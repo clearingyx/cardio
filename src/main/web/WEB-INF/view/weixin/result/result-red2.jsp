@@ -55,8 +55,11 @@
                 <p style="position: absolute;font-size: 0.8rem;color:#ec0004;margin-top: 2rem;margin-left: 11rem">20000元</p>
             </div>
         </div>
-        <a href="result-red1.jsp"><img src="img/result/left.png" style="width: 1.55rem;margin-top: 1rem;position: absolute;float:left"></a>
-        <a href="../../page-tv/page-tv.html"><img src="img/result/sp.png" style="width: 1.55rem;float:right;margin-top: 1rem"></a>
+        <a onclick="history.go(-1)"><img src="img/result/left.png" style="width: 1.55rem;margin-top: 1rem;position: absolute;float:left"></a>
+        <c:if test="${null != url && '' != url}">
+        <a href="${url}">
+            <img src="img/result/sp.png" style="width: 1.55rem;float:right;margin-top: 1rem"></a>
+        </c:if>
     </div>
 </div>
 

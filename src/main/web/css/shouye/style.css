@@ -160,7 +160,7 @@
 	z-index: 100;
 	border-radius: 1.4rem;
 	right: .2rem;
-	top:3.5rem;
+	top:-.3rem;
 }
 .list-pwd{
 	width: 7.53rem;
@@ -178,4 +178,7 @@
 .list-pwd.pwd-active{
 	background: #9FA2AC;
 	font-size: 1rem;
+}
+.inp-box{
+	position: relative;
 }

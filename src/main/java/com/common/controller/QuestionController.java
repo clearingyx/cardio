@@ -216,9 +216,11 @@ public class QuestionController {
      * 下面两个方法是试题总体测试用
      */
     @RequestMapping("risk")
-    public String risk(){
+    public String risk(String openId, Model model){
+        model.addAttribute("openId", openId);
         return "weixin/question_all_test.jsp";
     }
+
     @RequestMapping("allTest")
     public String allTest(PersonQuestionEntity person, Model model ,String openId){
         Map map = riskBiz.risk(person);
@@ -226,6 +228,10 @@ public class QuestionController {
         model.addAttribute("risk",riskReq);
         model.addAttribute("riskLevel",riskReq.getRisk_level());
         model.addAttribute("openId",openId);
+
+        personQuestionService.saveRisk((PersonQuestionEntity)map.get("personQuestion"),
+                riskReq.getRisk_level());
+
         if(riskReq.getRisk_level() == 0){
             return "weixin/result/result-green.jsp";
         } else if(riskReq.getRisk_level() == 1) {

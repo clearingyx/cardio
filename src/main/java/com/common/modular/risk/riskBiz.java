@@ -81,16 +81,24 @@ public class RiskBiz {
             riskReq.sethDiab(1);
         }
         double bmi = ( question.getWeight() / (Math.pow( (double)question.getHeight()/100, 2 ) ) ) - 24;
-        if (bmi < 0) {
-            riskReq.setBmi(0.0);
-        } else {
-            riskReq.setBmi(0.02 * ( 1 + bmi ));
+        if (bmi > 24) {
+            riskReq.setBmi(1);
         }
         if(personQuestionEntity.gethSmk() == 1){
             riskReq.sethSmk(1);
         }
 
         Map<String, Object> map = new HashMap();
+        if(personQuestionEntity.getDiet() == 0){
+            personQuestionEntity.setDiet(1);
+        } else {
+            personQuestionEntity.setDiet(0);
+        }
+        if(personQuestionEntity.getActivity() == 0){
+            personQuestionEntity.setActivity(1);
+        } else {
+            personQuestionEntity.setActivity(0);
+        }
         map.put("personQuestion", personQuestionEntity);
         map.put("riskReq", riskReq);
         return map;

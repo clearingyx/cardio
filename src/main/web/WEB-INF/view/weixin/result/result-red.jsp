@@ -22,17 +22,17 @@
            <p class="jkfx">血管健康风险</p>
            <p class="lsyj">红色预警</p>
             <img src="img/result/hxr.png" style="height:2.63rem;margin-left: 1.5rem">
-           <p class="bf">18.3%</p>
+           <p class="bf">${risk.risk_correct}%</p>
            <p class="gl">心脑血管发生事件概率</p>
            <img src="img/result/TB.png" style="position: absolute;height: 1.43rem;margin-left: 8.5rem">
            <hr width="90%" color="#acb4af" size="1px" style="margin-top: 0rem">
          </div>
          <div>
             <img src="img/result/hxr1.png" style="height: 2.9rem;margin-left: 1.5rem">
-             <div class="sb">3倍</div>
+             <div class="sb">${risk.multiple}倍</div>
              <p class="dyh"> > </p>
              <img style="height: 2.9rem;margin-left: 3.2rem" src="img/result/xr3.png">
-             <p class="sbwz">相比同龄健康人风险超过3倍</p>
+             <p class="sbwz">相比同龄健康人风险超过${risk.multiple}倍</p>
 
          </div>
          <div style="height:2.2rem;margin-top: -0.4rem">
@@ -59,7 +59,9 @@
              <p style="color:#00849f;font-size: 0.8rem;position: absolute;margin-left: 12.4rem">家族史</p>
          </div>
        </div>
-       <a href="result-red1.jsp"><img src="img/result/right.png" style="width: 1.55rem;float:right;margin-top: 1rem"></a>
+       <a href="../question/result.do?flag=1&openId=${openId}&riskLevel=${riskLevel}">
+           <img src="img/result/right.png" style="width: 1.55rem;float:right;margin-top: 1rem">
+       </a>
    </div>
  </div>
 </body>

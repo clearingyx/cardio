@@ -31,7 +31,18 @@ public class RiskController {
         PersonQuestionEntity personQuestion =
                 personQuestionBizDao.selectLastQuestionByOpenId(openId);
         Map map = riskBiz.risk(personQuestion);
-        model.addAttribute("risk",(RiskReq)map.get("riskReq"));
-        return "weixin/result.jsp";
+        RiskReq riskReq = (RiskReq)map.get("riskReq");
+        model.addAttribute("risk",riskReq);
+        model.addAttribute("riskLevel",riskReq.getRisk_level());
+        model.addAttribute("openId",openId);
+        if(riskReq.getRisk_level() == 0){
+            return "weixin/result/result-green.jsp";
+        } else if(riskReq.getRisk_level() == 1) {
+            return "weixin/result/result-yellow.jsp";
+        } else if(riskReq.getRisk_level() == 2) {
+            return "weixin/result/result-orange.jsp";
+        } else {
+            return "weixin/result/result-red.jsp";
+        }
     }
 }

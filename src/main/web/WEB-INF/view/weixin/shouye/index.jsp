@@ -36,9 +36,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="list-con"></div>
 					<span class="list-til">请注册</span>
 					<input class="end inp" type="text" name="firstname" placeholder="手机号" id="phone"/>
-					<input class="endl inp" type="text" name="lastname" placeholder="验证码" id="code"/>
-					<div class="psw-btn" id="psw-btn">
-						<div class="list-pwd">获取验证码</div>
+					<div class="inp-box">
+						<input class="endl inp" type="text" name="lastname" placeholder="验证码" id="code"/>
+						<div class="psw-btn" id="psw-btn">
+							<div class="list-pwd">获取验证码</div>
+						</div>
 					</div>
 					<div class="next nxt" id="ensure">确定</div>
 					<!--<li>

@@ -43,7 +43,7 @@ public class MobileBiz {
         //6位随机验证码
         String radom_code = getRandNum(6);
 
-        String content = "您的验证码是：" + radom_code + "，请在5分钟内注册有效。";
+        String content = "您的验证码为："+radom_code+"，5分钟内有效，请尽快填写注册。";
         //发送短信的url
         StringBuffer url = new StringBuffer("http://115.29.47.5:8080/CxfSmsWs/service/SmsWebServices/sendSms?");
         url = url .append("loginid=" +mobile.getLoginid()

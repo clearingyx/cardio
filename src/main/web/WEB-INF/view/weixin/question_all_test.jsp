@@ -21,7 +21,7 @@
 </head>
 <body onload="btnclick()">
 <form action="../question/allTest.do" method="post">
-    <input name="openId" value="ocnmBwcefyiffjYAv-Ro5xS7UdG8" type="hidden">
+    <input name="openId" value="${openId}">
     <table border="1px" id="address" style="width: 21%">
         <tr>
             <td>题干</td>

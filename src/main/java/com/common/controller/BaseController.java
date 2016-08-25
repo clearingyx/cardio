@@ -1,5 +1,7 @@
 package com.common.controller;
 
+import com.common.model.biz.NewsReq;
+import com.sun.javafx.sg.PGShape;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,4 +42,5 @@ public class BaseController {
     public String green(){
         return "weixin/result/result-green.jsp";
     }
+
 }

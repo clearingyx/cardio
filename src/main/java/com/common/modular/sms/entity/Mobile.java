@@ -27,11 +27,7 @@ public class Mobile {
         if (mobile == null) {
             loginid = ResourceBundle.getBundle("spring/config").getString("sms_loginid");
             loginpwd = ResourceBundle.getBundle("spring/config").getString("sms_loginpwd");
-            try {
-                sign = new String(ResourceBundle.getBundle("spring/config").getString("sms_sign").getBytes("ISO-8859-1"),"GBK");
-            }catch (UnsupportedEncodingException e) {
-                e.printStackTrace();
-            }
+            sign = new String(ResourceBundle.getBundle("spring/config").getString("sms_sign"));
             mobile = new Mobile(loginid,loginpwd,sign);
         }
         return mobile;

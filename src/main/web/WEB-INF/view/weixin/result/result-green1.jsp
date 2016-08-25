@@ -60,8 +60,12 @@
                 </div>
             </div>
         </div>
-        <a href="result-green.jsp"><img src="img/result/left.png" style="width: 1.55rem;margin-top: 1rem;position: absolute;float:left"></a>
-        <a href="result-green2.jsp"><img src="img/result/right.png" style="width: 1.55rem;float:right;margin-top: 1rem"></a>
+        <a onclick="history.go(-1)">
+            <img src="img/result/left.png" style="width: 1.55rem;margin-top: 1rem;position: absolute;float:left">
+        </a>
+        <a href="../question/result.do?flag=2&openId=${openId}&riskLevel=${riskLevel}">
+            <img src="img/result/right.png" style="width: 1.55rem;float:right;margin-top: 1rem">
+        </a>
     </div>
 </div>
 </body>
